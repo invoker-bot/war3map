@@ -1,0 +1,43 @@
+{
+  "name": "war3map",
+  "version": "0.0.1",
+  "description": "To translate between `war3map` and `json` formats for WarCraft III .w3x maps.",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint . --ext .ts",
+    "doc": "typedoc"
+  },
+  "keywords": [
+    "wc3",
+    "warcraft",
+    "frozen throne",
+    "reign of chaos",
+    "war3map",
+    "w3x"
+  ],
+  "author": "Invoker Bot",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "@types/node": "^14.11.5",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-jest": "^24.1.0",
+    "jest": "^26.5.2",
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.4.1",
+    "tsutils": "^3.17.1",
+    "typedoc": "^0.19.2",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
