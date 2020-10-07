@@ -1,11 +1,6 @@
-dist: bionic
+
 language: node_js
 node_js:
   - "8"
   - "9"
   - "10"
-
-script:
-  - npm run lint --if-present
-  - npm run test
-  - npm run build --if-present
