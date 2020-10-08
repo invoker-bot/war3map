@@ -3,6 +3,11 @@
   "version": "0.0.1",
   "description": "To translate between `war3map` and `json` formats for WarCraft III .w3x maps.",
   "main": "dist/src/index.js",
+  "homepage":"https://invokerrrr.github.io/war3map/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/invokerrrr/war3map.git"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
@@ -19,7 +24,14 @@
     "war3map",
     "w3x"
   ],
-  "author": "Invoker Bot",
+  "author":{ 
+    "name": "Invoker Bot",
+    "email": "594404963@qq.com",
+    "url": "https://github.com/invokerrrr"
+  },
+  "bugs": {
+    "url": "https://github.com/invokerrrr/war3map/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.14",

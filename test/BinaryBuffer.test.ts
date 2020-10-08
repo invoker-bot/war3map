@@ -182,20 +182,5 @@ describe('BinaryReadBuffer',()=>{
         assert.strictEqual(binaryReadBuffer.readString(),"WWWWWWW");
         assert.strictEqual(binaryReadBuffer.readByte(),2);
     });
-    /*
-    it('should readInt',()=>{
-        assert.strictEqual(binaryReadBuffer.readInt(),0x04030201);
-    });
 
-    it('should readFloat',()=>{
-        assert.strictEqual(binaryReadBuffer.readFloat(),-4960);
-    });
-
-    it('should readString',()=>{
-        assert.strictEqual(binaryReadBuffer.readString(),"WWWWWWW");
-    });
-
-    it('should readByte',()=>{
-        assert.strictEqual(binaryReadBuffer.readByte(),2);
-    });*/
 });

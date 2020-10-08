@@ -1,7 +1,7 @@
 import * as assert from "assert";
 
 import {BinaryReadBuffer,BinaryWriteBuffer} from "./BinaryBuffer";
-
+import {Translator} from './ObjectsTranslator';
 export interface Camera {
     target: {x:number;
         y:number};
@@ -17,7 +17,7 @@ export interface Camera {
 /**
  * The `.w3c` file
  */
-export class CamerasTranslator {
+export class CamerasTranslator implements Translator {
     public objectToBuffer(cameras:Camera[]):Buffer{
         const writer=new BinaryWriteBuffer();
 

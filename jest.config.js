@@ -9,7 +9,7 @@ module.exports={
       "json",
       "node",
     ],
-    testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)$',
+    testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.ts$',
     coverageDirectory: 'coverage',
     collectCoverageFrom: [
       'src/**/*.{ts,js}',

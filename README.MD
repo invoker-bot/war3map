@@ -1,7 +1,11 @@
+# WAR3MAP
+![Language](https://img.shields.io/badge/language-typescript-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-000000.svg)
+[![Build Status](https://travis-ci.com/invokerrrr/war3map.svg?branch=master)](https://travis-ci.com/invokerrrr/war3map)
 ## Overview
 War3map is a module to convert between a JSON representation of WarCraft III (.w3x) data and `war3map` format files.
 
-![TranslationExample](./img/example.png)
+![TranslationExample](https://invokerrrr.github.io/war3map/img/example.png)
 
 War3map is written in `TypeScript`, offering type safety and improved development experience.
 

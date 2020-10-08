@@ -1,14 +1,6 @@
-import {BinaryReadBuffer,BinaryWriteBuffer} from "./BinaryBuffer";
 
 export interface Translator{
+    objectToBuffer:(object:any)=>Buffer;
+    bufferToObject:(buffer:Buffer)=>any;
+}
 
-}
-enum ObjectType{
-    Units,
-    Items,
-    Destructables,
-    Doodads,
-    Abilities,
-    Buffs,
-    Upgrades
-}
