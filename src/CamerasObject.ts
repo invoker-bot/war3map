@@ -1,7 +1,7 @@
 import * as assert from "assert";
 
 import {BinaryReadBuffer,BinaryWriteBuffer} from "./BinaryBuffer";
-import {Translator} from './ObjectsTranslator';
+
 export interface Camera {
     target: {x:number;
         y:number};
@@ -17,14 +17,14 @@ export interface Camera {
 /**
  * The `.w3c` file
  */
-export class CamerasTranslator implements Translator {
-    public objectToBuffer(cameras:Camera[]):Buffer{
+export class CamerasObject{
+    public dump():Buffer{
         const writer=new BinaryWriteBuffer();
 
-        writer.writeInt(0);//file version
-        writer.writeInt(cameras.length);
+        writer.writeInt(this._version);//file version
+        writer.writeInt(this._cameras.length);
 
-        cameras.forEach((camera)=>{
+        this._cameras.forEach((camera)=>{
             writer.writeFloat(camera.target.x);
             writer.writeFloat(camera.target.y);
             writer.writeFloat(camera.offsetZ);
@@ -42,14 +42,12 @@ export class CamerasTranslator implements Translator {
 
         return writer.getBuffer();
     }
-    public bufferToObject(buffer:Buffer):Camera[]{
-        const result:Camera[]=[];
+    public read(buffer:Buffer):void{
         const reader=new BinaryReadBuffer(buffer);
         const fileVersion=reader.readInt();
-        assert.ok(fileVersion<=0,`The File version \`${fileVersion}\` not support.`) ; //version
+        assert.ok(fileVersion===0,`The File version \`${fileVersion}\` not support.`) ; //version
         const camerasLength=reader.readInt();
         for(let i=0;i<camerasLength;++i){
-
             const x=reader.readFloat();
             const y=reader.readFloat();
             const offsetZ=reader.readFloat();
@@ -62,7 +60,7 @@ export class CamerasTranslator implements Translator {
             const unknown=reader.readFloat();
             assert.strictEqual(unknown,100,"The magic number of camera should be 100");
             const name=reader.readString();
-            result.push({
+            this._cameras.push({
                 target:{
                     x,
                     y
@@ -78,7 +76,13 @@ export class CamerasTranslator implements Translator {
             });
 
         }
-        return result;
     }
-
+    public get Version():number{
+        return this._version;
+    }
+    public get Cameras():Camera[]{
+        return this._cameras;
+    }
+    private _cameras:Camera[]=[];
+    private _version=0;
 }

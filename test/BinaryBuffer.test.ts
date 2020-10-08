@@ -1,4 +1,5 @@
-import assert from "assert";
+/* eslint-disable jest/expect-expect */
+import * as assert from "assert";
 import {BinaryWriteBuffer,BinaryReadBuffer} from '../src/BinaryBuffer';
 
 
@@ -181,6 +182,15 @@ describe('BinaryReadBuffer',()=>{
         assert.strictEqual(binaryReadBuffer.readFloat(),-4960);
         assert.strictEqual(binaryReadBuffer.readString(),"WWWWWWW");
         assert.strictEqual(binaryReadBuffer.readByte(),2);
+    });
+    it('should readChars',()=>{
+        const buffData = Buffer.from([
+            0x68,0x65,0x6C,0x6C,0x6F,//hello
+            0x77,0x6F,0x72,0x6C,0x64 //world
+        ]);
+        const binaryReadBuffer=new BinaryReadBuffer(buffData);
+        assert.strictEqual(binaryReadBuffer.readChars(5),'hello');
+        assert.strictEqual(binaryReadBuffer.readChars(5),"world");
     });
 
 });

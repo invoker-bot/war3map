@@ -65,7 +65,7 @@ Here's some places where you can use this library:
 
 | Type |Json → War|War → Json|File|
 | --- | :-: | :-: | --- |
-| Terrain |![check][error] | ![check][error] | war3map.w3e |
+| Terrain |![check][error] | ![check][ok] | war3map.w3e |
 | Units  |![check][error] | ![check][error] | war3mapUnits.doo |
 | Doodads |![check][error] | ![check][error] | war3map.doo |
 | Regions |![check][error] | ![check][error] | war3map.w3r |
@@ -79,7 +79,7 @@ Here's some places where you can use this library:
 | Units - Objects | ![check][error] | ![check][error] | war3map.w3u     |
 | Items - Objects | ![check][error] | ![check][error] | war3map.w3t     |
 | Abilities - Objects | ![check][error] | ![check][error] | war3map.w3a     |
-| Destructables - Objects | ![check][error] | ![check][error]) | war3map.w3b     |
+| Destructables - Objects | ![check][error] | ![check][error] | war3map.w3b     |
 | Doodads - Objects   | ![check][error] | ![check][error] | war3map.w3d     |
 | Upgrades - Objects  | ![check][error] | ![check][error] | war3map.w3q     |
 | Buffs - Objects   | ![check][error] | ![check][error] | war3map.w3h     |

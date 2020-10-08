@@ -69,10 +69,10 @@
   "include": 
     [
       "src/**/*.ts",
-      "**/*.config.js"
+      "**/*.config.js",
+      "test/**/*.ts"
     ]
   ,
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": 
+  ["node_modules", "dist", "dist/**/*spec.ts"]
 }

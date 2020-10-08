@@ -64,6 +64,328 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
+				<p><strong>Not finished yet, please wait until version &gt;= 1.0.0.</strong></p>
+				<p><a href="https://github.com/invokerrrr/war3map/graphs/contributors"><img src="https://img.shields.io/github/contributors/invokerrrr/war3map.svg?style=flat-square" alt="Contributors"></a>
+					<a href="https://github.com/invokerrrr/war3map/network/members"><img src="https://img.shields.io/github/forks/invokerrrr/war3map.svg?style=flat-square" alt="Forks"></a>
+					<a href="https://github.com/invokerrrr/war3map/stargazers"><img src="https://img.shields.io/github/stars/invokerrrr/war3map.svg?style=flat-square" alt="Stargazers"></a>
+					<a href="https://github.com/invokerrrr/war3map/issues"><img src="https://img.shields.io/github/issues/invokerrrr/war3map.svg?style=flat-square" alt="Issues"></a>
+					<a href="https://github.com/invokerrrr/war3map/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/invokerrrr/war3map.svg?style=flat-square" alt="MIT License"></a>
+					<a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/language-typescript-orange.svg" alt="Language"></a>
+				<a href="https://travis-ci.com/invokerrrr/war3map"><img src="https://travis-ci.com/invokerrrr/war3map.svg?branch=master" alt="Build Status"></a></p>
+				<br />
+				<p align="center">
+					<a alt="WAR" href="https://github.com/invokerrrr/war3map">
+						<img src="https://invokerrrr.github.io/war3map/img/logo.png" alt="Logo" width="80" height="80">
+					</a>
+					<h3 align="center">WAR3MAP</h3>
+					<p align="center">
+						An awesome war3 map translator library for your project!
+						<br />
+						<a href="https://invokerrrr.github.io/war3map"><strong>Explore the docs »</strong></a>
+						<br />
+						<br />
+						<a href="https://github.com/invokerrrr/war3map">View Demo</a>
+						·
+						<a href="https://github.com/invokerrrr/war3map/issues">Report Bug</a>
+						·
+						<a href="https://github.com/invokerrrr/war3map/issues">Request Feature</a>
+					</p>
+				</p>
+				<a href="#table-of-contents" id="table-of-contents" style="color: inherit; text-decoration: none;">
+					<h2>Table of Contents</h2>
+				</a>
+				<ul>
+					<li><a href="#Overview">Overview</a></li>
+					<li><a href="#Support">Support</a><ul>
+							<li><a href="#support-files">Support Files</a></li>
+							<li><a href="#object-data-files">Object data files</a></li>
+							<li><a href="#trigger-files">Trigger files</a></li>
+							<li><a href="#map-files">Map files</a></li>
+							<li><a href="#Currently-Not-included">Currently Not included</a></li>
+						</ul>
+					</li>
+					<li><a href="#getting-started">Getting Started</a><ul>
+							<li><a href="#Prerequisites">Prerequisites</a></li>
+							<li><a href="#Import">Import</a></li>
+							<li><a href="#Development">Development</a></li>
+						</ul>
+					</li>
+					<li><a href="#Roadmap">Roadmap</a></li>
+					<li><a href="#Contributing">Contributing</a></li>
+					<li><a href="#License">License</a></li>
+					<li><a href="#Contact">Contact</a></li>
+					<li><a href="#Acknowledgements">Acknowledgements</a></li>
+				</ul>
+				<a href="#overview" id="overview" style="color: inherit; text-decoration: none;">
+					<h2>Overview</h2>
+				</a>
+				<p>War3map is a module to convert between a JSON representation of WarCraft III (.w3x) data and <code>war3map</code> format files.</p>
+				<p><img src="https://invokerrrr.github.io/war3map/img/example.png" alt="TranslationExample"></p>
+				<p>War3map is written in <code>TypeScript</code>, offering type safety and improved development experience.</p>
+				<p>Here&#39;s some places where you can use this library:</p>
+				<ul>
+					<li>You need to decompile a map of Warcraft 3. </li>
+					<li>You want to write a map editor for Warcraft 3.</li>
+					<li>You want to optimize or encrypt your Warcraft 3 map.</li>
+				</ul>
+				<a href="#support" id="support" style="color: inherit; text-decoration: none;">
+					<h2>Support</h2>
+				</a>
+				<a href="#support-files" id="support-files" style="color: inherit; text-decoration: none;">
+					<h3>Support Files</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Type</th>
+							<th align="center">Json → War</th>
+							<th align="center">War → Json</th>
+							<th>File</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Terrain</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3e</td>
+						</tr>
+						<tr>
+							<td>Units</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3mapUnits.doo</td>
+						</tr>
+						<tr>
+							<td>Doodads</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.doo</td>
+						</tr>
+						<tr>
+							<td>Regions</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3r</td>
+						</tr>
+						<tr>
+							<td>Cameras</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/ok.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/ok.png" alt="check"></td>
+							<td>war3map.w3c</td>
+						</tr>
+						<tr>
+							<td>Sounds(definitions)</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3s</td>
+						</tr>
+				</tbody></table>
+				<a href="#object-data-files" id="object-data-files" style="color: inherit; text-decoration: none;">
+					<h3>Object data files</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Type</th>
+							<th align="center">Json → War</th>
+							<th align="center">War → Json</th>
+							<th>File</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Units - Objects</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3u</td>
+						</tr>
+						<tr>
+							<td>Items - Objects</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3t</td>
+						</tr>
+						<tr>
+							<td>Abilities - Objects</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3a</td>
+						</tr>
+						<tr>
+							<td>Destructables - Objects</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check">)</td>
+							<td>war3map.w3b</td>
+						</tr>
+						<tr>
+							<td>Doodads - Objects</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3d</td>
+						</tr>
+						<tr>
+							<td>Upgrades - Objects</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3q</td>
+						</tr>
+						<tr>
+							<td>Buffs - Objects</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3h</td>
+						</tr>
+				</tbody></table>
+				<a href="#trigger-files" id="trigger-files" style="color: inherit; text-decoration: none;">
+					<h3>Trigger files</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Type</th>
+							<th align="center">Json → War</th>
+							<th align="center">War → Json</th>
+							<th>File</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>LUA</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.lua</td>
+						</tr>
+						<tr>
+							<td>JASS</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.j</td>
+						</tr>
+						<tr>
+							<td>Strings</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.wts</td>
+						</tr>
+				</tbody></table>
+				<a href="#map-files" id="map-files" style="color: inherit; text-decoration: none;">
+					<h3>Map files</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Type</th>
+							<th align="center">Json → War</th>
+							<th align="center">War → Json</th>
+							<th>File</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Info File</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.w3i</td>
+						</tr>
+						<tr>
+							<td>Imported Files</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.imp</td>
+						</tr>
+						<tr>
+							<td>Pathing</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.wpm</td>
+						</tr>
+						<tr>
+							<td>Shadow map</td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td align="center"><img src="https://invokerrrr.github.io/war3map/img/error.png" alt="check"></td>
+							<td>war3map.shd</td>
+						</tr>
+				</tbody></table>
+				<a href="#currently-not-included" id="currently-not-included" style="color: inherit; text-decoration: none;">
+					<h3>Currently Not included</h3>
+				</a>
+				<p> <img src="https://invokerrrr.github.io/war3map/img/error.png" alt="times"> Custom Text Trigger File (war3map.wct)<br> <img src="https://invokerrrr.github.io/war3map/img/error.png" alt="times"> Trigger Names File (war3map.wtg)<br> <img src="https://invokerrrr.github.io/war3map/img/error.png" alt="times"> Menu Minimap (war3map.mmp)<br> <img src="https://invokerrrr.github.io/war3map/img/error.png" alt="times"> Minimap Image (war3mapMap.blp)<br> <img src="https://invokerrrr.github.io/war3map/img/error.png" alt="times"> Minimap Image (war3mapMap.b00<br> <img src="https://invokerrrr.github.io/war3map/img/error.png" alt="times"> Minimap Image (war3mapMap.tga)<br> <img src="https://invokerrrr.github.io/war3map/img/error.png" alt="times"> Map Preview Image (war3mapPreview.tga)</p>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h2>Getting Started</h2>
+				</a>
+				<a href="#prerequisites" id="prerequisites" style="color: inherit; text-decoration: none;">
+					<h3>Prerequisites</h3>
+				</a>
+				<ul>
+					<li><a href="https://nodejs.org/">NODEJS</a></li>
+					<li>*VERSION &gt;= 10** </li>
+				</ul>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h3>Installation</h3>
+				</a>
+				<p>The easiest and fastest way is to use it as a library. Just simply type the followings:</p>
+				<ul>
+					<li>npm<pre><code class="language-sh">npm install war3map</code></pre>
+					</li>
+				</ul>
+				<a href="#import" id="import" style="color: inherit; text-decoration: none;">
+					<h3>Import</h3>
+				</a>
+				<p>Create your <code>.ts</code> or <code>.js</code> file, and type as follows:</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> war3map <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;war3map&quot;</span>;</code></pre>
+				<p><em>To get more examples or usages for war3map, see <a href="https://invokerrrr.github.io/war3map">Documentation</a>.</em></p>
+				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+					<h3>Development</h3>
+				</a>
+				<p>To get a local copy up and running follow these simple steps:</p>
+				<ol>
+					<li>Clone the repo<pre><code class="language-sh">git <span class="hljs-built_in">clone</span> https://github.com/invokerrrr/war3map.git</code></pre>
+					</li>
+					<li>Enter the correct directory<pre><code class="language-sh"><span class="hljs-built_in">cd</span> war3map</code></pre>
+					</li>
+					<li>Install NPM packages<pre><code class="language-sh">npm install</code></pre>
+					</li>
+					<li>Run All Tests<pre><code>npm <span class="hljs-built_in">test</span></code></pre>
+					</li>
+				</ol>
+				<a href="#roadmap" id="roadmap" style="color: inherit; text-decoration: none;">
+					<h2>Roadmap</h2>
+				</a>
+				<p>See the <a href="https://github.com/invokerrrr/war3map/issues">open issues</a> for a list of proposed features (and known issues).</p>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<p>Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
+				<ol>
+					<li>Fork the Project</li>
+					<li>Create your Feature Branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
+					<li>Commit your Changes (<code>git commit -m &#39;Add some AmazingFeature&#39;</code>)</li>
+					<li>Push to the Branch (<code>git push origin feature/AmazingFeature</code>)</li>
+					<li>Open a Pull Request</li>
+				</ol>
+				<p><strong>Your code should</strong>:</p>
+				<ul>
+					<li><strong>Run correctly</strong> (Run <code>npm test</code> without errors.)</li>
+					<li><strong>Include tests</strong> (Write unit tests and run <code>npm run test:coverage</code> to cover most of your code.)</li>
+					<li><strong>Be linted</strong> (Run <code>npm run lint</code> and follow the project&#39;s coding standards.)</li>
+					<li><strong>Pass travis-ci</strong> (Pass in different environments.)</li>
+				</ul>
+				<p>If your code is accepted into <code>master</code>, we will invite you to be a project member as soon.</p>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>Distributed under the MIT License. See <a href="https://github.com/invokerrrr/war3map/blob/master/LICENSE.md">LICENSE</a> for more information.</p>
+				<a href="#contact" id="contact" style="color: inherit; text-decoration: none;">
+					<h2>Contact</h2>
+				</a>
+				<p>Invoker Bot - <a href="mailto:&#53;&#x39;&#x34;&#52;&#x30;&#x34;&#57;&#x36;&#51;&#64;&#113;&#113;&#46;&#99;&#x6f;&#109;">&#53;&#x39;&#x34;&#52;&#x30;&#x34;&#57;&#x36;&#51;&#64;&#113;&#113;&#46;&#99;&#x6f;&#109;</a></p>
+				<p>Project Link: <a href="https://github.com/invokerrrr/war3map">https://github.com/invokerrrr/war3map</a></p>
+				<a href="#acknowledgements" id="acknowledgements" style="color: inherit; text-decoration: none;">
+					<h2>Acknowledgements</h2>
+				</a>
+				<ul>
+					<li><p>This project refers a lot from <a href="https://github.com/ChiefOfGxBxL/WC3MapTranslator">WC3MapTranslator</a> written by <em>ChiefOfGxBxL</em>. Our goal is same but offers different API, and plan more features.</p>
+					</li>
+					<li><p>We owe a lot of thanks to <em>Chocobo</em> on <a href="http://www.thehelper.net/">TheHelper</a> for the detailed documentation of the files found in a .w3x archive. And another two tutorials are <a href="http://www.thehelper.net/threads/guide-explanation-of-w3m-and-w3x-files.35292/">here (1)</a> and <a href="http://world-editor-tutorials.thehelper.net/cat_usersubmit.php?view=42787">here (2)</a> and <a href="https://867380699.github.io/blog/2019/05/09/W3X_Files_Format">here (3)</a>.</p>
+					</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -74,6 +396,15 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_binarybuffer_.html">&quot;<wbr>Binary<wbr>Buffer&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_camerasobject_.html">&quot;<wbr>Cameras<wbr>Object&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_environmentobject_.html">&quot;<wbr>Environment<wbr>Object&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_index_.html">&quot;index&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -88,6 +419,12 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 			</ul>

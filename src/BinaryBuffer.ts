@@ -25,14 +25,12 @@ export class BinaryWriteBuffer{
         if(isNullTerminated){
             this._buffer.push(0);
         }
-        return this;
     }
     /**
      * Push a null to binary buffer.
      */
     public writeNullTerminator(){
         this._buffer.push(0);
-        return this;
     }
     /**
      * Push '\r\n' to binary buffer.
@@ -40,7 +38,6 @@ export class BinaryWriteBuffer{
     public writeNewLine(){
         this._buffer.push(0x0d);//carriage return
         this._buffer.push(0x0a);//line feed
-        return this;
     }
     /**
      * Push char to binary buffer.
@@ -48,14 +45,13 @@ export class BinaryWriteBuffer{
      */
     public writeChar(char:string){
         this._buffer.push(char.charCodeAt(0));
-        return this;
     }
     /**
      * Push int or short to binary buffer.
      * @param intValue The int(32-bit) or short(16-bit) to write.
      * @param isShort whether or not the value is 16-bit.
      */
-    public writeInt(intValue:number,isShort:boolean=false){
+    public writeInt(intValue:number,isShort=false){
         /*const intN=isShort?this._int16:this._int32;
         //little endian
         intN.fromInt(intValue).bytes.forEach((byte:number) => {
@@ -70,14 +66,13 @@ export class BinaryWriteBuffer{
             buf.writeInt32LE(intValue,0);
             this._buffer.push(buf[0],buf[1],buf[2],buf[3]);
         }
-        return this;
     }
     /**
      * Push short to binary buffer.
      * @param short The short(16-bit) to write.
      */
     public writeShort(short:number){
-        return this.writeInt(short,true);
+        this.writeInt(short,true);
     }
     /**
      * Push float to binary buffer.
@@ -87,7 +82,6 @@ export class BinaryWriteBuffer{
         const buf=Buffer.alloc(4);
         buf.writeFloatLE(float,0);
         this._buffer.push(buf[0],buf[1],buf[2],buf[3]);
-        return this;
     }
     /**
      * Push byte(8-bit) to binary buffer.
@@ -95,7 +89,6 @@ export class BinaryWriteBuffer{
      */
     public writeByte(byte:number){
         this._buffer.push(byte);
-        return this;
     }
     /**
      * Generate a buffer from the values pushed.
@@ -158,10 +151,12 @@ export class BinaryReadBuffer{
      * Read the number of chars.
      * @param len The length of chars to read.
      */
-    public readChars(len:number=1):string{
-        const str=this._buffer.slice(this._offset,len).toString("utf-8");
+    public readChars(len=1):string{
+        //const str=this._buffer.slice(this._offset,len);
+        const str=this._buffer.toString("utf-8",this._offset,len+this._offset);
         this._offset+=len;
         return str;
+        //return str.toString("utf-8");
     }
     /**
      * Read a byte.
