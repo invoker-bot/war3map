@@ -1,7 +1,13 @@
+/**
+ * @packageDocumentation
+ */
+
 import * as assert from "assert";
+import {BinaryReadBuffer,BinaryWriteBuffer,ReadDumpObject} from "./BinaryBuffer";
 
-import {BinaryReadBuffer,BinaryWriteBuffer} from "./BinaryBuffer";
-
+/**
+ * Camera represents a camera in the game.
+ */
 export interface Camera {
     target: {x:number;
         y:number};
@@ -15,9 +21,12 @@ export interface Camera {
     name:string
 }
 /**
- * The `.w3c` file
+ * CamerasObject parses data from "war3map.w3c" file and can dump back.
  */
-export class CamerasObject{
+export class CamerasObject implements ReadDumpObject{
+    /**
+     * Extends from ReadDumpObject
+     */
     public dump():Buffer{
         const writer=new BinaryWriteBuffer();
 
@@ -42,6 +51,9 @@ export class CamerasObject{
 
         return writer.getBuffer();
     }
+    /**
+     * Extends from ReadDumpObject
+     */
     public read(buffer:Buffer):void{
         const reader=new BinaryReadBuffer(buffer);
         const fileVersion=reader.readInt();
@@ -77,9 +89,15 @@ export class CamerasObject{
 
         }
     }
+    /**
+     * Get the version.
+     */
     public get Version():number{
         return this._version;
     }
+    /**
+     * Get all cameras.
+     */
     public get Cameras():Camera[]{
         return this._cameras;
     }

@@ -4,6 +4,14 @@
  * @packageDocumentation
  */
 
+ /**
+  * This interface means object can read datas from w3x binary buffer, and also dump itself to a w3x binary buffer.  
+  * All w3x object binary parser implements this.
+  */
+export interface ReadDumpObject{
+    read(buffer:Buffer):void;
+    dump():Buffer;
+}
 
 /**
  * Write binary data from byte, string, int, float, etc.
@@ -14,7 +22,7 @@ export class BinaryWriteBuffer{
      * @param str The string to write.
      * @param isNullTerminated Whether or not the string ends with '\0'
      */
-    public writeString(str:string,isNullTerminated =false){
+    public writeString(str:string,isNullTerminated =false):void{
         /*
             convert string to utf-8 code.
         */
@@ -29,13 +37,13 @@ export class BinaryWriteBuffer{
     /**
      * Push a null to binary buffer.
      */
-    public writeNullTerminator(){
+    public writeNullTerminator():void{
         this._buffer.push(0);
     }
     /**
      * Push '\r\n' to binary buffer.
      */
-    public writeNewLine(){
+    public writeNewLine():void{
         this._buffer.push(0x0d);//carriage return
         this._buffer.push(0x0a);//line feed
     }
@@ -43,7 +51,7 @@ export class BinaryWriteBuffer{
      * Push char to binary buffer.
      * @param char The char to write.
      */
-    public writeChar(char:string){
+    public writeChar(char:string):void{
         this._buffer.push(char.charCodeAt(0));
     }
     /**
@@ -51,7 +59,7 @@ export class BinaryWriteBuffer{
      * @param intValue The int(32-bit) or short(16-bit) to write.
      * @param isShort whether or not the value is 16-bit.
      */
-    public writeInt(intValue:number,isShort=false){
+    public writeInt(intValue:number,isShort=false):void{
         /*const intN=isShort?this._int16:this._int32;
         //little endian
         intN.fromInt(intValue).bytes.forEach((byte:number) => {
@@ -71,14 +79,14 @@ export class BinaryWriteBuffer{
      * Push short to binary buffer.
      * @param short The short(16-bit) to write.
      */
-    public writeShort(short:number){
+    public writeShort(short:number):void{
         this.writeInt(short,true);
     }
     /**
      * Push float to binary buffer.
      * @param float The float(32-bit) to write.
      */
-    public writeFloat(float:number){
+    public writeFloat(float:number):void{
         const buf=Buffer.alloc(4);
         buf.writeFloatLE(float,0);
         this._buffer.push(buf[0],buf[1],buf[2],buf[3]);
@@ -87,13 +95,13 @@ export class BinaryWriteBuffer{
      * Push byte(8-bit) to binary buffer.
      * @param byte The byte(8-bit) to write.
      */
-    public writeByte(byte:number){
+    public writeByte(byte:number):void{
         this._buffer.push(byte);
     }
     /**
      * Generate a buffer from the values pushed.
      */
-    public getBuffer(){
+    public getBuffer():Buffer{
         return Buffer.from(this._buffer);
     }
 

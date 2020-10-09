@@ -63,9 +63,9 @@ Here's some places where you can use this library:
 
 ### Support Files
 
-| Type |Json → War|War → Json|File|
+| Type | Object → War | War → Object | File |
 | --- | :-: | :-: | --- |
-| Terrain |![check][error] | ![check][ok] | war3map.w3e |
+| Environment | ![check][ok] | ![check][ok] | war3map.w3e |
 | Units  |![check][error] | ![check][error] | war3mapUnits.doo |
 | Doodads |![check][error] | ![check][error] | war3map.doo |
 | Regions |![check][error] | ![check][error] | war3map.w3r |
@@ -74,7 +74,7 @@ Here's some places where you can use this library:
 
 ### Object data files
 
-| Type  | Json → War | War → Json  | File |
+| Type  | Object → War | War → Object  | File |
 | ---   |   :-----------:  |  :-:   |  ----  |
 | Units - Objects | ![check][error] | ![check][error] | war3map.w3u     |
 | Items - Objects | ![check][error] | ![check][error] | war3map.w3t     |
@@ -86,7 +86,7 @@ Here's some places where you can use this library:
 
 ### Trigger files
 
-|   Type | Json → War  | War → Json  | File |
+|   Type | Object → War  | War → Object  | File |
 |   ---  |   :-:   |   :-:   |   ---    |
 | LUA    | ![check][error] | ![check][error] | war3map.lua  |
 | JASS   | ![check][error] | ![check][error] | war3map.j    |
@@ -95,7 +95,7 @@ Here's some places where you can use this library:
 
 ### Map files
 
-| Type | Json → War  | War → Json  | File   |
+| Type | Object → War  | War → Object  | File   |
 |   ---    |    :-: |   :-: |   --- |
 | Info File    | ![check][error] | ![check][error] | war3map.w3i  |
 | Imported Files  | ![check][error] | ![check][error] | war3map.imp  |

@@ -1,10 +1,11 @@
-
+/**
+ *  @packageDocumentation
+ */
 import * as  assert from "assert";
-import { BinaryReadBuffer } from "./BinaryBuffer";
+import { BinaryReadBuffer,BinaryWriteBuffer,ReadDumpObject } from "./BinaryBuffer";
 
 /**
- * file:war3map.w3e
- * 
+ * Tileset is the main-type one of the tilesets.
  */
 export enum Tileset {
     Ashenvale = "A",
@@ -26,17 +27,19 @@ export enum Tileset {
     Outland = "O",
     "Black Citadel" = "K"
 }
-
+/**
+ * TilePoint is the smallest indivisible part of the map, the size of each is 128*128.
+ */
 export interface TilePoint{
     groundHeight:number; //[-16384,16383] C000h - 2000h - 3FFFh
-    waterLevelFlag:number;
-    mapEdgeLevelFlag:number;
-    waterAndRampFlag:number;
-    groundTextureType:number;
-    textureDetails:number;
-    cliffTextureType:number;
-    layerHeight:number;
+    waterLevelAndMapEdgeLevelFlag:number; // boundary flag & water level
+    waterAndRampFlagAndGroundTextureType:number;
+    textureDetailsType:number;
+    cliffTextureTypeAndLayerHeight:number;
 }
+/**
+ * Environment represents the environment like map ( water, cliffs, etc. ) datas in the game.
+ */
 export interface Environment {
     mainTileset:Tileset; //sizeof tile:128
     useCustomTilesets:boolean;
@@ -48,9 +51,12 @@ export interface Environment {
     centerOffsetOfMapY:number;
     tilesetsData:TilePoint[][];
 }
-
-export class EnvironmentObject {
+/**
+ * EnvironmentObject parses data from "war3map.w3e" file and can dump back.
+ */
+export class EnvironmentObject implements ReadDumpObject{
     private _environment?:Environment;
+    private _fileVersion=11;
     public read(buffer:Buffer):void{
         const reader = new BinaryReadBuffer(buffer);
         const fileID = reader.readChars(4);
@@ -80,26 +86,16 @@ export class EnvironmentObject {
             const tilesetsDataX:TilePoint[]=[];
             for(let j=0;j<maxY;++j){
                 const groundHeight=reader.readShort();
-                const flag=reader.readShort();
-                const waterLevelFlag=flag&0xC000;
-                const mapEdgeLevelFlag=flag&0x3FFF;
-                const _flag=reader.readByte();
-                const waterAndRampFlag=_flag&0xF0;
-                const groundTextureType=_flag&0x0F;
-                
-                const textureDetails=reader.readByte();
-                const __flag=reader.readByte();
-                const cliffTextureType=__flag&0xF0;
-                const layerHeight=__flag&0x0F;
+                const waterLevelAndMapEdgeLevelFlag=reader.readShort();
+                const waterAndRampFlagAndGroundTextureType=reader.readByte();
+                const textureDetailsType=reader.readByte();
+                const cliffTextureTypeAndLayerHeight=reader.readByte();
                 tilesetsDataX.push({
                     groundHeight,
-                    waterLevelFlag,
-                    mapEdgeLevelFlag,
-                    waterAndRampFlag,
-                    groundTextureType,
-                    textureDetails,
-                    cliffTextureType,
-                    layerHeight,
+                    waterLevelAndMapEdgeLevelFlag,
+                    waterAndRampFlagAndGroundTextureType,
+                    textureDetailsType,
+                    cliffTextureTypeAndLayerHeight
                 });
             }
             tilesetsData.push(tilesetsDataX);
@@ -117,7 +113,39 @@ export class EnvironmentObject {
         };
 
     }
-
+    public dump():Buffer{
+        if(this._environment){
+            const writer=new BinaryWriteBuffer();
+            writer.writeString("W3E!",false);
+            writer.writeInt(this._fileVersion);
+            const env=this._environment;
+            writer.writeChar(this.tilesetToChar(env.mainTileset));
+            writer.writeInt(env.useCustomTilesets?1:0);
+            writer.writeInt(env.groundTilesets.length);
+            env.groundTilesets.forEach((tileset)=>{
+                writer.writeString(tileset);
+            });
+            writer.writeInt(env.cliffTilesets.length);
+            env.cliffTilesets.forEach((tileset)=>{
+                writer.writeString(tileset);
+            });
+            writer.writeInt(env.maxX);
+            writer.writeInt(env.maxY);
+            writer.writeFloat(env.centerOffsetOfMapX);
+            writer.writeFloat(env.centerOffsetOfMapY);
+            env.tilesetsData.forEach((tilesetsDataX)=>{
+                tilesetsDataX.forEach((tilesetData)=>{
+                    writer.writeShort(tilesetData.groundHeight);
+                    writer.writeShort(tilesetData.waterLevelAndMapEdgeLevelFlag);
+                    writer.writeByte(tilesetData.waterAndRampFlagAndGroundTextureType);
+                    writer.writeByte(tilesetData.textureDetailsType);
+                    writer.writeByte(tilesetData.cliffTextureTypeAndLayerHeight);
+                });
+            });
+            return writer.getBuffer();
+        }
+        throw new Error("Empty environment object, should call `read` first.");
+    }
     private charToTileset(char: string):Tileset {
         switch (char) {
             case "A":

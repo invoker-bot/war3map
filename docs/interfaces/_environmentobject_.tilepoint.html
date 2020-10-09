@@ -69,6 +69,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>TilePoint is the smallest indivisible part of the map, the size of each is 128*128.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -84,14 +91,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#clifftexturetype" class="tsd-kind-icon">cliff<wbr>Texture<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#clifftexturetypeandlayerheight" class="tsd-kind-icon">cliff<wbr>Texture<wbr>Type<wbr>And<wbr>Layer<wbr>Height</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#groundheight" class="tsd-kind-icon">ground<wbr>Height</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#groundtexturetype" class="tsd-kind-icon">ground<wbr>Texture<wbr>Type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#layerheight" class="tsd-kind-icon">layer<wbr>Height</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#mapedgelevelflag" class="tsd-kind-icon">map<wbr>Edge<wbr>Level<wbr>Flag</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#texturedetails" class="tsd-kind-icon">texture<wbr>Details</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#waterandrampflag" class="tsd-kind-icon">water<wbr>And<wbr>Ramp<wbr>Flag</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#waterlevelflag" class="tsd-kind-icon">water<wbr>Level<wbr>Flag</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#texturedetailstype" class="tsd-kind-icon">texture<wbr>Details<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#waterandrampflagandgroundtexturetype" class="tsd-kind-icon">water<wbr>And<wbr>Ramp<wbr>Flag<wbr>And<wbr>Ground<wbr>Texture<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#waterlevelandmapedgelevelflag" class="tsd-kind-icon">water<wbr>Level<wbr>And<wbr>Map<wbr>Edge<wbr>Level<wbr>Flag</a></li>
 							</ul>
 						</section>
 					</div>
@@ -100,12 +104,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="clifftexturetype" class="tsd-anchor"></a>
-					<h3>cliff<wbr>Texture<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">cliff<wbr>Texture<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="clifftexturetypeandlayerheight" class="tsd-anchor"></a>
+					<h3>cliff<wbr>Texture<wbr>Type<wbr>And<wbr>Layer<wbr>Height</h3>
+					<div class="tsd-signature tsd-kind-icon">cliff<wbr>Texture<wbr>Type<wbr>And<wbr>Layer<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in EnvironmentObject.ts:37</li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L38">EnvironmentObject.ts:38</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -115,67 +119,37 @@
 					<div class="tsd-signature tsd-kind-icon">ground<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in EnvironmentObject.ts:31</li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L34">EnvironmentObject.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="groundtexturetype" class="tsd-anchor"></a>
-					<h3>ground<wbr>Texture<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">ground<wbr>Texture<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="texturedetailstype" class="tsd-anchor"></a>
+					<h3>texture<wbr>Details<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">texture<wbr>Details<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in EnvironmentObject.ts:35</li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L37">EnvironmentObject.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="layerheight" class="tsd-anchor"></a>
-					<h3>layer<wbr>Height</h3>
-					<div class="tsd-signature tsd-kind-icon">layer<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="waterandrampflagandgroundtexturetype" class="tsd-anchor"></a>
+					<h3>water<wbr>And<wbr>Ramp<wbr>Flag<wbr>And<wbr>Ground<wbr>Texture<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">water<wbr>And<wbr>Ramp<wbr>Flag<wbr>And<wbr>Ground<wbr>Texture<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in EnvironmentObject.ts:38</li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L36">EnvironmentObject.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="mapedgelevelflag" class="tsd-anchor"></a>
-					<h3>map<wbr>Edge<wbr>Level<wbr>Flag</h3>
-					<div class="tsd-signature tsd-kind-icon">map<wbr>Edge<wbr>Level<wbr>Flag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="waterlevelandmapedgelevelflag" class="tsd-anchor"></a>
+					<h3>water<wbr>Level<wbr>And<wbr>Map<wbr>Edge<wbr>Level<wbr>Flag</h3>
+					<div class="tsd-signature tsd-kind-icon">water<wbr>Level<wbr>And<wbr>Map<wbr>Edge<wbr>Level<wbr>Flag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in EnvironmentObject.ts:33</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="texturedetails" class="tsd-anchor"></a>
-					<h3>texture<wbr>Details</h3>
-					<div class="tsd-signature tsd-kind-icon">texture<wbr>Details<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in EnvironmentObject.ts:36</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="waterandrampflag" class="tsd-anchor"></a>
-					<h3>water<wbr>And<wbr>Ramp<wbr>Flag</h3>
-					<div class="tsd-signature tsd-kind-icon">water<wbr>And<wbr>Ramp<wbr>Flag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in EnvironmentObject.ts:34</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="waterlevelflag" class="tsd-anchor"></a>
-					<h3>water<wbr>Level<wbr>Flag</h3>
-					<div class="tsd-signature tsd-kind-icon">water<wbr>Level<wbr>Flag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in EnvironmentObject.ts:32</li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L35">EnvironmentObject.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -218,28 +192,19 @@
 						<a href="_environmentobject_.tilepoint.html" class="tsd-kind-icon">Tile<wbr>Point</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#clifftexturetype" class="tsd-kind-icon">cliff<wbr>Texture<wbr>Type</a>
+								<a href="_environmentobject_.tilepoint.html#clifftexturetypeandlayerheight" class="tsd-kind-icon">cliff<wbr>Texture<wbr>Type<wbr>And<wbr>Layer<wbr>Height</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_environmentobject_.tilepoint.html#groundheight" class="tsd-kind-icon">ground<wbr>Height</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#groundtexturetype" class="tsd-kind-icon">ground<wbr>Texture<wbr>Type</a>
+								<a href="_environmentobject_.tilepoint.html#texturedetailstype" class="tsd-kind-icon">texture<wbr>Details<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#layerheight" class="tsd-kind-icon">layer<wbr>Height</a>
+								<a href="_environmentobject_.tilepoint.html#waterandrampflagandgroundtexturetype" class="tsd-kind-icon">water<wbr>And<wbr>Ramp<wbr>Flag<wbr>And<wbr>Ground<wbr>Texture<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#mapedgelevelflag" class="tsd-kind-icon">map<wbr>Edge<wbr>Level<wbr>Flag</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#texturedetails" class="tsd-kind-icon">texture<wbr>Details</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#waterandrampflag" class="tsd-kind-icon">water<wbr>And<wbr>Ramp<wbr>Flag</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#waterlevelflag" class="tsd-kind-icon">water<wbr>Level<wbr>Flag</a>
+								<a href="_environmentobject_.tilepoint.html#waterlevelandmapedgelevelflag" class="tsd-kind-icon">water<wbr>Level<wbr>And<wbr>Map<wbr>Edge<wbr>Level<wbr>Flag</a>
 							</li>
 						</ul>
 					</li>

@@ -69,12 +69,25 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>EnvironmentObject parses data from &quot;war3map.w3e&quot; file and can dump back.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">EnvironmentObject</span>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/_binarybuffer_.readdumpobject.html" class="tsd-signature-type">ReadDumpObject</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -85,12 +98,14 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_environmentobject_.environmentobject.html#_environment" class="tsd-kind-icon">_environment</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_environmentobject_.environmentobject.html#_fileversion" class="tsd-kind-icon">_file<wbr>Version</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_environmentobject_.environmentobject.html#chartotileset" class="tsd-kind-icon">char<wbr>ToTileset</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_environmentobject_.environmentobject.html#dump" class="tsd-kind-icon">dump</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_environmentobject_.environmentobject.html#read" class="tsd-kind-icon">read</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_environmentobject_.environmentobject.html#tilesettochar" class="tsd-kind-icon">tileset<wbr>ToChar</a></li>
 							</ul>
@@ -106,7 +121,17 @@
 					<div class="tsd-signature tsd-kind-icon">_environment<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_environmentobject_.environment.html" class="tsd-signature-type">Environment</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in EnvironmentObject.ts:53</li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L58">EnvironmentObject.ts:58</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_fileversion" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _file<wbr>Version</h3>
+					<div class="tsd-signature tsd-kind-icon">_file<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 11</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L59">EnvironmentObject.ts:59</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -123,7 +148,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in EnvironmentObject.ts:121</li>
+									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L149">EnvironmentObject.ts:149</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -137,6 +162,24 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="dump" class="tsd-anchor"></a>
+					<h3>dump</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dump<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_binarybuffer_.readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/_binarybuffer_.readdumpobject.html#dump">dump</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L116">EnvironmentObject.ts:116</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="read" class="tsd-anchor"></a>
 					<h3>read</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -145,8 +188,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_binarybuffer_.readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/_binarybuffer_.readdumpobject.html#read">read</a></p>
 								<ul>
-									<li>Defined in EnvironmentObject.ts:54</li>
+									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L60">EnvironmentObject.ts:60</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -169,7 +213,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in EnvironmentObject.ts:164</li>
+									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/6af1d73/src/EnvironmentObject.ts#L192">EnvironmentObject.ts:192</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -217,8 +261,14 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_environmentobject_.environmentobject.html#_environment" class="tsd-kind-icon">_environment</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_environmentobject_.environmentobject.html#_fileversion" class="tsd-kind-icon">_file<wbr>Version</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="_environmentobject_.environmentobject.html#chartotileset" class="tsd-kind-icon">char<wbr>ToTileset</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_environmentobject_.environmentobject.html#dump" class="tsd-kind-icon">dump</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_environmentobject_.environmentobject.html#read" class="tsd-kind-icon">read</a>

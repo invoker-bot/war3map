@@ -14,8 +14,12 @@
     "test:coverage": "jest --coverage",
     "build": "tsc -p tsconfig.json",
     "lint": "eslint . --ext .ts",
-    "doc": "typedoc"
+    "doc": "typedoc --disableOutputCheck"
   },
+  "files": [
+    "src/**/*",
+    "dist/src/**/*"
+  ],
   "keywords": [
     "wc3",
     "warcraft",
