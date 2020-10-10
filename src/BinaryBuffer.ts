@@ -174,6 +174,12 @@ export class BinaryReadBuffer{
         this._offset+=1;
         return byte;
     }
+    /**
+     * Read end of file.
+     */
+    public isEOF():boolean{
+        return this._offset===this._buffer.length;
+    }
     private _offset=0;
     private _buffer:Buffer;
 }

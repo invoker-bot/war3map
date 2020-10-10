@@ -88,6 +88,8 @@ export class CamerasObject implements ReadDumpObject{
             });
 
         }
+
+        assert.ok(reader.isEOF(),"Not reach end of the file because of unknown data.");
     }
     /**
      * Get the version.

@@ -1,0 +1,8 @@
+#binary
+* text=auto
+*.png -text
+*war3map.??? -text
+
+
+*.js linguist-language=typescript
+*.ts linguist-language=typescript

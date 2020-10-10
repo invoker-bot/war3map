@@ -5,15 +5,15 @@ module.exports={
     },
     moduleFileExtensions: [
       "ts",
-      "js",
-      "json",
-      "node",
+      "js"
+     // "json",
+     // "node",
     ],
     testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.ts$',
     coverageDirectory: 'coverage',
     collectCoverageFrom: [
       'src/**/*.{ts,js}',
-      '!src/**/*.d.ts',
+      '!src/**/index.ts',
     ],
 
 

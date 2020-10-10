@@ -5,3 +5,11 @@ node_js:
   - "11"
   - "12"
   - "13"
+deploy:
+  provider: npm
+  user: "invoker-godder"
+  email: "594404963@qq.com"
+  api_key: "$NPM_TOKEN"
+  on:
+    tags: true
+    branch: master

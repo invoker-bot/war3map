@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a alt="WAR" href="https://github.com/invokerrrr/war3map">
-    <img src="https://invokerrrr.github.io/war3map/img/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://invokerrrr.github.io/war3map/img/logo.png" alt="Logo" width="115" height="80">
   </a>
   <h3 align="center">WAR3MAP</h3>
   <p align="center">
@@ -20,7 +20,7 @@
     <a href="https://invokerrrr.github.io/war3map"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/invokerrrr/war3map">View Demo</a>
+    <a href="https://github.com/invokerrrr/war3map">View Repository</a>
     ·
     <a href="https://github.com/invokerrrr/war3map/issues">Report Bug</a>
     ·
@@ -48,7 +48,7 @@
 * [Acknowledgements](#Acknowledgements)
 
 ## Overview
-War3map is a module to convert between a JSON representation of WarCraft III (.w3x) data and `war3map` format files.
+War3map is a module to convert between a Object representation of WarCraft III (.w3x) data and `war3map` format files.
 
 ![TranslationExample](https://invokerrrr.github.io/war3map/img/example.png)
 
@@ -66,10 +66,10 @@ Here's some places where you can use this library:
 | Type | Object → War | War → Object | File |
 | --- | :-: | :-: | --- |
 | Environment | ![check][ok] | ![check][ok] | war3map.w3e |
-| Units  |![check][error] | ![check][error] | war3mapUnits.doo |
-| Doodads |![check][error] | ![check][error] | war3map.doo |
-| Regions |![check][error] | ![check][error] | war3map.w3r |
-| Cameras |![check][ok]  | ![check][ok]  | war3map.w3c |
+| Units  | ![check][error] | ![check][error] | war3mapUnits.doo |
+| Doodads | ![check][ok] | ![check][ok] | war3map.doo |
+| Regions | ![check][error] | ![check][error] | war3map.w3r |
+| Cameras | ![check][ok]  | ![check][ok]  | war3map.w3c |
 | Sounds(definitions)| ![check][error] | ![check][error] | war3map.w3s|
 
 ### Object data files

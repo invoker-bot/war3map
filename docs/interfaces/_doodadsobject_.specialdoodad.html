@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TilePoint | war3map</title>
+	<title>SpecialDoodad | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,31 +56,24 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_environmentobject_.html">&quot;EnvironmentObject&quot;</a>
+					<a href="../modules/_doodadsobject_.html">&quot;DoodadsObject&quot;</a>
 				</li>
 				<li>
-					<a href="_environmentobject_.tilepoint.html">TilePoint</a>
+					<a href="_doodadsobject_.specialdoodad.html">SpecialDoodad</a>
 				</li>
 			</ul>
-			<h1>Interface TilePoint</h1>
+			<h1>Interface SpecialDoodad</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>TilePoint is the smallest indivisible part of the map, the size of each is 128*128.</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TilePoint</span>
+						<span class="target">SpecialDoodad</span>
 					</li>
 				</ul>
 			</section>
@@ -91,11 +84,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#clifftexturetypeandlayerheight" class="tsd-kind-icon">cliff<wbr>Texture<wbr>Type<wbr>And<wbr>Layer<wbr>Height</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#groundheight" class="tsd-kind-icon">ground<wbr>Height</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#texturedetailstype" class="tsd-kind-icon">texture<wbr>Details<wbr>Type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#waterandrampflagandgroundtexturetype" class="tsd-kind-icon">water<wbr>And<wbr>Ramp<wbr>Flag<wbr>And<wbr>Ground<wbr>Texture<wbr>Type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_environmentobject_.tilepoint.html#waterlevelandmapedgelevelflag" class="tsd-kind-icon">water<wbr>Level<wbr>And<wbr>Map<wbr>Edge<wbr>Level<wbr>Flag</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_doodadsobject_.specialdoodad.html#doodadid" class="tsd-kind-icon">doodadID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_doodadsobject_.specialdoodad.html#x" class="tsd-kind-icon">x</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_doodadsobject_.specialdoodad.html#y" class="tsd-kind-icon">y</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_doodadsobject_.specialdoodad.html#z" class="tsd-kind-icon">z</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,52 +96,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="clifftexturetypeandlayerheight" class="tsd-anchor"></a>
-					<h3>cliff<wbr>Texture<wbr>Type<wbr>And<wbr>Layer<wbr>Height</h3>
-					<div class="tsd-signature tsd-kind-icon">cliff<wbr>Texture<wbr>Type<wbr>And<wbr>Layer<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="doodadid" class="tsd-anchor"></a>
+					<h3>doodadID</h3>
+					<div class="tsd-signature tsd-kind-icon">doodadID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/25ca295/src/EnvironmentObject.ts#L38">EnvironmentObject.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/25ca295/src/DoodadsObject.ts#L40">DoodadsObject.ts:40</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="groundheight" class="tsd-anchor"></a>
-					<h3>ground<wbr>Height</h3>
-					<div class="tsd-signature tsd-kind-icon">ground<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="x" class="tsd-anchor"></a>
+					<h3>x</h3>
+					<div class="tsd-signature tsd-kind-icon">x<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/25ca295/src/EnvironmentObject.ts#L34">EnvironmentObject.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/25ca295/src/DoodadsObject.ts#L42">DoodadsObject.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="texturedetailstype" class="tsd-anchor"></a>
-					<h3>texture<wbr>Details<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">texture<wbr>Details<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="y" class="tsd-anchor"></a>
+					<h3>y</h3>
+					<div class="tsd-signature tsd-kind-icon">y<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/25ca295/src/EnvironmentObject.ts#L37">EnvironmentObject.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/25ca295/src/DoodadsObject.ts#L43">DoodadsObject.ts:43</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="waterandrampflagandgroundtexturetype" class="tsd-anchor"></a>
-					<h3>water<wbr>And<wbr>Ramp<wbr>Flag<wbr>And<wbr>Ground<wbr>Texture<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">water<wbr>And<wbr>Ramp<wbr>Flag<wbr>And<wbr>Ground<wbr>Texture<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="z" class="tsd-anchor"></a>
+					<h3>z</h3>
+					<div class="tsd-signature tsd-kind-icon">z<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/25ca295/src/EnvironmentObject.ts#L36">EnvironmentObject.ts:36</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="waterlevelandmapedgelevelflag" class="tsd-anchor"></a>
-					<h3>water<wbr>Level<wbr>And<wbr>Map<wbr>Edge<wbr>Level<wbr>Flag</h3>
-					<div class="tsd-signature tsd-kind-icon">water<wbr>Level<wbr>And<wbr>Map<wbr>Edge<wbr>Level<wbr>Flag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/25ca295/src/EnvironmentObject.ts#L35">EnvironmentObject.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/25ca295/src/DoodadsObject.ts#L41">DoodadsObject.ts:41</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -167,10 +149,10 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_camerasobject_.html">&quot;<wbr>Cameras<wbr>Object&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_doodadsobject_.html">&quot;<wbr>Doodads<wbr>Object&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_environmentobject_.html">&quot;<wbr>Environment<wbr>Object&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -180,39 +162,36 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/_environmentobject_.tileset.html" class="tsd-kind-icon">Tileset</a>
-					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_environmentobject_.environmentobject.html" class="tsd-kind-icon">Environment<wbr>Object</a>
+						<a href="../classes/_doodadsobject_.doodadsobject.html" class="tsd-kind-icon">Doodads<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_environmentobject_.environment.html" class="tsd-kind-icon">Environment</a>
+						<a href="_doodadsobject_.itemidandchoice.html" class="tsd-kind-icon">ItemIDAnd<wbr>Choice</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_environmentobject_.tilepoint.html" class="tsd-kind-icon">Tile<wbr>Point</a>
+						<a href="_doodadsobject_.specialdoodad.html" class="tsd-kind-icon">Special<wbr>Doodad</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#clifftexturetypeandlayerheight" class="tsd-kind-icon">cliff<wbr>Texture<wbr>Type<wbr>And<wbr>Layer<wbr>Height</a>
+								<a href="_doodadsobject_.specialdoodad.html#doodadid" class="tsd-kind-icon">doodadID</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#groundheight" class="tsd-kind-icon">ground<wbr>Height</a>
+								<a href="_doodadsobject_.specialdoodad.html#x" class="tsd-kind-icon">x</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#texturedetailstype" class="tsd-kind-icon">texture<wbr>Details<wbr>Type</a>
+								<a href="_doodadsobject_.specialdoodad.html#y" class="tsd-kind-icon">y</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#waterandrampflagandgroundtexturetype" class="tsd-kind-icon">water<wbr>And<wbr>Ramp<wbr>Flag<wbr>And<wbr>Ground<wbr>Texture<wbr>Type</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_environmentobject_.tilepoint.html#waterlevelandmapedgelevelflag" class="tsd-kind-icon">water<wbr>Level<wbr>And<wbr>Map<wbr>Edge<wbr>Level<wbr>Flag</a>
+								<a href="_doodadsobject_.specialdoodad.html#z" class="tsd-kind-icon">z</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_doodadsobject_.tree.html" class="tsd-kind-icon">Tree</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

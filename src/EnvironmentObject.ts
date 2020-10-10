@@ -55,8 +55,8 @@ export interface Environment {
  * EnvironmentObject parses data from "war3map.w3e" file and can dump back.
  */
 export class EnvironmentObject implements ReadDumpObject{
-    private _environment?:Environment;
-    private _fileVersion=11;
+    protected _environment?:Environment;
+    protected _fileVersion=11;
     public read(buffer:Buffer):void{
         const reader = new BinaryReadBuffer(buffer);
         const fileID = reader.readChars(4);
@@ -111,7 +111,7 @@ export class EnvironmentObject implements ReadDumpObject{
             centerOffsetOfMapY,
             tilesetsData,
         };
-
+        assert.ok(reader.isEOF(),"Not reach end of the file because of unknown data.");
     }
     public dump():Buffer{
         if(this._environment){
@@ -146,7 +146,7 @@ export class EnvironmentObject implements ReadDumpObject{
         }
         throw new Error("Empty environment object, should call `read` first.");
     }
-    private charToTileset(char: string):Tileset {
+    protected charToTileset(char: string):Tileset {
         switch (char) {
             case "A":
                 return Tileset["Ashenvale"];
@@ -189,7 +189,16 @@ export class EnvironmentObject implements ReadDumpObject{
         }
 
     }
-    private tilesetToChar(tileset:Tileset):string{
+    protected tilesetToChar(tileset:Tileset):string{
         return tileset;
     }
+    /**
+     * Get the environment data.
+     */
+    public get environment():Environment{
+        if(this._environment){
+            return this._environment;
+        }
+        throw new Error("Empty environment object, should call `read` first.");
+    } 
 } 
