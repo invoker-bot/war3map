@@ -3,15 +3,19 @@ language: node_js
 node_js:
   - "10"
   - "13"
-deploy:
-  provider: npm
-  email: "594404963@qq.com"
-  api_key: "$NPM_TOKEN"
-  on:
-    branch: master
 jobs:
   include:
     - 
       stage: coverage
       node_js: "13"
       script: npm run coveralls
+    -
+      stage: deploy
+      node_js: "13"
+      deploy:
+        provider: npm
+        email: "594404963@qq.com"
+        api_key: "$NPM_TOKEN"
+        on:
+          branch: master
+        skip_cleanuo: true
