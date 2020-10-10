@@ -8,7 +8,6 @@ deploy:
   email: "594404963@qq.com"
   api_key: "$NPM_TOKEN"
   on:
-    tags: true
     branch: master
 jobs:
   include:
