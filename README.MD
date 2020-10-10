@@ -68,7 +68,7 @@ Here's some places where you can use this library:
 | Environment | ![check][ok] | ![check][ok] | war3map.w3e |
 | Units  | ![check][error] | ![check][error] | war3mapUnits.doo |
 | Doodads | ![check][ok] | ![check][ok] | war3map.doo |
-| Regions | ![check][error] | ![check][error] | war3map.w3r |
+| Regions | ![check][ok] | ![check][ok] | war3map.w3r |
 | Cameras | ![check][ok]  | ![check][ok]  | war3map.w3c |
 | Sounds(definitions)| ![check][error] | ![check][error] | war3map.w3s|
 

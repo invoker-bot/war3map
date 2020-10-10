@@ -29,7 +29,6 @@ export class CamerasObject implements ReadDumpObject{
      */
     public dump():Buffer{
         const writer=new BinaryWriteBuffer();
-
         writer.writeInt(this._version);//file version
         writer.writeInt(this._cameras.length);
 
@@ -103,6 +102,12 @@ export class CamerasObject implements ReadDumpObject{
     public get Cameras():Camera[]{
         return this._cameras;
     }
-    private _cameras:Camera[]=[];
-    private _version=0;
+    public get cameras():Camera[]{
+        return this._cameras;
+    }
+    public set cameras(_cameras:Camera[]){
+        this._cameras=_cameras;
+    }
+    protected _cameras:Camera[]=[];
+    protected _version=0;
 }

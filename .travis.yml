@@ -13,6 +13,6 @@ deploy:
 jobs:
   include:
     - 
-      stage: Produce Coverage
+      stage: coverage
       node_js: "13"
       script: npm run coveralls

@@ -1,10 +1,12 @@
 /* eslint-disable jest/expect-expect */
 import * as assert from "assert";
 import {ReadDumpObject} from "../src/BinaryBuffer";
+
 import {CamerasObject} from "../src/CamerasObject";
 import {EnvironmentObject} from "../src/EnvironmentObject";
 import {DoodadsObject} from "../src/DoodadsObject";
 import {readFileSync} from "fs";
+import {RegionObject} from "../src/RegionObject";
 //import {resolve} from "path";
 
 function assertObjectReadDump<T extends ReadDumpObject>(obj1:T,obj2:T,map:string,fileType:string){
@@ -28,6 +30,12 @@ describe("EnvironmentObject",()=>{
 });
 describe("DoodadsObject",()=>{
     it("should support map1",()=>{
-        assertObjectReadDump(new DoodadsObject,new DoodadsObject(),"map1","doo");
+        assertObjectReadDump(new DoodadsObject(),new DoodadsObject(),"map1","doo");
+    });
+});
+
+describe("RegionObject",()=>{
+    it("should support map1",()=>{
+        assertObjectReadDump(new RegionObject(),new RegionObject(),"map1","w3r");
     });
 });

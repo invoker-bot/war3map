@@ -2,7 +2,8 @@
 logs
 *.log
 npm-debug.log*
-
+#
+unfinish
 # Dependencies
 node_modules
 #

@@ -3,6 +3,8 @@
 *.png -text
 *war3map.??? -text
 
-
+*.json linguist-language=typescript
+*.css linguist-language=typescript
+*.html linguist-language=typescript
 *.js linguist-language=typescript
 *.ts linguist-language=typescript

@@ -91,6 +91,11 @@ export class BinaryWriteBuffer{
         buf.writeFloatLE(float,0);
         this._buffer.push(buf[0],buf[1],buf[2],buf[3]);
     }
+    public writeColor(color:number):void{
+        this.writeByte((color>>16)&0xFF);
+        this.writeByte((color>>8)&0xFF);
+        this.writeByte((color)&0xFF);
+    }
     /**
      * Push byte(8-bit) to binary buffer.
      * @param byte The byte(8-bit) to write.
@@ -154,6 +159,9 @@ export class BinaryReadBuffer{
         }
         ++this._offset;//consume '\0'
         return Buffer.from(str).toString("utf-8");
+    }
+    public readColor():number{
+        return (this.readByte()<<16)+(this.readByte()<<8)+this.readByte();
     }
     /**
      * Read the number of chars.

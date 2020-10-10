@@ -197,8 +197,10 @@ export class EnvironmentObject implements ReadDumpObject{
      */
     public get environment():Environment{
         if(this._environment){
-            return this._environment;
-        }
+        return this._environment;}
         throw new Error("Empty environment object, should call `read` first.");
     } 
+    public set environment(_environment:Environment){
+        this._environment=_environment;
+    }
 } 

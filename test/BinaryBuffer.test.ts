@@ -155,7 +155,14 @@ describe('BinaryWriteBuffer',()=>{
         assert.strictEqual(binaryWriteBuffer.getBuffer().length, 1);
         assert.strictEqual(binaryWriteBuffer.getBuffer()[0], 15);
     });
+    it("should writeNullString",()=>{
+        binaryWriteBuffer.writeString("\0\n \t\0",true);
+        assert.strictEqual(binaryWriteBuffer.getBuffer().length,6);
+        assert.strictEqual(binaryWriteBuffer.getBuffer()[0],0);
+        assert.strictEqual(binaryWriteBuffer.getBuffer()[4],0);
 
+        assert.strictEqual(binaryWriteBuffer.getBuffer()[5],0);
+    });
     it('should writeNullTerminator', () => {
         binaryWriteBuffer.writeNullTerminator();
         assert.strictEqual(binaryWriteBuffer.getBuffer().length, 1);
@@ -191,6 +198,18 @@ describe('BinaryReadBuffer',()=>{
         const binaryReadBuffer=new BinaryReadBuffer(buffData);
         assert.strictEqual(binaryReadBuffer.readChars(5),'hello');
         assert.strictEqual(binaryReadBuffer.readChars(5),"world");
+    });
+
+});
+
+describe('BinaryBuffer',()=>{
+    it('should readWriteColor',()=>{
+        const color=0xFF00FF;
+        const binaryWriteBuffer=new BinaryWriteBuffer();
+        binaryWriteBuffer.writeColor(color);
+        const binaryReadBuffer=new BinaryReadBuffer(binaryWriteBuffer.getBuffer());
+        const colorNew=binaryReadBuffer.readColor();
+        assert.strictEqual(colorNew,color);
     });
 
 });
