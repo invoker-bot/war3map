@@ -7,7 +7,7 @@
 [![MIT License][license-shield]][license-url]
 [![Language][language-shield]][language-url]
 [![Build Status][build-status-shield]][build-status-url]
-
+[![Coverage Status][coverage-status-shield]][coverage-status-url]
 <br />
 <p align="center">
   <a alt="WAR" href="https://github.com/invokerrrr/war3map">
@@ -219,6 +219,9 @@ Project Link: <https://github.com/invokerrrr/war3map>
 
 [language-shield]: https://img.shields.io/badge/language-typescript-orange.svg
 [language-url]: https://www.typescriptlang.org
+
+[coverage-status-shield]: https://coveralls.io/repos/github/invokerrrr/war3map/badge.svg?branch=master
+[coverage-status-url]: https://coveralls.io/github/invokerrrr/war3map?branch=master
 
 [ok]: https://invokerrrr.github.io/war3map/img/ok.png
 [error]: https://invokerrrr.github.io/war3map/img/error.png

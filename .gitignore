@@ -9,7 +9,7 @@ node_modules
 img
 # Coverage
 coverage
-
+.coveralls.yml
 # debug
 src/debug*.ts
 

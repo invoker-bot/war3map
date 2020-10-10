@@ -2,14 +2,17 @@
 language: node_js
 node_js:
   - "10"
-  - "11"
-  - "12"
   - "13"
 deploy:
   provider: npm
-  user: "invoker-godder"
   email: "594404963@qq.com"
   api_key: "$NPM_TOKEN"
   on:
     tags: true
     branch: master
+jobs:
+  include:
+    - 
+      stage: Produce Coverage
+      node_js: "13"
+      script: npm run coveralls
