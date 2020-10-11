@@ -71,6 +71,10 @@ export class RegionObject implements ReadDumpObject {
         
         return writer.getBuffer();
     }
-
-
+    public get region():RegionDefinition[]{
+        return this._regions;
+    }
+    public set region(_regions:RegionDefinition[]){
+        this._regions=_regions;
+    }
 }

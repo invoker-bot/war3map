@@ -76,13 +76,13 @@ Here's some places where you can use this library:
 
 | Type  | Object → War | War → Object  | File |
 | ---   |   :-----------:  |  :-:   |  ----  |
-| Units - Objects | ![check][error] | ![check][error] | war3map.w3u     |
-| Items - Objects | ![check][error] | ![check][error] | war3map.w3t     |
-| Abilities - Objects | ![check][error] | ![check][error] | war3map.w3a     |
-| Destructables - Objects | ![check][error] | ![check][error] | war3map.w3b     |
-| Doodads - Objects   | ![check][error] | ![check][error] | war3map.w3d     |
-| Upgrades - Objects  | ![check][error] | ![check][error] | war3map.w3q     |
-| Buffs - Objects   | ![check][error] | ![check][error] | war3map.w3h     |
+| Units - Objects | ![check][ok] | ![check][ok] | war3map.w3u     |
+| Items - Objects | ![check][ok] | ![check][ok] | war3map.w3t     |
+| Abilities - Objects | ![check][ok] | ![check][ok] | war3map.w3a     |
+| Destructables - Objects | ![check][ok] |![check][ok] | war3map.w3b     |
+| Doodads - Objects   | ![check][ok] | ![check][ok] | war3map.w3d     |
+| Upgrades - Objects  | ![check][ok] | ![check][ok] | war3map.w3q     |
+| Buffs - Objects   | ![check][ok] | ![check][ok] | war3map.w3h     |
 
 ### Trigger files
 
@@ -99,8 +99,8 @@ Here's some places where you can use this library:
 |   ---    |    :-: |   :-: |   --- |
 | Info File    | ![check][error] | ![check][error] | war3map.w3i  |
 | Imported Files  | ![check][error] | ![check][error] | war3map.imp  |
-| Pathing      | ![check][error] | ![check][error] | war3map.wpm  |
-| Shadow map    | ![check][error] | ![check][error] | war3map.shd |
+| Pathing      | ![check][ok] | ![check][ok] | war3map.wpm  |
+| Shadow map    | ![check][ok] | ![check][ok] | war3map.shd |
 
 
 ### Currently Not included

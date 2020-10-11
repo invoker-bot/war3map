@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Camera | war3map</title>
+	<title>Modification | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,28 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="camera.html">Camera</a>
+					<a href="modification.html">Modification</a>
 				</li>
 			</ul>
-			<h1>Interface Camera</h1>
+			<h1>Interface Modification</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Camera represents a camera in the game.</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Camera</span>
+						<span class="target">Modification</span>
 					</li>
 				</ul>
 			</section>
@@ -88,15 +81,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#angleofattack" class="tsd-kind-icon">angle<wbr>OfAttack</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#angleofrotation" class="tsd-kind-icon">angle<wbr>OfRotation</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#distance" class="tsd-kind-icon">distance</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#farclipping" class="tsd-kind-icon">far<wbr>Clipping</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#fieldofview" class="tsd-kind-icon">field<wbr>OfView</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#offsetz" class="tsd-kind-icon">offsetZ</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#roll" class="tsd-kind-icon">roll</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#target" class="tsd-kind-icon">target</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="modification.html#datapointer" class="tsd-kind-icon">data<wbr>Pointer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="modification.html#end" class="tsd-kind-icon">end</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="modification.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="modification.html#levelvariation" class="tsd-kind-icon">level<wbr>Variation</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="modification.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="modification.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
@@ -105,105 +95,64 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="angleofattack" class="tsd-anchor"></a>
-					<h3>angle<wbr>OfAttack</h3>
-					<div class="tsd-signature tsd-kind-icon">angle<wbr>OfAttack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="datapointer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> data<wbr>Pointer</h3>
+					<div class="tsd-signature tsd-kind-icon">data<wbr>Pointer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L16">CamerasObject.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/ObjectsObject.ts#L18">ObjectsObject.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="angleofrotation" class="tsd-anchor"></a>
-					<h3>angle<wbr>OfRotation</h3>
-					<div class="tsd-signature tsd-kind-icon">angle<wbr>OfRotation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="end" class="tsd-anchor"></a>
+					<h3>end</h3>
+					<div class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L15">CamerasObject.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/ObjectsObject.ts#L19">ObjectsObject.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="distance" class="tsd-anchor"></a>
-					<h3>distance</h3>
-					<div class="tsd-signature tsd-kind-icon">distance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L17">CamerasObject.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/ObjectsObject.ts#L14">ObjectsObject.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="farclipping" class="tsd-anchor"></a>
-					<h3>far<wbr>Clipping</h3>
-					<div class="tsd-signature tsd-kind-icon">far<wbr>Clipping<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="levelvariation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> level<wbr>Variation</h3>
+					<div class="tsd-signature tsd-kind-icon">level<wbr>Variation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L20">CamerasObject.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/ObjectsObject.ts#L17">ObjectsObject.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="fieldofview" class="tsd-anchor"></a>
-					<h3>field<wbr>OfView</h3>
-					<div class="tsd-signature tsd-kind-icon">field<wbr>OfView<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L19">CamerasObject.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/ObjectsObject.ts#L15">ObjectsObject.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="value" class="tsd-anchor"></a>
+					<h3>value</h3>
+					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L21">CamerasObject.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/ObjectsObject.ts#L16">ObjectsObject.ts:16</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="offsetz" class="tsd-anchor"></a>
-					<h3>offsetZ</h3>
-					<div class="tsd-signature tsd-kind-icon">offsetZ<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L14">CamerasObject.ts:14</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="roll" class="tsd-anchor"></a>
-					<h3>roll</h3>
-					<div class="tsd-signature tsd-kind-icon">roll<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L18">CamerasObject.ts:18</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="target" class="tsd-anchor"></a>
-					<h3>target</h3>
-					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L12">CamerasObject.ts:12</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-						</ul>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -247,51 +196,42 @@
 					<li class=" tsd-kind-class">
 						<a href="../classes/shadowobject.html" class="tsd-kind-icon">Shadow<wbr>Object</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="camera.html" class="tsd-kind-icon">Camera</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#angleofattack" class="tsd-kind-icon">angle<wbr>OfAttack</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#angleofrotation" class="tsd-kind-icon">angle<wbr>OfRotation</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#distance" class="tsd-kind-icon">distance</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#farclipping" class="tsd-kind-icon">far<wbr>Clipping</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#fieldofview" class="tsd-kind-icon">field<wbr>OfView</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#offsetz" class="tsd-kind-icon">offsetZ</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#roll" class="tsd-kind-icon">roll</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#target" class="tsd-kind-icon">target</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="environment.html" class="tsd-kind-icon">Environment</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="itemidandchoice.html" class="tsd-kind-icon">ItemIDAnd<wbr>Choice</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="modification.html" class="tsd-kind-icon">Modification</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="modification.html#datapointer" class="tsd-kind-icon">data<wbr>Pointer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="modification.html#end" class="tsd-kind-icon">end</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="modification.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="modification.html#levelvariation" class="tsd-kind-icon">level<wbr>Variation</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="modification.html#type" class="tsd-kind-icon">type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="modification.html#value" class="tsd-kind-icon">value</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="objectdefination.html" class="tsd-kind-icon">Object<wbr>Defination</a>
 					</li>

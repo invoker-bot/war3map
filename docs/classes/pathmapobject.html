@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CamerasObject | war3map</title>
+	<title>PathmapObject | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,28 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="camerasobject.html">CamerasObject</a>
+					<a href="pathmapobject.html">PathmapObject</a>
 				</li>
 			</ul>
-			<h1>Class CamerasObject</h1>
+			<h1>Class PathmapObject</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>CamerasObject parses data from &quot;war3map.w3c&quot; file and can dump back.</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">CamerasObject</span>
+						<span class="target">PathmapObject</span>
 					</li>
 				</ul>
 			</section>
@@ -91,131 +84,66 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-private-protected">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="camerasobject.html#_cameras" class="tsd-kind-icon">_cameras</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="camerasobject.html#_version" class="tsd-kind-icon">_version</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Accessors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="camerasobject.html#cameras" class="tsd-kind-icon">Cameras</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="camerasobject.html#version" class="tsd-kind-icon">Version</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="camerasobject.html#cameras-1" class="tsd-kind-icon">cameras</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="pathmapobject.html#_fileversion" class="tsd-kind-icon">_file<wbr>Version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pathmapobject.html#pathheight" class="tsd-kind-icon">path<wbr>Height</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pathmapobject.html#pathwidth" class="tsd-kind-icon">path<wbr>Width</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pathmapobject.html#tilesets" class="tsd-kind-icon">tilesets</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="camerasobject.html#dump" class="tsd-kind-icon">dump</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="camerasobject.html#read" class="tsd-kind-icon">read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="pathmapobject.html#dump" class="tsd-kind-icon">dump</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="pathmapobject.html#read" class="tsd-kind-icon">read</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="_cameras" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _cameras</h3>
-					<div class="tsd-signature tsd-kind-icon">_cameras<span class="tsd-signature-symbol">:</span> <a href="../interfaces/camera.html" class="tsd-signature-type">Camera</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<a name="_fileversion" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _file<wbr>Version</h3>
+					<div class="tsd-signature tsd-kind-icon">_file<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L111">CamerasObject.ts:111</a></li>
+							<li>Defined in PathmapObject.ts:5</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="_version" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _version</h3>
-					<div class="tsd-signature tsd-kind-icon">_version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pathheight" class="tsd-anchor"></a>
+					<h3>path<wbr>Height</h3>
+					<div class="tsd-signature tsd-kind-icon">path<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L112">CamerasObject.ts:112</a></li>
+							<li>Defined in PathmapObject.ts:8</li>
 						</ul>
 					</aside>
 				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="cameras" class="tsd-anchor"></a>
-					<h3>Cameras</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Cameras<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/camera.html" class="tsd-signature-type">Camera</a><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L102">CamerasObject.ts:102</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get all cameras.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/camera.html" class="tsd-signature-type">Camera</a><span class="tsd-signature-symbol">[]</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pathwidth" class="tsd-anchor"></a>
+					<h3>path<wbr>Width</h3>
+					<div class="tsd-signature tsd-kind-icon">path<wbr>Width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in PathmapObject.ts:7</li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="version" class="tsd-anchor"></a>
-					<h3>Version</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Version<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L96">CamerasObject.ts:96</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the version.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="cameras-1" class="tsd-anchor"></a>
-					<h3>cameras</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> cameras<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/camera.html" class="tsd-signature-type">Camera</a><span class="tsd-signature-symbol">[]</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> cameras<span class="tsd-signature-symbol">(</span>_cameras<span class="tsd-signature-symbol">: </span><a href="../interfaces/camera.html" class="tsd-signature-type">Camera</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L105">CamerasObject.ts:105</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/camera.html" class="tsd-signature-type">Camera</a><span class="tsd-signature-symbol">[]</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L108">CamerasObject.ts:108</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>_cameras: <a href="../interfaces/camera.html" class="tsd-signature-type">Camera</a><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="tilesets" class="tsd-anchor"></a>
+					<h3>tilesets</h3>
+					<div class="tsd-signature tsd-kind-icon">tilesets<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in PathmapObject.ts:6</li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -231,14 +159,9 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L30">CamerasObject.ts:30</a></li>
+									<li>Defined in PathmapObject.ts:26</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Extends from ReadDumpObject</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
 						</li>
 					</ul>
@@ -254,14 +177,9 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/invokerrrr/war3map/blob/1214d81/src/CamerasObject.ts#L56">CamerasObject.ts:56</a></li>
+									<li>Defined in PathmapObject.ts:9</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Extends from ReadDumpObject</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -293,36 +211,9 @@
 					<li class=" tsd-kind-class">
 						<a href="binarywritebuffer.html" class="tsd-kind-icon">Binary<wbr>Write<wbr>Buffer</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="camerasobject.html" class="tsd-kind-icon">Cameras<wbr>Object</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="camerasobject.html#_cameras" class="tsd-kind-icon">_cameras</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="camerasobject.html#_version" class="tsd-kind-icon">_version</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="camerasobject.html#cameras" class="tsd-kind-icon">Cameras</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="camerasobject.html#version" class="tsd-kind-icon">Version</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="camerasobject.html#cameras-1" class="tsd-kind-icon">cameras</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="camerasobject.html#dump" class="tsd-kind-icon">dump</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="camerasobject.html#read" class="tsd-kind-icon">read</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="doodadsobject.html" class="tsd-kind-icon">Doodads<wbr>Object</a>
 					</li>
@@ -332,9 +223,33 @@
 					<li class=" tsd-kind-class">
 						<a href="objectsobject.html" class="tsd-kind-icon">Objects<wbr>Object</a>
 					</li>
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="pathmapobject.html" class="tsd-kind-icon">Pathmap<wbr>Object</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="pathmapobject.html#_fileversion" class="tsd-kind-icon">_file<wbr>Version</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pathmapobject.html#pathheight" class="tsd-kind-icon">path<wbr>Height</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pathmapobject.html#pathwidth" class="tsd-kind-icon">path<wbr>Width</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pathmapobject.html#tilesets" class="tsd-kind-icon">tilesets</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="pathmapobject.html#dump" class="tsd-kind-icon">dump</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="pathmapobject.html#read" class="tsd-kind-icon">read</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="regionobject.html" class="tsd-kind-icon">Region<wbr>Object</a>
 					</li>
