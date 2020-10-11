@@ -1,17 +1,12 @@
 /* eslint-disable jest/expect-expect */
 import * as assert from "assert";
-import { ReadDumpObject } from "../src/BinaryBuffer";
 
-import { CamerasObject } from "../src/CamerasObject";
-import { EnvironmentObject } from "../src/EnvironmentObject";
-import { DoodadsObject } from "../src/DoodadsObject";
 import { readFileSync } from "fs";
-import { RegionObject } from "../src/RegionObject";
-import { PathmapObject } from "../src/PathmapObject";
-import { ShadowObject } from "../src/ShadowObject";
-
-import { ObjectsObject } from "../src/ObjectsObject";
-//import {resolve} from "path";
+import {
+    ReadDumpObject, CamerasObject, EnvironmentObject,
+    DoodadsObject, RegionObject, PathmapObject,
+    ShadowObject, ObjectsObject
+} from "../src/index";
 
 function assertObjectReadDump<T extends ReadDumpObject>(obj1: T, obj2: T, map: string, fileType: string) {
     const buff = readFileSync(`./test/${map}/war3map.${fileType}`);
@@ -58,7 +53,7 @@ describe("ShadowObject", () => {
 
 describe("PathmapObject", () => {
     it("should support map2", () => {
-        assertObjectReadDump(new PathmapObject(),new PathmapObject(), "map2", "wpm");
+        assertObjectReadDump(new PathmapObject(), new PathmapObject(), "map2", "wpm");
     });
 });
 describe("ObjectsObject", () => {
