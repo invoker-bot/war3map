@@ -176,7 +176,7 @@ Contributions are what make the open source community such an amazing place to b
  * **Run correctly** (Run `npm test` without errors.)
  * **Include tests** (Write unit tests and run `npm run test:coverage` to cover most of your code.)
  * **Be linted** (Run `npm run lint` and follow the project's coding standards.)
- * **Pass travis-ci** (Pass in different environments.)
+ * **Pass CI** (GitHub Actions must pass on supported Node.js versions.)
 
 If your code is accepted into `master`, we will invite you to be a project member as soon.
 
@@ -214,8 +214,8 @@ Project Link: <https://github.com/invoker-bot/war3map>
 [license-shield]: https://img.shields.io/github/license/invoker-bot/war3map.svg?style=flat-square
 [license-url]: https://github.com/invoker-bot/war3map/blob/master/LICENSE.md
 
-[build-status-shield]: https://travis-ci.com/invoker-bot/war3map.svg?branch=master
-[build-status-url]: https://travis-ci.com/invoker-bot/war3map
+[build-status-shield]: https://github.com/invoker-bot/war3map/actions/workflows/ci.yml/badge.svg
+[build-status-url]: https://github.com/invoker-bot/war3map/actions/workflows/ci.yml
 
 [language-shield]: https://img.shields.io/badge/language-typescript-orange.svg
 [language-url]: https://www.typescriptlang.org
