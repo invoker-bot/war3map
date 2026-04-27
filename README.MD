@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a alt="WAR" href="https://github.com/invokerrrr/war3map">
-    <img src="https://invokerrrr.github.io/war3map/img/logo.png" alt="Logo" width="115" height="80">
+    <img src="docs/img/logo.png" alt="Logo" width="115" height="80">
   </a>
   <h3 align="center">WAR3MAP</h3>
   <p align="center">
@@ -50,7 +50,7 @@
 ## Overview
 War3map is a module to convert between a Object representation of WarCraft III (.w3x) data and `war3map` format files.
 
-![TranslationExample](https://invokerrrr.github.io/war3map/img/example.png)
+![TranslationExample](docs/img/example.png)
 
 War3map is written in `TypeScript`, offering type safety and improved development experience.
 
@@ -223,5 +223,5 @@ Project Link: <https://github.com/invokerrrr/war3map>
 [coverage-status-shield]: https://coveralls.io/repos/github/invokerrrr/war3map/badge.svg?branch=master
 [coverage-status-url]: https://coveralls.io/github/invokerrrr/war3map?branch=master
 
-[ok]: https://invokerrrr.github.io/war3map/img/ok.png
-[error]: https://invokerrrr.github.io/war3map/img/error.png
+[ok]: docs/img/ok.png
+[error]: docs/img/error.png
