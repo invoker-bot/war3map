@@ -141,6 +141,14 @@ describe('BinaryWriteBuffer',()=>{
         assert.strictEqual(binaryWriteBuffer.getBuffer()[1], 0x78);
     });
 
+    it('should writeInt24(little-endian)', () => {
+        binaryWriteBuffer.writeInt24(-1);
+        assert.strictEqual(binaryWriteBuffer.getBuffer().length, 3);
+        assert.strictEqual(binaryWriteBuffer.getBuffer()[0], 0xff);
+        assert.strictEqual(binaryWriteBuffer.getBuffer()[1], 0xff);
+        assert.strictEqual(binaryWriteBuffer.getBuffer()[2], 0xff);
+    });
+
     it('should writeFloat', () => {
         binaryWriteBuffer.writeFloat(1.234);
         assert.strictEqual(binaryWriteBuffer.getBuffer().length, 4); // 4 bytes in length
@@ -198,6 +206,12 @@ describe('BinaryReadBuffer',()=>{
         const binaryReadBuffer=new BinaryReadBuffer(buffData);
         assert.strictEqual(binaryReadBuffer.readChars(5),'hello');
         assert.strictEqual(binaryReadBuffer.readChars(5),"world");
+    });
+    it('should readInt24',()=>{
+        const buffData = Buffer.from([0xff,0xff,0xff,0x01,0x00,0x00]);
+        const binaryReadBuffer=new BinaryReadBuffer(buffData);
+        assert.strictEqual(binaryReadBuffer.readInt24(),-1);
+        assert.strictEqual(binaryReadBuffer.readInt24(),1);
     });
 
 });

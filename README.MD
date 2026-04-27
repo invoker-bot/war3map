@@ -66,11 +66,11 @@ Here's some places where you can use this library:
 | Type | Object → War | War → Object | File |
 | --- | :-: | :-: | --- |
 | Environment | ![check][ok] | ![check][ok] | war3map.w3e |
-| Units  | ![check][error] | ![check][error] | war3mapUnits.doo |
+| Units  | ![check][ok] | ![check][ok] | war3mapUnits.doo |
 | Doodads | ![check][ok] | ![check][ok] | war3map.doo |
 | Regions | ![check][ok] | ![check][ok] | war3map.w3r |
 | Cameras | ![check][ok]  | ![check][ok]  | war3map.w3c |
-| Sounds(definitions)| ![check][error] | ![check][error] | war3map.w3s|
+| Sounds(definitions)| ![check][ok] | ![check][ok] | war3map.w3s|
 
 ### Object data files
 
@@ -90,7 +90,7 @@ Here's some places where you can use this library:
 |   ---  |   :-:   |   :-:   |   ---    |
 | LUA    | ![check][error] | ![check][error] | war3map.lua  |
 | JASS   | ![check][error] | ![check][error] | war3map.j    |
-| Strings  | ![check][error] | ![check][error] | war3map.wts  |
+| Strings  | ![check][ok] | ![check][ok] | war3map.wts  |
 
 
 ### Map files
@@ -98,7 +98,7 @@ Here's some places where you can use this library:
 | Type | Object → War  | War → Object  | File   |
 |   ---    |    :-: |   :-: |   --- |
 | Info File    | ![check][error] | ![check][error] | war3map.w3i  |
-| Imported Files  | ![check][error] | ![check][error] | war3map.imp  |
+| Imported Files  | ![check][ok] | ![check][ok] | war3map.imp  |
 | Pathing      | ![check][ok] | ![check][ok] | war3map.wpm  |
 | Shadow map    | ![check][ok] | ![check][ok] | war3map.shd |
 

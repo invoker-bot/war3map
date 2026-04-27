@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>EnvironmentObject | war3map</title>
+	<title>UnitsObject | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="environmentobject.html">EnvironmentObject</a>
+					<a href="unitsobject.html">UnitsObject</a>
 				</li>
 			</ul>
-			<h1>Class EnvironmentObject</h1>
+			<h1>Class UnitsObject</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>EnvironmentObject parses data from &quot;war3map.w3e&quot; file and can dump back.</p>
+						<p>UnitsObject parses data from &quot;war3mapUnits.doo&quot; file and can dump back.</p>
 					</div>
 				</div>
 			</section>
@@ -77,7 +77,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">EnvironmentObject</span>
+						<span class="target">UnitsObject</span>
 					</li>
 				</ul>
 			</section>
@@ -94,23 +94,22 @@
 						<section class="tsd-index-section tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="environmentobject.html#_environment" class="tsd-kind-icon">_environment</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="environmentobject.html#_fileversion" class="tsd-kind-icon">_file<wbr>Version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="unitsobject.html#_filesubversion" class="tsd-kind-icon">_file<wbr>Sub<wbr>Version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="unitsobject.html#_fileversion" class="tsd-kind-icon">_file<wbr>Version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="unitsobject.html#_units" class="tsd-kind-icon">_units</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="environmentobject.html#environment" class="tsd-kind-icon">environment</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="unitsobject.html#units" class="tsd-kind-icon">units</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="environmentobject.html#chartotileset" class="tsd-kind-icon">char<wbr>ToTileset</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="environmentobject.html#dump" class="tsd-kind-icon">dump</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="environmentobject.html#read" class="tsd-kind-icon">read</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="environmentobject.html#tilesettochar" class="tsd-kind-icon">tileset<wbr>ToChar</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="unitsobject.html#dump" class="tsd-kind-icon">dump</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="unitsobject.html#read" class="tsd-kind-icon">read</a></li>
 							</ul>
 						</section>
 					</div>
@@ -119,22 +118,32 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="_environment" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagOptional">Optional</span> _environment</h3>
-					<div class="tsd-signature tsd-kind-icon">_environment<span class="tsd-signature-symbol">:</span> <a href="../interfaces/environment.html" class="tsd-signature-type">Environment</a></div>
+					<a name="_filesubversion" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _file<wbr>Sub<wbr>Version</h3>
+					<div class="tsd-signature tsd-kind-icon">_file<wbr>Sub<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 11</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/EnvironmentObject.ts#L58">EnvironmentObject.ts:58</a></li>
+							<li>Defined in UnitsObject.ts:135</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="_fileversion" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _file<wbr>Version</h3>
-					<div class="tsd-signature tsd-kind-icon">_file<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 11</span></div>
+					<div class="tsd-signature tsd-kind-icon">_file<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 8</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/EnvironmentObject.ts#L59">EnvironmentObject.ts:59</a></li>
+							<li>Defined in UnitsObject.ts:134</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_units" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _units</h3>
+					<div class="tsd-signature tsd-kind-icon">_units<span class="tsd-signature-symbol">:</span> <a href="../interfaces/unitdefinition.html" class="tsd-signature-type">UnitDefinition</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in UnitsObject.ts:136</li>
 						</ul>
 					</aside>
 				</section>
@@ -142,41 +151,31 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="environment" class="tsd-anchor"></a>
-					<h3>environment</h3>
+					<a name="units" class="tsd-anchor"></a>
+					<h3>units</h3>
 					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> environment<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/environment.html" class="tsd-signature-type">Environment</a></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> environment<span class="tsd-signature-symbol">(</span>_environment<span class="tsd-signature-symbol">: </span><a href="../interfaces/environment.html" class="tsd-signature-type">Environment</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> units<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/unitdefinition.html" class="tsd-signature-type">UnitDefinition</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> units<span class="tsd-signature-symbol">(</span>_units<span class="tsd-signature-symbol">: </span><a href="../interfaces/unitdefinition.html" class="tsd-signature-type">UnitDefinition</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/EnvironmentObject.ts#L198">EnvironmentObject.ts:198</a></li>
+									<li>Defined in UnitsObject.ts:362</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the environment data.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/environment.html" class="tsd-signature-type">Environment</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/unitdefinition.html" class="tsd-signature-type">UnitDefinition</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/EnvironmentObject.ts#L203">EnvironmentObject.ts:203</a></li>
+									<li>Defined in UnitsObject.ts:365</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the environment data.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>_environment: <a href="../interfaces/environment.html" class="tsd-signature-type">Environment</a></h5>
+									<h5>_units: <a href="../interfaces/unitdefinition.html" class="tsd-signature-type">UnitDefinition</a><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -186,29 +185,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-					<a name="chartotileset" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> char<wbr>ToTileset</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">char<wbr>ToTileset<span class="tsd-signature-symbol">(</span>char<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/tileset.html" class="tsd-signature-type">Tileset</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/EnvironmentObject.ts#L149">EnvironmentObject.ts:149</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>char: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../enums/tileset.html" class="tsd-signature-type">Tileset</a></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="dump" class="tsd-anchor"></a>
 					<h3>dump</h3>
@@ -220,7 +196,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/EnvironmentObject.ts#L116">EnvironmentObject.ts:116</a></li>
+									<li>Defined in UnitsObject.ts:264</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
@@ -238,7 +214,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/EnvironmentObject.ts#L60">EnvironmentObject.ts:60</a></li>
+									<li>Defined in UnitsObject.ts:138</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -248,29 +224,6 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-					<a name="tilesettochar" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> tileset<wbr>ToChar</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">tileset<wbr>ToChar<span class="tsd-signature-symbol">(</span>tileset<span class="tsd-signature-symbol">: </span><a href="../enums/tileset.html" class="tsd-signature-type">Tileset</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/EnvironmentObject.ts#L192">EnvironmentObject.ts:192</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>tileset: <a href="../enums/tileset.html" class="tsd-signature-type">Tileset</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -289,28 +242,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="environmentobject.html" class="tsd-kind-icon">Environment<wbr>Object</a>
+						<a href="unitsobject.html" class="tsd-kind-icon">Units<wbr>Object</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="environmentobject.html#_environment" class="tsd-kind-icon">_environment</a>
+								<a href="unitsobject.html#_filesubversion" class="tsd-kind-icon">_file<wbr>Sub<wbr>Version</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="environmentobject.html#_fileversion" class="tsd-kind-icon">_file<wbr>Version</a>
+								<a href="unitsobject.html#_fileversion" class="tsd-kind-icon">_file<wbr>Version</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="unitsobject.html#_units" class="tsd-kind-icon">_units</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="environmentobject.html#environment" class="tsd-kind-icon">environment</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-								<a href="environmentobject.html#chartotileset" class="tsd-kind-icon">char<wbr>ToTileset</a>
+								<a href="unitsobject.html#units" class="tsd-kind-icon">units</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="environmentobject.html#dump" class="tsd-kind-icon">dump</a>
+								<a href="unitsobject.html#dump" class="tsd-kind-icon">dump</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="environmentobject.html#read" class="tsd-kind-icon">read</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-								<a href="environmentobject.html#tilesettochar" class="tsd-kind-icon">tileset<wbr>ToChar</a>
+								<a href="unitsobject.html#read" class="tsd-kind-icon">read</a>
 							</li>
 						</ul>
 					</li>

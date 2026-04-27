@@ -5,7 +5,9 @@ import { readFileSync } from "fs";
 import {
     ReadDumpObject, CamerasObject, EnvironmentObject,
     DoodadsObject, RegionObject, PathmapObject,
-    ShadowObject, ObjectsObject
+    ShadowObject, ObjectsObject, ImportsObject,
+    SoundsObject, StringsObject, UnitsObject,
+    PlayerNumber, TargetAcquisition
 } from "../src/index";
 
 function assertObjectReadDump<T extends ReadDumpObject>(obj1: T, obj2: T, map: string, fileType: string) {
@@ -73,4 +75,67 @@ describe("ObjectsObject", () => {
         assertObjectReadDump(new ObjectsObject(true), new ObjectsObject(true), "map2", "w3a");
     });
 
+});
+
+describe("ImportsObject", () => {
+    it("should support map1", () => {
+        assertObjectReadDump(new ImportsObject(), new ImportsObject(), "map1", "imp");
+    });
+});
+
+describe("SoundsObject", () => {
+    it("should support map1", () => {
+        assertObjectReadDump(new SoundsObject(), new SoundsObject(), "map1", "w3s");
+    });
+});
+
+describe("StringsObject", () => {
+    it("should read and dump trigger strings", () => {
+        const stringsObject = new StringsObject();
+        stringsObject.strings = [
+            { id: "1", comment: "// optional comment", value: "Hello world" },
+            { id: "2", value: "Line 1\r\nLine 2" }
+        ];
+        const dumped = stringsObject.dump();
+        const reread = new StringsObject();
+        reread.read(dumped);
+        assert.deepStrictEqual(reread, stringsObject);
+    });
+});
+
+describe("UnitsObject", () => {
+    it("should read and dump unit placements", () => {
+        const unitsObject = new UnitsObject();
+        unitsObject.units = [
+            {
+                type: "hfoo",
+                x: -256,
+                y: 128,
+                z: 0,
+                rotation: 90,
+                player: PlayerNumber.Red,
+                id: 1,
+                flags: 2,
+                hitpoints: 75,
+                mana: 0,
+                targetAcquisition: TargetAcquisition.Camp,
+                hero: {
+                    level: 1,
+                    strength: 0,
+                    agility: 0,
+                    intelligence: 0
+                },
+                inventory: [
+                    { slot: 1, type: "ratf" }
+                ],
+                abilities: [
+                    { ability: "Adef", active: true, level: 1 }
+                ]
+            }
+        ];
+        const dumped = unitsObject.dump();
+        const reread = new UnitsObject();
+        reread.read(dumped);
+        assert.deepStrictEqual(reread, unitsObject);
+    });
 });

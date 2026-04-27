@@ -83,6 +83,15 @@ export class BinaryWriteBuffer{
         this.writeInt(short,true);
     }
     /**
+     * Push a signed 24-bit integer to binary buffer.
+     * @param intValue The signed 24-bit integer to write.
+     */
+    public writeInt24(intValue:number):void{
+        const buf=Buffer.alloc(3);
+        buf.writeIntLE(intValue,0,3);
+        this._buffer.push(buf[0],buf[1],buf[2]);
+    }
+    /**
      * Push float to binary buffer.
      * @param float The float(32-bit) to write.
      */
@@ -102,6 +111,15 @@ export class BinaryWriteBuffer{
      */
     public writeByte(byte:number):void{
         this._buffer.push(byte);
+    }
+    /**
+     * Push raw bytes to binary buffer.
+     * @param buffer The raw bytes to append.
+     */
+    public writeBuffer(buffer:Buffer):void{
+        buffer.forEach((byte)=>{
+            this._buffer.push(byte);
+        });
     }
     /**
      * Generate a buffer from the values pushed.
@@ -130,6 +148,14 @@ export class BinaryReadBuffer{
     public readInt():number{
         const int=this._buffer.readInt32LE(this._offset);
         this._offset+=4;
+        return int;
+    }
+    /**
+     * Read a signed 24-bit integer.
+     */
+    public readInt24():number{
+        const int=this._buffer.readIntLE(this._offset,3);
+        this._offset+=3;
         return int;
     }
     /**
@@ -181,6 +207,15 @@ export class BinaryReadBuffer{
         const byte=this._buffer[this._offset];
         this._offset+=1;
         return byte;
+    }
+    /**
+     * Read raw bytes.
+     * @param len The number of bytes to read.
+     */
+    public readBytes(len:number):Buffer{
+        const bytes=this._buffer.slice(this._offset,this._offset+len);
+        this._offset+=len;
+        return bytes;
     }
     /**
      * Read end of file.

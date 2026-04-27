@@ -95,11 +95,13 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#getbuffer" class="tsd-kind-icon">get<wbr>Buffer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writebuffer" class="tsd-kind-icon">write<wbr>Buffer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writebyte" class="tsd-kind-icon">write<wbr>Byte</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writechar" class="tsd-kind-icon">write<wbr>Char</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writecolor" class="tsd-kind-icon">write<wbr>Color</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writefloat" class="tsd-kind-icon">write<wbr>Float</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writeint" class="tsd-kind-icon">write<wbr>Int</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writeint24" class="tsd-kind-icon">write<wbr>Int24</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writenewline" class="tsd-kind-icon">write<wbr>New<wbr>Line</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writenullterminator" class="tsd-kind-icon">write<wbr>Null<wbr>Terminator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="binarywritebuffer.html#writeshort" class="tsd-kind-icon">write<wbr>Short</a></li>
@@ -117,7 +119,7 @@
 					<div class="tsd-signature tsd-kind-icon">_buffer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L113">BinaryBuffer.ts:113</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L131">BinaryBuffer.ts:131</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -134,7 +136,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L109">BinaryBuffer.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L127">BinaryBuffer.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -143,6 +145,37 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="writebuffer" class="tsd-anchor"></a>
+					<h3>write<wbr>Buffer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Buffer<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L119">BinaryBuffer.ts:119</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Push raw bytes to binary buffer.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The raw bytes to append.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -156,7 +189,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L103">BinaryBuffer.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L112">BinaryBuffer.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -187,7 +220,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L54">BinaryBuffer.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L54">BinaryBuffer.ts:54</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -218,7 +251,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L94">BinaryBuffer.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L103">BinaryBuffer.ts:103</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -241,7 +274,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L89">BinaryBuffer.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L98">BinaryBuffer.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -272,7 +305,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L62">BinaryBuffer.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L62">BinaryBuffer.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -300,6 +333,37 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="writeint24" class="tsd-anchor"></a>
+					<h3>write<wbr>Int24</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Int24<span class="tsd-signature-symbol">(</span>intValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L89">BinaryBuffer.ts:89</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Push a signed 24-bit integer to binary buffer.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>intValue: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The signed 24-bit integer to write.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="writenewline" class="tsd-anchor"></a>
 					<h3>write<wbr>New<wbr>Line</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -309,7 +373,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L46">BinaryBuffer.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L46">BinaryBuffer.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -331,7 +395,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L40">BinaryBuffer.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L40">BinaryBuffer.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -353,7 +417,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L82">BinaryBuffer.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L82">BinaryBuffer.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -384,7 +448,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/1214d81/src/BinaryBuffer.ts#L25">BinaryBuffer.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/03a2e12/src/BinaryBuffer.ts#L25">BinaryBuffer.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -423,12 +487,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum">
-						<a href="../enums/tileset.html" class="tsd-kind-icon">Tileset</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="binaryreadbuffer.html" class="tsd-kind-icon">Binary<wbr>Read<wbr>Buffer</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
@@ -439,6 +497,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="binarywritebuffer.html#getbuffer" class="tsd-kind-icon">get<wbr>Buffer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="binarywritebuffer.html#writebuffer" class="tsd-kind-icon">write<wbr>Buffer</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="binarywritebuffer.html#writebyte" class="tsd-kind-icon">write<wbr>Byte</a>
@@ -456,6 +517,9 @@
 								<a href="binarywritebuffer.html#writeint" class="tsd-kind-icon">write<wbr>Int</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="binarywritebuffer.html#writeint24" class="tsd-kind-icon">write<wbr>Int24</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="binarywritebuffer.html#writenewline" class="tsd-kind-icon">write<wbr>New<wbr>Line</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -471,57 +535,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class">
-						<a href="camerasobject.html" class="tsd-kind-icon">Cameras<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="doodadsobject.html" class="tsd-kind-icon">Doodads<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="environmentobject.html" class="tsd-kind-icon">Environment<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="objectsobject.html" class="tsd-kind-icon">Objects<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="pathmapobject.html" class="tsd-kind-icon">Pathmap<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="regionobject.html" class="tsd-kind-icon">Region<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="shadowobject.html" class="tsd-kind-icon">Shadow<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/camera.html" class="tsd-kind-icon">Camera</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/environment.html" class="tsd-kind-icon">Environment</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/itemidandchoice.html" class="tsd-kind-icon">ItemIDAnd<wbr>Choice</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/modification.html" class="tsd-kind-icon">Modification</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/objectdefination.html" class="tsd-kind-icon">Object<wbr>Defination</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/readdumpobject.html" class="tsd-kind-icon">Read<wbr>Dump<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/regiondefinition.html" class="tsd-kind-icon">Region<wbr>Definition</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/specialdoodad.html" class="tsd-kind-icon">Special<wbr>Doodad</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/tilepoint.html" class="tsd-kind-icon">Tile<wbr>Point</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/tree.html" class="tsd-kind-icon">Tree</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -548,6 +561,9 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
