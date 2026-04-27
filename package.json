@@ -15,7 +15,7 @@
     "build": "tsc -p tsconfig.json",
     "lint": "eslint . --ext .ts",
     "doc": "typedoc --disableOutputCheck",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "coveralls":"jest --coverage && coveralls < coverage/lcov.info "
   },
   "files": [
