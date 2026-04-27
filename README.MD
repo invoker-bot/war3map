@@ -10,21 +10,21 @@
 [![Coverage Status][coverage-status-shield]][coverage-status-url]
 <br />
 <p align="center">
-  <a alt="WAR" href="https://github.com/invokerrrr/war3map">
+  <a alt="WAR" href="https://github.com/invoker-bot/war3map">
     <img src="docs/img/logo.png" alt="Logo" width="115" height="80">
   </a>
   <h3 align="center">WAR3MAP</h3>
   <p align="center">
     An awesome war3 map translator library for your project!
     <br />
-    <a href="https://invokerrrr.github.io/war3map"><strong>Explore the docs »</strong></a>
+    <a href="https://invoker-bot.github.io/war3map"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/invokerrrr/war3map">View Repository</a>
+    <a href="https://github.com/invoker-bot/war3map">View Repository</a>
     ·
-    <a href="https://github.com/invokerrrr/war3map/issues">Report Bug</a>
+    <a href="https://github.com/invoker-bot/war3map/issues">Report Bug</a>
     ·
-    <a href="https://github.com/invokerrrr/war3map/issues">Request Feature</a>
+    <a href="https://github.com/invoker-bot/war3map/issues">Request Feature</a>
   </p>
 </p>
 
@@ -135,7 +135,7 @@ Create your `.ts` or `.js` file, and type as follows:
 import * as war3map from "war3map";
 ```
 
-_To get more examples or usages for war3map, see [Documentation](https://invokerrrr.github.io/war3map)._
+_To get more examples or usages for war3map, see [Documentation](https://invoker-bot.github.io/war3map)._
 
 ### Development
 
@@ -143,7 +143,7 @@ To get a local copy up and running follow these simple steps:
 
 1. Clone the repo
 ```sh
-git clone https://github.com/invokerrrr/war3map.git
+git clone https://github.com/invoker-bot/war3map.git
 ```
 2. Enter the correct directory
 ```sh
@@ -160,7 +160,7 @@ npm test
 
 ## Roadmap
 
-See the [open issues](https://github.com/invokerrrr/war3map/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/invoker-bot/war3map/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 
@@ -186,9 +186,9 @@ Distributed under the MIT License. See [LICENSE][license-url] for more informati
 
 ## Contact
 
-Invoker Bot - <594404963@qq.com>
+Invoker Bot - <invoker-bot@outlook.com>
 
-Project Link: <https://github.com/invokerrrr/war3map>
+Project Link: <https://github.com/invoker-bot/war3map>
 
 ## Acknowledgements
 
@@ -199,29 +199,29 @@ Project Link: <https://github.com/invokerrrr/war3map>
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/invokerrrr/war3map.svg?style=flat-square
-[contributors-url]: https://github.com/invokerrrr/war3map/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/invoker-bot/war3map.svg?style=flat-square
+[contributors-url]: https://github.com/invoker-bot/war3map/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/invokerrrr/war3map.svg?style=flat-square
-[forks-url]: https://github.com/invokerrrr/war3map/network/members
+[forks-shield]: https://img.shields.io/github/forks/invoker-bot/war3map.svg?style=flat-square
+[forks-url]: https://github.com/invoker-bot/war3map/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/invokerrrr/war3map.svg?style=flat-square
-[stars-url]: https://github.com/invokerrrr/war3map/stargazers
+[stars-shield]: https://img.shields.io/github/stars/invoker-bot/war3map.svg?style=flat-square
+[stars-url]: https://github.com/invoker-bot/war3map/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/invokerrrr/war3map.svg?style=flat-square
-[issues-url]: https://github.com/invokerrrr/war3map/issues
+[issues-shield]: https://img.shields.io/github/issues/invoker-bot/war3map.svg?style=flat-square
+[issues-url]: https://github.com/invoker-bot/war3map/issues
 
-[license-shield]: https://img.shields.io/github/license/invokerrrr/war3map.svg?style=flat-square
-[license-url]: https://github.com/invokerrrr/war3map/blob/master/LICENSE.md
+[license-shield]: https://img.shields.io/github/license/invoker-bot/war3map.svg?style=flat-square
+[license-url]: https://github.com/invoker-bot/war3map/blob/master/LICENSE.md
 
-[build-status-shield]: https://travis-ci.com/invokerrrr/war3map.svg?branch=master
-[build-status-url]: https://travis-ci.com/invokerrrr/war3map
+[build-status-shield]: https://travis-ci.com/invoker-bot/war3map.svg?branch=master
+[build-status-url]: https://travis-ci.com/invoker-bot/war3map
 
 [language-shield]: https://img.shields.io/badge/language-typescript-orange.svg
 [language-url]: https://www.typescriptlang.org
 
-[coverage-status-shield]: https://coveralls.io/repos/github/invokerrrr/war3map/badge.svg?branch=master
-[coverage-status-url]: https://coveralls.io/github/invokerrrr/war3map?branch=master
+[coverage-status-shield]: https://coveralls.io/repos/github/invoker-bot/war3map/badge.svg?branch=master
+[coverage-status-url]: https://coveralls.io/github/invoker-bot/war3map?branch=master
 
 [ok]: docs/img/ok.png
 [error]: docs/img/error.png
