@@ -1,6 +1,6 @@
 {
   "name": "war3map",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "To translate between `war3map` and `json` formats for WarCraft III .w3x maps.",
   "main": "dist/src/index.js",
   "homepage": "https://invoker-bot.github.io/war3map/",
