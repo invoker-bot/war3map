@@ -4,6 +4,7 @@ export * from "./CamerasObject";
 export * from "./CustomTextTriggerObject";
 export * from "./EnvironmentObject";
 export * from "./DoodadsObject";
+export * from "./GameConfigurationObject";
 export * from "./InfoObject";
 export * from "./ImportsObject";
 export * from "./ImageData";

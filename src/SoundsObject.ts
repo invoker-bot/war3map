@@ -54,23 +54,60 @@ export interface SoundDistance {
     cutoff: number;
 }
 
+export interface SoundFadeRate {
+    in: number;
+    out: number;
+}
+
+export interface SoundRuntimeExtents {
+    minDistance: number;
+    maxDistance: number;
+    volume: number;
+    pitch: number;
+    pitchVariance: number;
+    cutoffDistance: number;
+}
+
+export interface SoundEditorMetadata {
+    marker1: number;
+    marker2: number;
+    marker3: number;
+    reserved1: number;
+    reserved2: number;
+    reserved3: number;
+}
+
 export interface SoundDefinition {
     variableName: string;
     path: string;
     effect: string;
     flags: number;
+    fadeRate?: SoundFadeRate;
     fadeInRate: number;
     fadeOutRate: number;
     volume: number;
-    pitchRaw: number;
-    pitchVarianceRaw: number;
+    pitch?: number;
+    pitchRaw?: number;
+    pitchVariance?: number;
+    pitchVarianceRaw?: number;
     priority: number;
     channel: number;
     distance: SoundDistance;
-    unknowns: number[];
+    runtimeExtents?: SoundRuntimeExtents;
+    editorMetadata?: SoundEditorMetadata;
+    /** @deprecated Use editorMetadata instead. */
+    unknowns?: number[];
     repeatedVariableName?: string;
     internalName?: string;
     repeatedPath?: string;
+    tailMarker1?: number;
+    tailByte1?: number;
+    tailMarker2?: number;
+    tailReserved1?: number;
+    tailReserved2?: number;
+    tailByte2?: number;
+    tailMarker3?: number;
+    /** @deprecated Use the structured tail marker and reserved fields instead. */
     trailingData?: Buffer;
 }
 
@@ -96,22 +133,42 @@ export class SoundsObject implements ReadDumpObject {
             const fadeInRate = reader.readInt();
             const fadeOutRate = reader.readInt();
             const volume = reader.readInt();
-            const pitchRaw = reader.readInt();
-            const pitchVarianceRaw = reader.readInt();
+            const pitchOffset = reader.offset;
+            const pitch = reader.readFloat();
+            const pitchRaw = buffer.readInt32LE(pitchOffset);
+            const pitchVarianceOffset = reader.offset;
+            const pitchVariance = reader.readFloat();
+            const pitchVarianceRaw = buffer.readInt32LE(pitchVarianceOffset);
             const priority = reader.readInt();
             const channel = reader.readInt();
             const distance = {
-                min: reader.readInt(),
-                max: reader.readInt(),
-                cutoff: reader.readInt()
+                min: reader.readFloat(),
+                max: reader.readFloat(),
+                cutoff: reader.readFloat()
+            };
+            const editorMetadata = {
+                marker1: reader.readInt(),
+                marker2: reader.readInt(),
+                marker3: reader.readInt(),
+                reserved1: reader.readInt(),
+                reserved2: reader.readInt(),
+                reserved3: reader.readInt()
+            };
+            const runtimeExtents = {
+                minDistance: editorMetadata.marker1,
+                maxDistance: editorMetadata.marker2,
+                volume: editorMetadata.marker3,
+                pitch: editorMetadata.reserved1,
+                pitchVariance: editorMetadata.reserved2,
+                cutoffDistance: editorMetadata.reserved3
             };
             const unknowns = [
-                reader.readInt(),
-                reader.readInt(),
-                reader.readInt(),
-                reader.readInt(),
-                reader.readInt(),
-                reader.readInt()
+                editorMetadata.marker1,
+                editorMetadata.marker2,
+                editorMetadata.marker3,
+                editorMetadata.reserved1,
+                editorMetadata.reserved2,
+                editorMetadata.reserved3
             ];
 
             const sound: SoundDefinition = {
@@ -119,14 +176,22 @@ export class SoundsObject implements ReadDumpObject {
                 path,
                 effect,
                 flags,
+                fadeRate: {
+                    in: fadeInRate,
+                    out: fadeOutRate
+                },
                 fadeInRate,
                 fadeOutRate,
                 volume,
+                pitch,
                 pitchRaw,
+                pitchVariance,
                 pitchVarianceRaw,
                 priority,
                 channel,
                 distance,
+                runtimeExtents,
+                editorMetadata,
                 unknowns
             };
 
@@ -134,7 +199,14 @@ export class SoundsObject implements ReadDumpObject {
                 sound.repeatedVariableName = reader.readString();
                 sound.internalName = reader.readString();
                 sound.repeatedPath = reader.readString();
-                sound.trailingData = reader.readBytes(22);
+                sound.tailMarker1 = reader.readInt();
+                sound.tailByte1 = reader.readByte();
+                sound.tailMarker2 = reader.readInt();
+                sound.tailReserved1 = reader.readInt();
+                sound.tailReserved2 = reader.readInt();
+                sound.tailByte2 = reader.readByte();
+                sound.tailMarker3 = reader.readInt();
+                sound.trailingData = SoundsObject.writeVersion3Tail(sound);
             }
 
             this._sounds.push(sound);
@@ -152,25 +224,65 @@ export class SoundsObject implements ReadDumpObject {
             writer.writeString(sound.path, true);
             writer.writeString(sound.effect, true);
             writer.writeInt(sound.flags);
-            writer.writeInt(sound.fadeInRate);
-            writer.writeInt(sound.fadeOutRate);
+            writer.writeInt(sound.fadeRate ? sound.fadeRate.in : sound.fadeInRate);
+            writer.writeInt(sound.fadeRate ? sound.fadeRate.out : sound.fadeOutRate);
             writer.writeInt(sound.volume);
-            writer.writeInt(sound.pitchRaw);
-            writer.writeInt(sound.pitchVarianceRaw);
+            writer.writeFloat(SoundsObject.getFloatValue(sound.pitch, sound.pitchRaw, 1));
+            writer.writeFloat(SoundsObject.getFloatValue(sound.pitchVariance, sound.pitchVarianceRaw, 0));
             writer.writeInt(sound.priority);
             writer.writeInt(sound.channel);
-            writer.writeInt(sound.distance.min);
-            writer.writeInt(sound.distance.max);
-            writer.writeInt(sound.distance.cutoff);
-            sound.unknowns.forEach((unknown) => writer.writeInt(unknown));
+            writer.writeFloat(sound.distance.min);
+            writer.writeFloat(sound.distance.max);
+            writer.writeFloat(sound.distance.cutoff);
+            const editorMetadata = sound.editorMetadata || SoundsObject.editorMetadataFromUnknowns(sound.unknowns);
+            writer.writeInt(editorMetadata.marker1);
+            writer.writeInt(editorMetadata.marker2);
+            writer.writeInt(editorMetadata.marker3);
+            writer.writeInt(editorMetadata.reserved1);
+            writer.writeInt(editorMetadata.reserved2);
+            writer.writeInt(editorMetadata.reserved3);
 
             if (this._fileVersion === 3) {
                 writer.writeString(sound.repeatedVariableName || sound.variableName, true);
                 writer.writeString(sound.internalName || "", true);
                 writer.writeString(sound.repeatedPath || sound.path, true);
-                writer.writeBuffer(sound.trailingData || Buffer.from([255, 255, 255, 255, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]));
+                writer.writeBuffer(SoundsObject.writeVersion3Tail(sound));
             }
         });
+        return writer.getBuffer();
+    }
+
+    protected static floatFromRaw(raw: number): number {
+        const buffer = Buffer.alloc(4);
+        buffer.writeInt32LE(raw, 0);
+        return buffer.readFloatLE(0);
+    }
+
+    protected static getFloatValue(value: number | undefined, raw: number | undefined, fallback: number): number {
+        return value === undefined ? (raw === undefined ? fallback : SoundsObject.floatFromRaw(raw)) : value;
+    }
+
+    protected static editorMetadataFromUnknowns(unknowns?: number[]): SoundEditorMetadata {
+        const values = unknowns || [0, 0, 127, 0, 0, 0];
+        return {
+            marker1: values[0] || 0,
+            marker2: values[1] || 0,
+            marker3: values[2] === undefined ? 127 : values[2],
+            reserved1: values[3] || 0,
+            reserved2: values[4] || 0,
+            reserved3: values[5] || 0
+        };
+    }
+
+    protected static writeVersion3Tail(sound: SoundDefinition): Buffer {
+        const writer = new BinaryWriteBuffer();
+        writer.writeInt(sound.tailMarker1 === undefined ? -1 : sound.tailMarker1);
+        writer.writeByte(sound.tailByte1 === undefined ? 0 : sound.tailByte1);
+        writer.writeInt(sound.tailMarker2 === undefined ? -1 : sound.tailMarker2);
+        writer.writeInt(sound.tailReserved1 === undefined ? 0 : sound.tailReserved1);
+        writer.writeInt(sound.tailReserved2 === undefined ? 0 : sound.tailReserved2);
+        writer.writeByte(sound.tailByte2 === undefined ? 0 : sound.tailByte2);
+        writer.writeInt(sound.tailMarker3 === undefined ? 1 : sound.tailMarker3);
         return writer.getBuffer();
     }
 
@@ -179,6 +291,13 @@ export class SoundsObject implements ReadDumpObject {
     }
     public set sounds(_sounds: SoundDefinition[]) {
         this._sounds = _sounds;
+    }
+
+    public get fileVersion(): number {
+        return this._fileVersion;
+    }
+    public set fileVersion(fileVersion: number) {
+        this._fileVersion = fileVersion;
     }
 
     public static flagsToObject(flags: number): SoundFlags {

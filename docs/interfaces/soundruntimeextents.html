@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>UnitInventoryItem | war3map</title>
+	<title>SoundRuntimeExtents | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="unitinventoryitem.html">UnitInventoryItem</a>
+					<a href="soundruntimeextents.html">SoundRuntimeExtents</a>
 				</li>
 			</ul>
-			<h1>Interface UnitInventoryItem</h1>
+			<h1>Interface SoundRuntimeExtents</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">UnitInventoryItem</span>
+						<span class="target">SoundRuntimeExtents</span>
 					</li>
 				</ul>
 			</section>
@@ -81,8 +81,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="unitinventoryitem.html#slot" class="tsd-kind-icon">slot</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="unitinventoryitem.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="soundruntimeextents.html#cutoffdistance" class="tsd-kind-icon">cutoff<wbr>Distance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="soundruntimeextents.html#maxdistance" class="tsd-kind-icon">max<wbr>Distance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="soundruntimeextents.html#mindistance" class="tsd-kind-icon">min<wbr>Distance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="soundruntimeextents.html#pitch" class="tsd-kind-icon">pitch</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="soundruntimeextents.html#pitchvariance" class="tsd-kind-icon">pitch<wbr>Variance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="soundruntimeextents.html#volume" class="tsd-kind-icon">volume</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,22 +95,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="slot" class="tsd-anchor"></a>
-					<h3>slot</h3>
-					<div class="tsd-signature tsd-kind-icon">slot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="cutoffdistance" class="tsd-anchor"></a>
+					<h3>cutoff<wbr>Distance</h3>
+					<div class="tsd-signature tsd-kind-icon">cutoff<wbr>Distance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/UnitsObject.ts#L75">UnitsObject.ts:75</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/SoundsObject.ts#L68">SoundsObject.ts:68</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="maxdistance" class="tsd-anchor"></a>
+					<h3>max<wbr>Distance</h3>
+					<div class="tsd-signature tsd-kind-icon">max<wbr>Distance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/UnitsObject.ts#L76">UnitsObject.ts:76</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/SoundsObject.ts#L64">SoundsObject.ts:64</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="mindistance" class="tsd-anchor"></a>
+					<h3>min<wbr>Distance</h3>
+					<div class="tsd-signature tsd-kind-icon">min<wbr>Distance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/SoundsObject.ts#L63">SoundsObject.ts:63</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="pitch" class="tsd-anchor"></a>
+					<h3>pitch</h3>
+					<div class="tsd-signature tsd-kind-icon">pitch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/SoundsObject.ts#L66">SoundsObject.ts:66</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="pitchvariance" class="tsd-anchor"></a>
+					<h3>pitch<wbr>Variance</h3>
+					<div class="tsd-signature tsd-kind-icon">pitch<wbr>Variance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/SoundsObject.ts#L67">SoundsObject.ts:67</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="volume" class="tsd-anchor"></a>
+					<h3>volume</h3>
+					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/SoundsObject.ts#L65">SoundsObject.ts:65</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -125,13 +169,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="unitinventoryitem.html" class="tsd-kind-icon">Unit<wbr>Inventory<wbr>Item</a>
+						<a href="soundruntimeextents.html" class="tsd-kind-icon">Sound<wbr>Runtime<wbr>Extents</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="unitinventoryitem.html#slot" class="tsd-kind-icon">slot</a>
+								<a href="soundruntimeextents.html#cutoffdistance" class="tsd-kind-icon">cutoff<wbr>Distance</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="unitinventoryitem.html#type" class="tsd-kind-icon">type</a>
+								<a href="soundruntimeextents.html#maxdistance" class="tsd-kind-icon">max<wbr>Distance</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="soundruntimeextents.html#mindistance" class="tsd-kind-icon">min<wbr>Distance</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="soundruntimeextents.html#pitch" class="tsd-kind-icon">pitch</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="soundruntimeextents.html#pitchvariance" class="tsd-kind-icon">pitch<wbr>Variance</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="soundruntimeextents.html#volume" class="tsd-kind-icon">volume</a>
 							</li>
 						</ul>
 					</li>

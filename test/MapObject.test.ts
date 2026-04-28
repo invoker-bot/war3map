@@ -8,7 +8,8 @@ import {
     ShadowObject, ObjectsObject, ImportsObject,
     SoundsObject, StringsObject, UnitsObject,
     PlayerNumber, TargetAcquisition,
-    InfoObject, MenuMinimapObject
+    InfoObject, MenuMinimapObject,
+    GameConfigurationObject
 } from "../src/index";
 
 function assertObjectReadDump<T extends ReadDumpObject>(obj1: T, obj2: T, map: string, fileType: string) {
@@ -117,6 +118,66 @@ describe("ImportsObject", () => {
 describe("SoundsObject", () => {
     it("should support map1", () => {
         assertObjectReadDump(new SoundsObject(), new SoundsObject(), "map1", "w3s");
+    });
+
+    it("should expose sound pitch and distance values as numbers", () => {
+        const soundsObject = new SoundsObject();
+        const source = readFileSync("./test/map1/war3map.w3s");
+        soundsObject.read(source);
+
+        const importedSound = soundsObject.sounds.find((sound) => sound.variableName === "gg_snd_02_Battle_Academy01");
+        assert.ok(importedSound);
+        assert.strictEqual(importedSound.pitch, 1);
+        assert.strictEqual(importedSound.pitchVariance, 0);
+        assert.deepStrictEqual(importedSound.distance, { min: 0, max: 10000, cutoff: 3000 });
+        assert.deepStrictEqual(importedSound.editorMetadata, {
+            marker1: 0,
+            marker2: 0,
+            marker3: 127,
+            reserved1: 0,
+            reserved2: 0,
+            reserved3: 0
+        });
+        assert.deepStrictEqual(soundsObject.dump(), source);
+    });
+});
+
+describe("GameConfigurationObject", () => {
+    it("should read and dump World Editor game configuration files", () => {
+        const gameConfigurationObject = new GameConfigurationObject();
+        gameConfigurationObject.flags = GameConfigurationObject.flagsToObject(3);
+        gameConfigurationObject.baseGameSpeed = 4;
+        gameConfigurationObject.mapPath = "Maps\\Custom\\Smoke.w3x";
+        gameConfigurationObject.players = [
+            {
+                slotId: 0,
+                team: 0,
+                race: 1,
+                color: 0,
+                handicap: 100,
+                flags: GameConfigurationObject.playerFlagsToObject(1),
+                aiDifficulty: 0,
+                aiScriptPath: ""
+            },
+            {
+                slotId: 1,
+                team: 1,
+                race: 2,
+                color: 1,
+                handicap: 90,
+                flags: GameConfigurationObject.playerFlagsToObject(4),
+                aiDifficulty: 2,
+                aiScriptPath: "AI Scripts\\orc.ai"
+            }
+        ];
+
+        const dumped = gameConfigurationObject.dump();
+        const reread = new GameConfigurationObject();
+        reread.read(dumped);
+
+        assert.deepStrictEqual(reread.dump(), dumped);
+        assert.strictEqual(reread.baseGameSpeed, 4);
+        assert.strictEqual(reread.players[1].flags.loadCustomAi, true);
     });
 });
 

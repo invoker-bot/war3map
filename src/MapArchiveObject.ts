@@ -9,6 +9,7 @@ import { CamerasObject } from "./CamerasObject";
 import { CustomTextTriggerObject } from "./CustomTextTriggerObject";
 import { DoodadsObject } from "./DoodadsObject";
 import { EnvironmentObject } from "./EnvironmentObject";
+import { GameConfigurationObject } from "./GameConfigurationObject";
 import { InfoObject } from "./InfoObject";
 import { ImportsObject } from "./ImportsObject";
 import { MenuMinimapObject } from "./MenuMinimapObject";
@@ -124,6 +125,10 @@ export function createMapFileObject(name: string, context?: { pathmap?: PathmapO
     const basename = path.posix.basename(normalizedName);
 
     switch (normalizedName) {
+        case "war3map.wgc":
+        case "map.wgc":
+        case "testconfig.wgc":
+            return new GameConfigurationObject();
         case "war3map.w3e":
             return new EnvironmentObject();
         case "war3mapunits.doo":
@@ -168,6 +173,9 @@ export function createMapFileObject(name: string, context?: { pathmap?: PathmapO
         case "war3map.lua":
             return new TextFileObject();
         default:
+            if (basename.endsWith(".wgc")) {
+                return new GameConfigurationObject();
+            }
             if (basename.endsWith(".blp") || basename.endsWith(".b00")) {
                 return new BlpImageObject();
             }

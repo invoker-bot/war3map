@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Camera | war3map</title>
+	<title>GameConfigurationPlayer | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,28 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="camera.html">Camera</a>
+					<a href="gameconfigurationplayer.html">GameConfigurationPlayer</a>
 				</li>
 			</ul>
-			<h1>Interface Camera</h1>
+			<h1>Interface GameConfigurationPlayer</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Camera represents a camera in the game.</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Camera</span>
+						<span class="target">GameConfigurationPlayer</span>
 					</li>
 				</ul>
 			</section>
@@ -88,15 +81,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#angleofattack" class="tsd-kind-icon">angle<wbr>OfAttack</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#angleofrotation" class="tsd-kind-icon">angle<wbr>OfRotation</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#distance" class="tsd-kind-icon">distance</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#farclipping" class="tsd-kind-icon">far<wbr>Clipping</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#fieldofview" class="tsd-kind-icon">field<wbr>OfView</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#offsetz" class="tsd-kind-icon">offsetZ</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#roll" class="tsd-kind-icon">roll</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#target" class="tsd-kind-icon">target</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gameconfigurationplayer.html#aidifficulty" class="tsd-kind-icon">ai<wbr>Difficulty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gameconfigurationplayer.html#aiscriptpath" class="tsd-kind-icon">ai<wbr>Script<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gameconfigurationplayer.html#color" class="tsd-kind-icon">color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gameconfigurationplayer.html#flags" class="tsd-kind-icon">flags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gameconfigurationplayer.html#handicap" class="tsd-kind-icon">handicap</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gameconfigurationplayer.html#race" class="tsd-kind-icon">race</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gameconfigurationplayer.html#slotid" class="tsd-kind-icon">slot<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gameconfigurationplayer.html#team" class="tsd-kind-icon">team</a></li>
 							</ul>
 						</section>
 					</div>
@@ -105,105 +97,84 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="angleofattack" class="tsd-anchor"></a>
-					<h3>angle<wbr>OfAttack</h3>
-					<div class="tsd-signature tsd-kind-icon">angle<wbr>OfAttack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="aidifficulty" class="tsd-anchor"></a>
+					<h3>ai<wbr>Difficulty</h3>
+					<div class="tsd-signature tsd-kind-icon">ai<wbr>Difficulty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/CamerasObject.ts#L16">CamerasObject.ts:16</a></li>
+							<li>Defined in GameConfigurationObject.ts:28</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="angleofrotation" class="tsd-anchor"></a>
-					<h3>angle<wbr>OfRotation</h3>
-					<div class="tsd-signature tsd-kind-icon">angle<wbr>OfRotation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="aiscriptpath" class="tsd-anchor"></a>
+					<h3>ai<wbr>Script<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">ai<wbr>Script<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/CamerasObject.ts#L15">CamerasObject.ts:15</a></li>
+							<li>Defined in GameConfigurationObject.ts:29</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="distance" class="tsd-anchor"></a>
-					<h3>distance</h3>
-					<div class="tsd-signature tsd-kind-icon">distance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="color" class="tsd-anchor"></a>
+					<h3>color</h3>
+					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/CamerasObject.ts#L17">CamerasObject.ts:17</a></li>
+							<li>Defined in GameConfigurationObject.ts:25</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="farclipping" class="tsd-anchor"></a>
-					<h3>far<wbr>Clipping</h3>
-					<div class="tsd-signature tsd-kind-icon">far<wbr>Clipping<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="flags" class="tsd-anchor"></a>
+					<h3>flags</h3>
+					<div class="tsd-signature tsd-kind-icon">flags<span class="tsd-signature-symbol">:</span> <a href="gameconfigurationplayerflags.html" class="tsd-signature-type">GameConfigurationPlayerFlags</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/CamerasObject.ts#L20">CamerasObject.ts:20</a></li>
+							<li>Defined in GameConfigurationObject.ts:27</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="fieldofview" class="tsd-anchor"></a>
-					<h3>field<wbr>OfView</h3>
-					<div class="tsd-signature tsd-kind-icon">field<wbr>OfView<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="handicap" class="tsd-anchor"></a>
+					<h3>handicap</h3>
+					<div class="tsd-signature tsd-kind-icon">handicap<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/CamerasObject.ts#L19">CamerasObject.ts:19</a></li>
+							<li>Defined in GameConfigurationObject.ts:26</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="race" class="tsd-anchor"></a>
+					<h3>race</h3>
+					<div class="tsd-signature tsd-kind-icon">race<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/CamerasObject.ts#L21">CamerasObject.ts:21</a></li>
+							<li>Defined in GameConfigurationObject.ts:24</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="offsetz" class="tsd-anchor"></a>
-					<h3>offsetZ</h3>
-					<div class="tsd-signature tsd-kind-icon">offsetZ<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="slotid" class="tsd-anchor"></a>
+					<h3>slot<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">slot<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/CamerasObject.ts#L14">CamerasObject.ts:14</a></li>
+							<li>Defined in GameConfigurationObject.ts:22</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="roll" class="tsd-anchor"></a>
-					<h3>roll</h3>
-					<div class="tsd-signature tsd-kind-icon">roll<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="team" class="tsd-anchor"></a>
+					<h3>team</h3>
+					<div class="tsd-signature tsd-kind-icon">team<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/CamerasObject.ts#L18">CamerasObject.ts:18</a></li>
+							<li>Defined in GameConfigurationObject.ts:23</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="target" class="tsd-anchor"></a>
-					<h3>target</h3>
-					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/CamerasObject.ts#L12">CamerasObject.ts:12</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-						</ul>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -220,34 +191,31 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="camera.html" class="tsd-kind-icon">Camera</a>
+						<a href="gameconfigurationplayer.html" class="tsd-kind-icon">Game<wbr>Configuration<wbr>Player</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#angleofattack" class="tsd-kind-icon">angle<wbr>OfAttack</a>
+								<a href="gameconfigurationplayer.html#aidifficulty" class="tsd-kind-icon">ai<wbr>Difficulty</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#angleofrotation" class="tsd-kind-icon">angle<wbr>OfRotation</a>
+								<a href="gameconfigurationplayer.html#aiscriptpath" class="tsd-kind-icon">ai<wbr>Script<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#distance" class="tsd-kind-icon">distance</a>
+								<a href="gameconfigurationplayer.html#color" class="tsd-kind-icon">color</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#farclipping" class="tsd-kind-icon">far<wbr>Clipping</a>
+								<a href="gameconfigurationplayer.html#flags" class="tsd-kind-icon">flags</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#fieldofview" class="tsd-kind-icon">field<wbr>OfView</a>
+								<a href="gameconfigurationplayer.html#handicap" class="tsd-kind-icon">handicap</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#name" class="tsd-kind-icon">name</a>
+								<a href="gameconfigurationplayer.html#race" class="tsd-kind-icon">race</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#offsetz" class="tsd-kind-icon">offsetZ</a>
+								<a href="gameconfigurationplayer.html#slotid" class="tsd-kind-icon">slot<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#roll" class="tsd-kind-icon">roll</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#target" class="tsd-kind-icon">target</a>
+								<a href="gameconfigurationplayer.html#team" class="tsd-kind-icon">team</a>
 							</li>
 						</ul>
 					</li>
