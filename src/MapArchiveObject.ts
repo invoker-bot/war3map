@@ -4,6 +4,7 @@
 import { createRequire } from "module";
 import * as path from "path";
 import { ReadDumpObject } from "./BinaryBuffer";
+import { AiScriptObject } from "./AiScriptObject";
 import { BlpImageObject } from "./BlpImageObject";
 import { CamerasObject } from "./CamerasObject";
 import { CustomTextTriggerObject } from "./CustomTextTriggerObject";
@@ -142,6 +143,8 @@ export function createMapFileObject(name: string, context?: { pathmap?: PathmapO
             return new CamerasObject();
         case "war3map.w3s":
             return new SoundsObject();
+        case "war3map.wai":
+            return new AiScriptObject();
         case "war3map.imp":
             return new ImportsObject();
         case "war3map.wts":
@@ -176,6 +179,9 @@ export function createMapFileObject(name: string, context?: { pathmap?: PathmapO
         default:
             if (basename.endsWith(".wgc")) {
                 return new GameConfigurationObject();
+            }
+            if (basename.endsWith(".wai")) {
+                return new AiScriptObject();
             }
             if (basename.endsWith(".blp") || basename.endsWith(".b00")) {
                 return new BlpImageObject();

@@ -24,6 +24,29 @@ describe("CamerasObject", () => {
     it("should support map1", () => {
         assertObjectReadDump(new CamerasObject(), new CamerasObject(), "map1", "w3c");
     });
+
+    it("should preserve non-default editor values", () => {
+        const camerasObject = new CamerasObject();
+        camerasObject.cameras = [{
+            target: { x: 128, y: 256 },
+            offsetZ: 32,
+            angleOfRotation: 90,
+            angleOfAttack: 270,
+            distance: 1650,
+            roll: 0,
+            fieldOfView: 70,
+            farClipping: 5000,
+            editorValue: 42,
+            name: "Camera 001"
+        }];
+
+        const dumped = camerasObject.dump();
+        const reread = new CamerasObject();
+        reread.read(dumped);
+
+        assert.strictEqual(reread.cameras[0].editorValue, 42);
+        assert.deepStrictEqual(reread.dump(), dumped);
+    });
 });
 
 describe("EnvironmentObject", () => {

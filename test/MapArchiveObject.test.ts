@@ -3,6 +3,7 @@ import * as assert from "assert";
 import { readFileSync } from "fs";
 import {
     createMapFileObject,
+    AiScriptObject,
     BlpImageObject,
     CustomTextTriggerObject,
     DdsImageObject,
@@ -103,6 +104,8 @@ describe("createMapFileObject", () => {
         assert.ok(createMapFileObject("war3map.wct") instanceof CustomTextTriggerObject);
         assert.ok(createMapFileObject("war3map.wtg") instanceof TriggerNamesObject);
         assert.ok(createMapFileObject("war3map.mmp") instanceof MenuMinimapObject);
+        assert.ok(createMapFileObject("war3map.wai") instanceof AiScriptObject);
+        assert.ok(createMapFileObject("war3mapImported\\CustomAI.wai") instanceof AiScriptObject);
         assert.ok(createMapFileObject("war3mapMap.blp") instanceof BlpImageObject);
         assert.ok(createMapFileObject("war3mapMap.b00") instanceof BlpImageObject);
         assert.ok(createMapFileObject("war3mapMap.tga") instanceof TgaImageObject);
@@ -110,6 +113,35 @@ describe("createMapFileObject", () => {
         assert.ok(createMapFileObject("war3mapPreview.dds") instanceof DdsImageObject);
         assert.ok(createMapFileObject("UI\\FrameDef\\Custom.fdf") instanceof TextFileObject);
         assert.ok(createMapFileObject("Units\\CustomUnitData.slk") instanceof TextFileObject);
+    });
+});
+
+describe("AiScriptObject", () => {
+    it("should expose the stable WAI header and preserve the AI payload", () => {
+        const source = Buffer.concat([
+            Buffer.from([
+                2, 0, 0, 0,
+                83, 97, 116, 121, 114, 32, 65, 73, 0,
+                0, 0, 0, 0,
+                0xff, 0x19, 0, 0,
+                4, 0, 0, 0
+            ]),
+            Buffer.from("n008n008o008o008", "ascii"),
+            Buffer.from([7, 0, 0, 0, 0, 0, 0, 0]),
+            Buffer.from("Attack Enemy\0", "utf8")
+        ]);
+        const object = new AiScriptObject();
+
+        object.read(source);
+
+        assert.deepStrictEqual(object.header, {
+            version: 2,
+            name: "Satyr AI",
+            editorFlags: 0,
+            gameFlags: 6655,
+            unitIds: ["n008", "n008", "o008", "o008"]
+        });
+        assert.deepStrictEqual(object.dump(), source);
     });
 });
 

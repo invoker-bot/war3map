@@ -18,6 +18,7 @@ export interface Camera {
     roll:number;
     fieldOfView:number;//in degrees
     farClipping:number;
+    editorValue?: number;
     name:string
 }
 /**
@@ -42,7 +43,7 @@ export class CamerasObject implements ReadDumpObject{
             writer.writeFloat(camera.roll);
             writer.writeFloat(camera.fieldOfView);
             writer.writeFloat(camera.farClipping);
-            writer.writeFloat(100);//reserved editor value
+            writer.writeFloat(camera.editorValue === undefined ? 100 : camera.editorValue);
 
             writer.writeString(camera.name,true);
         });
@@ -67,8 +68,7 @@ export class CamerasObject implements ReadDumpObject{
             const roll=reader.readFloat();
             const fieldOfView=reader.readFloat();
             const farClipping=reader.readFloat();
-            const reserved=reader.readFloat();
-            assert.strictEqual(reserved,100,"The reserved camera value should be 100");
+            const editorValue=reader.readFloat();
             const name=reader.readString();
             this._cameras.push({
                 target:{
@@ -82,6 +82,7 @@ export class CamerasObject implements ReadDumpObject{
                 roll:roll,
                 fieldOfView:fieldOfView,
                 farClipping:farClipping,
+                editorValue:editorValue,
                 name
             });
 

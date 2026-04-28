@@ -1,4 +1,5 @@
 export * from "./BinaryBuffer";
+export * from "./AiScriptObject";
 export * from "./BlpImageObject";
 export * from "./CamerasObject";
 export * from "./CustomTextTriggerObject";
