@@ -158,7 +158,7 @@ export function createMapFileObject(name: string, context?: { pathmap?: PathmapO
             return new PathmapObject();
         case "war3map.shd":
             if (context && context.pathmap) {
-                return new ShadowObject(context.pathmap.pathWidth * 4, context.pathmap.pathHeight * 4);
+                return new ShadowObject(context.pathmap.pathWidth / 4, context.pathmap.pathHeight / 4);
             }
             return new RawFileObject();
         case "war3map.w3u":

@@ -1,5 +1,6 @@
 /* eslint-disable jest/expect-expect */
 import * as assert from "assert";
+import { readFileSync } from "fs";
 import {
     createMapFileObject,
     BlpImageObject,
@@ -156,5 +157,19 @@ describe("MapArchiveObject", () => {
         assert.ok(file?.object instanceof RawFileObject);
         assert.strictEqual(file?.raw, true);
         assert.ok(file?.parseError);
+    });
+
+    it("should size shadow maps from pathing map dimensions", () => {
+        const inputArchive = "shadow.w3x";
+        const sourceFiles = new Map<string, Buffer>([
+            ["war3map.wpm", readFileSync("./test/map2/war3map.wpm")],
+            ["war3map.shd", readFileSync("./test/map2/war3map.shd")]
+        ]);
+        const archive = new MapArchiveObject(new FakeStormArchive(inputArchive, sourceFiles));
+
+        archive.readArchive(inputArchive);
+
+        assert.strictEqual(archive.getFile("war3map.wpm")?.raw, false);
+        assert.strictEqual(archive.getFile("war3map.shd")?.raw, false);
     });
 });
