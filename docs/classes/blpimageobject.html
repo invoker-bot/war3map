@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>BlpImageObject parses Warcraft III BLP1 image headers and preserves image payload bytes.</p>
+						<p>BlpImageObject parses Warcraft III BLP1/BLP2 image headers and preserves image payload bytes.</p>
 					</div>
 				</div>
 			</section>
@@ -95,6 +95,8 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#_payload" class="tsd-kind-icon">_payload</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#blp1_header_size" class="tsd-kind-icon">BLP1_<wbr>HEADER_<wbr>SIZE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#blp2_header_size" class="tsd-kind-icon">BLP2_<wbr>HEADER_<wbr>SIZE</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -108,16 +110,34 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="blpimageobject.html#dump" class="tsd-kind-icon">dump</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#dumpblp2" class="tsd-kind-icon">dump<wbr>Blp2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#getblp2dxtformat" class="tsd-kind-icon">get<wbr>Blp2<wbr>Dxt<wbr>Format</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="blpimageobject.html#read" class="tsd-kind-icon">read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#readblp2" class="tsd-kind-icon">read<wbr>Blp2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#readblp2bgraimage" class="tsd-kind-icon">read<wbr>Blp2<wbr>Bgra<wbr>Image</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#readblp2dxtimage" class="tsd-kind-icon">read<wbr>Blp2<wbr>Dxt<wbr>Image</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#readblp2image" class="tsd-kind-icon">read<wbr>Blp2<wbr>Image</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#readblp2palettedimage" class="tsd-kind-icon">read<wbr>Blp2<wbr>Paletted<wbr>Image</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#readindexedimage" class="tsd-kind-icon">read<wbr>Indexed<wbr>Image</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#readjpegimage" class="tsd-kind-icon">read<wbr>Jpeg<wbr>Image</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#readpalettealpha" class="tsd-kind-icon">read<wbr>Palette<wbr>Alpha</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#readpalettedimage" class="tsd-kind-icon">read<wbr>Paletted<wbr>Image</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="blpimageobject.html#requiremipmap" class="tsd-kind-icon">require<wbr>Mipmap</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="blpimageobject.html#torgbaimage" class="tsd-kind-icon">to<wbr>Rgba<wbr>Image</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#builddxt5alphatable" class="tsd-kind-icon">build<wbr>Dxt5<wbr>Alpha<wbr>Table</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#builddxtcolortable" class="tsd-kind-icon">build<wbr>Dxt<wbr>Color<wbr>Table</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#decodedxt" class="tsd-kind-icon">decode<wbr>Dxt</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#decodedxt3block" class="tsd-kind-icon">decode<wbr>Dxt3<wbr>Block</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#decodedxt5block" class="tsd-kind-icon">decode<wbr>Dxt5<wbr>Block</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#decodedxtcolorblock" class="tsd-kind-icon">decode<wbr>Dxt<wbr>Color<wbr>Block</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#decodejpeg" class="tsd-kind-icon">decode<wbr>Jpeg</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#findjpegimagedataoffset" class="tsd-kind-icon">find<wbr>Jpeg<wbr>Image<wbr>Data<wbr>Offset</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="blpimageobject.html#fromrgbaimage" class="tsd-kind-icon">from<wbr>Rgba<wbr>Image</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#fromrgbaimageblp2" class="tsd-kind-icon">from<wbr>Rgba<wbr>Image<wbr>Blp2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#rgb565torgb" class="tsd-kind-icon">rgb565<wbr>ToRgb</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#withadobecmykmarker" class="tsd-kind-icon">with<wbr>Adobe<wbr>Cmyk<wbr>Marker</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#writeblockalpha" class="tsd-kind-icon">write<wbr>Block<wbr>Alpha</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="blpimageobject.html#writeblockcolor" class="tsd-kind-icon">write<wbr>Block<wbr>Color</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-private-protected">
@@ -137,7 +157,27 @@
 					<div class="tsd-signature tsd-kind-icon">_payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol"> = Buffer.alloc(0)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L45">BlpImageObject.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L53">BlpImageObject.ts:53</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="blp1_header_size" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> BLP1_<wbr>HEADER_<wbr>SIZE</h3>
+					<div class="tsd-signature tsd-kind-icon">BLP1_<wbr>HEADER_<wbr>SIZE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">156</span><span class="tsd-signature-symbol"> = 156</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L41">BlpImageObject.ts:41</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="blp2_header_size" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> BLP2_<wbr>HEADER_<wbr>SIZE</h3>
+					<div class="tsd-signature tsd-kind-icon">BLP2_<wbr>HEADER_<wbr>SIZE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1172</span><span class="tsd-signature-symbol"> = 1172</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L42">BlpImageObject.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -155,7 +195,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L248">BlpImageObject.ts:248</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L556">BlpImageObject.ts:556</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/blpheader.html" class="tsd-signature-type">BlpHeader</a></h4>
@@ -163,7 +203,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L251">BlpImageObject.ts:251</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L559">BlpImageObject.ts:559</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -187,7 +227,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L254">BlpImageObject.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L562">BlpImageObject.ts:562</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
@@ -195,7 +235,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L257">BlpImageObject.ts:257</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L565">BlpImageObject.ts:565</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -222,10 +262,44 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L75">BlpImageObject.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L124">BlpImageObject.ts:124</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="dumpblp2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> dump<wbr>Blp2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">dump<wbr>Blp2<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L146">BlpImageObject.ts:146</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="getblp2dxtformat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> get<wbr>Blp2<wbr>Dxt<wbr>Format</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Blp2<wbr>Dxt<wbr>Format<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"DXT1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DXT3"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DXT5"</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L364">BlpImageObject.ts:364</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">"DXT1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DXT3"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DXT5"</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -240,7 +314,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L47">BlpImageObject.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L55">BlpImageObject.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -254,6 +328,168 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="readblp2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Blp2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Blp2<span class="tsd-signature-symbol">(</span>reader<span class="tsd-signature-symbol">: </span><a href="binaryreadbuffer.html" class="tsd-signature-type">BinaryReadBuffer</a>, magic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L87">BlpImageObject.ts:87</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>reader: <a href="binaryreadbuffer.html" class="tsd-signature-type">BinaryReadBuffer</a></h5>
+								</li>
+								<li>
+									<h5>magic: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="readblp2bgraimage" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Blp2<wbr>Bgra<wbr>Image</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Blp2<wbr>Bgra<wbr>Image<span class="tsd-signature-symbol">(</span>mipmapIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L301">BlpImageObject.ts:301</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mipmapIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="readblp2dxtimage" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Blp2<wbr>Dxt<wbr>Image</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Blp2<wbr>Dxt<wbr>Image<span class="tsd-signature-symbol">(</span>mipmapIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L318">BlpImageObject.ts:318</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mipmapIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="readblp2image" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Blp2<wbr>Image</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Blp2<wbr>Image<span class="tsd-signature-symbol">(</span>mipmapIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L277">BlpImageObject.ts:277</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mipmapIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="readblp2palettedimage" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Blp2<wbr>Paletted<wbr>Image</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Blp2<wbr>Paletted<wbr>Image<span class="tsd-signature-symbol">(</span>mipmapIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L291">BlpImageObject.ts:291</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mipmapIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="readindexedimage" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Indexed<wbr>Image</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Indexed<wbr>Image<span class="tsd-signature-symbol">(</span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, mipmapOffset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, mipmapSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, palette<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, alphaBits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L328">BlpImageObject.ts:328</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>height: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>mipmapOffset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>mipmapSize: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>palette: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>payload: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>alphaBits: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 					<a name="readjpegimage" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Jpeg<wbr>Image</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
@@ -263,7 +499,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L138">BlpImageObject.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L251">BlpImageObject.ts:251</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -280,17 +516,20 @@
 					<a name="readpalettealpha" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Palette<wbr>Alpha</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">read<wbr>Palette<wbr>Alpha<span class="tsd-signature-symbol">(</span>alphaOffset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, mipmapSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, pixelCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Palette<wbr>Alpha<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, alphaOffset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, mipmapSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, pixelCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, alphaBits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L174">BlpImageObject.ts:174</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L345">BlpImageObject.ts:345</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
+								<li>
+									<h5>payload: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
 								<li>
 									<h5>alphaOffset: <span class="tsd-signature-type">number</span></h5>
 								</li>
@@ -302,6 +541,9 @@
 								</li>
 								<li>
 									<h5>pixelCount: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>alphaBits: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -318,7 +560,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L153">BlpImageObject.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L266">BlpImageObject.ts:266</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -341,7 +583,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L188">BlpImageObject.ts:188</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L374">BlpImageObject.ts:374</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -364,7 +606,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L94">BlpImageObject.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L169">BlpImageObject.ts:169</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -378,6 +620,219 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="builddxt5alphatable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> build<wbr>Dxt5<wbr>Alpha<wbr>Table</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Dxt5<wbr>Alpha<wbr>Table<span class="tsd-signature-symbol">(</span>alpha0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, alpha1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L480">BlpImageObject.ts:480</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>alpha0: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>alpha1: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="builddxtcolortable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> build<wbr>Dxt<wbr>Color<wbr>Table</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Dxt<wbr>Color<wbr>Table<span class="tsd-signature-symbol">(</span>color0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, color1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, allowOneBitAlpha<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L507">BlpImageObject.ts:507</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>color0: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>color1: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>allowOneBitAlpha: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="decodedxt" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> decode<wbr>Dxt</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Dxt<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"DXT1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DXT3"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DXT5"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L434">BlpImageObject.ts:434</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>height: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>format: <span class="tsd-signature-type">"DXT1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DXT3"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"DXT5"</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="decodedxt3block" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> decode<wbr>Dxt3<wbr>Block</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Dxt3<wbr>Block<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockX<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockY<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L456">BlpImageObject.ts:456</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>image: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>height: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockX: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockY: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="decodedxt5block" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> decode<wbr>Dxt5<wbr>Block</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Dxt5<wbr>Block<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockX<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockY<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L465">BlpImageObject.ts:465</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>image: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>height: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockX: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockY: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="decodedxtcolorblock" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> decode<wbr>Dxt<wbr>Color<wbr>Block</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Dxt<wbr>Color<wbr>Block<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockX<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockY<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, allowOneBitAlpha<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L496">BlpImageObject.ts:496</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>image: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>height: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockX: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockY: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>allowOneBitAlpha: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
 					<a name="decodejpeg" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> decode<wbr>Jpeg</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
@@ -387,7 +842,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L223">BlpImageObject.ts:223</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L409">BlpImageObject.ts:409</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -410,7 +865,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L195">BlpImageObject.ts:195</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L381">BlpImageObject.ts:381</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -433,7 +888,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L104">BlpImageObject.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L182">BlpImageObject.ts:182</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -450,6 +905,52 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="fromrgbaimageblp2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> from<wbr>Rgba<wbr>Image<wbr>Blp2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Rgba<wbr>Image<wbr>Blp2<span class="tsd-signature-symbol">(</span>image<span class="tsd-signature-symbol">: </span><a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="blpimageobject.html" class="tsd-signature-type">BlpImageObject</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L219">BlpImageObject.ts:219</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>image: <a href="../interfaces/rgbaimage.html" class="tsd-signature-type">RgbaImage</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="blpimageobject.html" class="tsd-signature-type">BlpImageObject</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="rgb565torgb" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> rgb565<wbr>ToRgb</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">rgb565<wbr>ToRgb<span class="tsd-signature-symbol">(</span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L526">BlpImageObject.ts:526</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>color: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
 					<a name="withadobecmykmarker" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> with<wbr>Adobe<wbr>Cmyk<wbr>Marker</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
@@ -459,7 +960,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L235">BlpImageObject.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L421">BlpImageObject.ts:421</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -472,6 +973,88 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="writeblockalpha" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> write<wbr>Block<wbr>Alpha</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Block<wbr>Alpha<span class="tsd-signature-symbol">(</span>image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockX<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockY<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, pixelIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, alpha<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L547">BlpImageObject.ts:547</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>image: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>height: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockX: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockY: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>pixelIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>alpha: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="writeblockcolor" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> write<wbr>Block<wbr>Color</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Block<wbr>Color<span class="tsd-signature-symbol">(</span>image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockX<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, blockY<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, pixelIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L534">BlpImageObject.ts:534</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>image: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>width: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>height: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockX: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>blockY: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>pixelIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 				<h2>Object literals</h2>
@@ -481,7 +1064,7 @@
 					<div class="tsd-signature tsd-kind-icon">_header<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L35">BlpImageObject.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L43">BlpImageObject.ts:43</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -490,7 +1073,7 @@
 						<div class="tsd-signature tsd-kind-icon">alpha<wbr>Bits<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L38">BlpImageObject.ts:38</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L46">BlpImageObject.ts:46</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -500,7 +1083,7 @@
 						<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L37">BlpImageObject.ts:37</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L45">BlpImageObject.ts:45</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -510,7 +1093,7 @@
 						<div class="tsd-signature tsd-kind-icon">height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L40">BlpImageObject.ts:40</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L48">BlpImageObject.ts:48</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -520,7 +1103,7 @@
 						<div class="tsd-signature tsd-kind-icon">magic<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;BLP1&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L36">BlpImageObject.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L44">BlpImageObject.ts:44</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -530,7 +1113,7 @@
 						<div class="tsd-signature tsd-kind-icon">mipmaps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L43">BlpImageObject.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L51">BlpImageObject.ts:51</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -540,7 +1123,7 @@
 						<div class="tsd-signature tsd-kind-icon">picture<wbr>Sub<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L42">BlpImageObject.ts:42</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L50">BlpImageObject.ts:50</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -550,7 +1133,7 @@
 						<div class="tsd-signature tsd-kind-icon">picture<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L41">BlpImageObject.ts:41</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L49">BlpImageObject.ts:49</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -560,7 +1143,7 @@
 						<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/8271cb7/src/BlpImageObject.ts#L39">BlpImageObject.ts:39</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/bb55e57/src/BlpImageObject.ts#L47">BlpImageObject.ts:47</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -585,6 +1168,12 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 								<a href="blpimageobject.html#_payload" class="tsd-kind-icon">_payload</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#blp1_header_size" class="tsd-kind-icon">BLP1_<wbr>HEADER_<wbr>SIZE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#blp2_header_size" class="tsd-kind-icon">BLP2_<wbr>HEADER_<wbr>SIZE</a>
+							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="blpimageobject.html#header" class="tsd-kind-icon">header</a>
 							</li>
@@ -594,8 +1183,32 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="blpimageobject.html#dump" class="tsd-kind-icon">dump</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="blpimageobject.html#dumpblp2" class="tsd-kind-icon">dump<wbr>Blp2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="blpimageobject.html#getblp2dxtformat" class="tsd-kind-icon">get<wbr>Blp2<wbr>Dxt<wbr>Format</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="blpimageobject.html#read" class="tsd-kind-icon">read</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="blpimageobject.html#readblp2" class="tsd-kind-icon">read<wbr>Blp2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="blpimageobject.html#readblp2bgraimage" class="tsd-kind-icon">read<wbr>Blp2<wbr>Bgra<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="blpimageobject.html#readblp2dxtimage" class="tsd-kind-icon">read<wbr>Blp2<wbr>Dxt<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="blpimageobject.html#readblp2image" class="tsd-kind-icon">read<wbr>Blp2<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="blpimageobject.html#readblp2palettedimage" class="tsd-kind-icon">read<wbr>Blp2<wbr>Paletted<wbr>Image</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="blpimageobject.html#readindexedimage" class="tsd-kind-icon">read<wbr>Indexed<wbr>Image</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 								<a href="blpimageobject.html#readjpegimage" class="tsd-kind-icon">read<wbr>Jpeg<wbr>Image</a>
@@ -613,6 +1226,24 @@
 								<a href="blpimageobject.html#torgbaimage" class="tsd-kind-icon">to<wbr>Rgba<wbr>Image</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#builddxt5alphatable" class="tsd-kind-icon">build<wbr>Dxt5<wbr>Alpha<wbr>Table</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#builddxtcolortable" class="tsd-kind-icon">build<wbr>Dxt<wbr>Color<wbr>Table</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#decodedxt" class="tsd-kind-icon">decode<wbr>Dxt</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#decodedxt3block" class="tsd-kind-icon">decode<wbr>Dxt3<wbr>Block</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#decodedxt5block" class="tsd-kind-icon">decode<wbr>Dxt5<wbr>Block</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#decodedxtcolorblock" class="tsd-kind-icon">decode<wbr>Dxt<wbr>Color<wbr>Block</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
 								<a href="blpimageobject.html#decodejpeg" class="tsd-kind-icon">decode<wbr>Jpeg</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
@@ -622,7 +1253,19 @@
 								<a href="blpimageobject.html#fromrgbaimage" class="tsd-kind-icon">from<wbr>Rgba<wbr>Image</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#fromrgbaimageblp2" class="tsd-kind-icon">from<wbr>Rgba<wbr>Image<wbr>Blp2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#rgb565torgb" class="tsd-kind-icon">rgb565<wbr>ToRgb</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
 								<a href="blpimageobject.html#withadobecmykmarker" class="tsd-kind-icon">with<wbr>Adobe<wbr>Cmyk<wbr>Marker</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#writeblockalpha" class="tsd-kind-icon">write<wbr>Block<wbr>Alpha</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="blpimageobject.html#writeblockcolor" class="tsd-kind-icon">write<wbr>Block<wbr>Color</a>
 							</li>
 							<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-protected">
 								<a href="blpimageobject.html#_header" class="tsd-kind-icon">_header</a>
