@@ -214,7 +214,22 @@ describe("StringsObject", () => {
         const dumped = stringsObject.dump();
         const reread = new StringsObject();
         reread.read(dumped);
-        assert.deepStrictEqual(reread, stringsObject);
+        assert.deepStrictEqual(reread.strings, stringsObject.strings);
+        assert.deepStrictEqual(reread.dump(), dumped);
+    });
+
+    it("should preserve source trigger string formatting until edited", () => {
+        const source = Buffer.from("STRING 1\r\n// comment\r\n{\r\nHello\r\n}\r\n\r\n// trailing note\r\n", "utf8");
+        const stringsObject = new StringsObject();
+
+        stringsObject.read(source);
+
+        assert.deepStrictEqual(stringsObject.dump(), source);
+        const string = stringsObject.getString("1");
+        assert.ok(string);
+        string.value = "Changed";
+        assert.notDeepStrictEqual(stringsObject.dump(), source);
+        assert.ok(stringsObject.dump().toString("utf8").includes("Changed"));
     });
 });
 

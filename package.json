@@ -12,6 +12,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "test:local-maps": "npm run build && node scripts/roundtrip-local-maps.js",
     "build": "tsc -p tsconfig.json",
     "lint": "eslint . --ext .ts",
     "doc": "typedoc --disableOutputCheck",

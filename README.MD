@@ -200,6 +200,15 @@ npm install
 npm test
 ```
 
+For local Warcraft III sample validation, build the project and compare every
+parsed archive subfile with its dumped bytes:
+
+```sh
+npm run test:local-maps
+```
+
+Set `WAR3_MAPS_DIR` to scan a different map directory.
+
 ## Roadmap
 
 See the [open issues](https://github.com/invoker-bot/war3map/issues) for a list of proposed features (and known issues).
