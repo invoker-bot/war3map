@@ -6,7 +6,7 @@
   "homepage": "https://invoker-bot.github.io/war3map/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/invoker-bot/war3map.git"
+    "url": "git+https://github.com/invoker-bot/war3map.git"
   },
   "scripts": {
     "test": "jest",
