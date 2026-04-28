@@ -157,7 +157,7 @@ export class UnitsObject implements ReadDumpObject {
         const initialReader = new BinaryReadBuffer(buffer);
         assert.strictEqual(initialReader.readChars(4), "W3do", "File should be `doo` format.");
         const fileVersion = initialReader.readInt();
-        assert.ok(fileVersion === 7 || fileVersion === 8, `Unsupport file version:${fileVersion}`);
+        assert.ok(fileVersion === 7 || fileVersion === 8, `Unsupported file version:${fileVersion}`);
 
         const attempts = fileVersion === 8 ? [false, true] : [false];
         let lastError: unknown;
@@ -177,7 +177,7 @@ export class UnitsObject implements ReadDumpObject {
         const fileID = reader.readChars(4);
         assert.strictEqual(fileID, "W3do", "File should be `doo` format.");
         this._fileVersion = reader.readInt();
-        assert.ok(this._fileVersion === 7 || this._fileVersion === 8, `Unsupport file version:${this._fileVersion}`);
+        assert.ok(this._fileVersion === 7 || this._fileVersion === 8, `Unsupported file version:${this._fileVersion}`);
         this._fileSubVersion = reader.readInt();
         this._hasSkinID = hasSkinID && this._fileVersion === 8;
 

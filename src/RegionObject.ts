@@ -24,7 +24,7 @@ export class RegionObject implements ReadDumpObject {
     read(buffer: Buffer): void {
         const reader = new BinaryReadBuffer(buffer);
         this._fileVersion=reader.readInt();
-        assert.strictEqual(this._fileVersion, 5, `Unsupport file version:${this._fileVersion}`);
+        assert.strictEqual(this._fileVersion, 5, `Unsupported file version:${this._fileVersion}`);
         const numberOfRgionDefinitions = reader.readInt();
         for (let i = 0; i < numberOfRgionDefinitions; ++i) {
             const left = reader.readFloat();

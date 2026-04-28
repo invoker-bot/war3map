@@ -11,7 +11,7 @@ export class PathmapObject implements ReadDumpObject {
         const header=reader.readChars(4);
         assert.strictEqual(header,"MP3W","File format incorrect.");
         this._fileVersion = reader.readInt();
-        assert.strictEqual(this._fileVersion, 0, `Unsupport file version:${this._fileVersion}`);
+        assert.strictEqual(this._fileVersion, 0, `Unsupported file version:${this._fileVersion}`);
         this.pathWidth=reader.readInt();
         this.pathHeight=reader.readInt();
         for(let i=0;i<this.pathWidth;++i){

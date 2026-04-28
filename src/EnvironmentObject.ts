@@ -62,7 +62,7 @@ export class EnvironmentObject implements ReadDumpObject{
         const fileID = reader.readChars(4);
         assert.strictEqual(fileID, "W3E!", "File should be `w3e` format.");
         const fileVersion = reader.readInt();
-        assert.ok(fileVersion === 11 || fileVersion === 12, `Unsupport file version:${fileVersion}`);
+        assert.ok(fileVersion === 11 || fileVersion === 12, `Unsupported file version:${fileVersion}`);
         this._fileVersion=fileVersion;
         const mainTileset =this.charToTileset(reader.readChars(1));
         //const b=reader.readByte();

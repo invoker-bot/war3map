@@ -21,7 +21,7 @@ export class ImportsObject implements ReadDumpObject {
     public read(buffer: Buffer): void {
         const reader = new BinaryReadBuffer(buffer);
         this._fileVersion = reader.readInt();
-        assert.strictEqual(this._fileVersion, 1, `Unsupport file version:${this._fileVersion}`);
+        assert.strictEqual(this._fileVersion, 1, `Unsupported file version:${this._fileVersion}`);
 
         this._imports = [];
         const numberOfImports = reader.readInt();

@@ -30,7 +30,7 @@ export class ObjectsObject implements ReadDumpObject {
     public read(buffer: Buffer): void {
         const reader = new BinaryReadBuffer(buffer);
         this._fileVersion = reader.readInt();
-        assert.ok(this._fileVersion === 1 ||this._fileVersion===2 , `The File version \`${this._fileVersion}\` not support.`);
+        assert.ok(this._fileVersion === 1 ||this._fileVersion===2 , `Unsupported file version:${this._fileVersion}`);
         this.originalObjects=this.readObjectsTable(reader);
         this.customObjects=this.readObjectsTable(reader);
         assert.ok(reader.isEOF(),"Not reach end of the file because of trailing data.");
@@ -62,7 +62,7 @@ export class ObjectsObject implements ReadDumpObject {
                     case 3:
                         value=reader.readString();break;
                     default:
-                        throw new Error(`trailing data type:${type}`);
+                        throw new Error(`Unknown object modification data type:${type}`);
                 } 
                 
                 const end=reader.readInt();

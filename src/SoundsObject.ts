@@ -119,7 +119,7 @@ export class SoundsObject implements ReadDumpObject {
     public read(buffer: Buffer): void {
         const reader = new BinaryReadBuffer(buffer);
         this._fileVersion = reader.readInt();
-        assert.ok(this._fileVersion === 1 || this._fileVersion === 3, `Unsupport file version:${this._fileVersion}`);
+        assert.ok(this._fileVersion === 1 || this._fileVersion === 3, `Unsupported file version:${this._fileVersion}`);
 
         this._sounds = [];
         const numberOfSounds = reader.readInt();
