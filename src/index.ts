@@ -2,6 +2,7 @@ export * from "./BinaryBuffer";
 export * from "./BlpImageObject";
 export * from "./CamerasObject";
 export * from "./CustomTextTriggerObject";
+export * from "./DdsImageObject";
 export * from "./EnvironmentObject";
 export * from "./DoodadsObject";
 export * from "./GameConfigurationObject";

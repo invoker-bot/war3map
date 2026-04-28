@@ -3,6 +3,7 @@ import * as assert from "assert";
 import { readFileSync } from "fs";
 import {
     BlpImageObject,
+    DdsImageObject,
     readPngImage,
     RgbaImage,
     TgaImageObject,
@@ -142,5 +143,42 @@ describe("image conversion", () => {
         const blpDxt5 = new BlpImageObject();
         blpDxt5.read(buildBlp2(4, 4, 2, 8, 7, dxt5));
         assert.deepStrictEqual(Array.from(blpDxt5.toRgbaImage().data.slice(0, 4)), [255, 0, 0, 255]);
+    });
+
+    it("should convert RGBA images to DDS and back", () => {
+        const image = createTestImage();
+        const dds = DdsImageObject.fromRgbaImage(image);
+        const reread = new DdsImageObject();
+        reread.read(dds.dump());
+
+        assert.deepStrictEqual(reread.toRgbaImage(), image);
+    });
+
+    it("should decode DDS DXT1 images", () => {
+        const dxt = Buffer.alloc(8);
+        dxt.writeUInt16LE(0xf800, 0);
+        dxt.writeUInt16LE(0x001f, 2);
+        const dds = DdsImageObject.fromRgbaImage(createTestImage());
+        dds.header = {
+            ...dds.header,
+            width: 4,
+            height: 4,
+            pitchOrLinearSize: dxt.length,
+            pixelFormat: {
+                ...dds.header.pixelFormat,
+                flags: 0x4,
+                fourCc: "DXT1",
+                rgbBitCount: 0,
+                redMask: 0,
+                greenMask: 0,
+                blueMask: 0,
+                alphaMask: 0
+            }
+        };
+        dds.payload = dxt;
+
+        const image = dds.toRgbaImage();
+        assert.deepStrictEqual(Array.from(image.data.slice(0, 4)), [255, 0, 0, 255]);
+        assert.strictEqual(image.data.length, 4 * 4 * 4);
     });
 });

@@ -322,7 +322,7 @@ export class BlpImageObject implements ReadDumpObject {
         const mipmapOffset = mipmap.offset - BlpImageObject.BLP2_HEADER_SIZE;
         assert.ok(mipmapOffset >= 0 && mipmapOffset + mipmap.size <= this._payload.length, "BLP mipmap points outside the payload.");
         const dxt = this.getBlp2DxtFormat();
-        return BlpImageObject.decodeDxt(this._payload.slice(mipmapOffset, mipmapOffset + mipmap.size), width, height, dxt);
+        return BlpImageObject.decodeDxtImageData(this._payload.slice(mipmapOffset, mipmapOffset + mipmap.size), width, height, dxt);
     }
 
     protected readIndexedImage(width: number, height: number, mipmapOffset: number, mipmapSize: number, palette: Buffer, payload: Buffer, alphaBits: number): RgbaImage {
@@ -431,7 +431,7 @@ export class BlpImageObject implements ReadDumpObject {
         return Buffer.concat([buffer.slice(0, 2), app14, buffer.slice(2)]);
     }
 
-    protected static decodeDxt(buffer: Buffer, width: number, height: number, format: "DXT1" | "DXT3" | "DXT5"): RgbaImage {
+    public static decodeDxtImageData(buffer: Buffer, width: number, height: number, format: "DXT1" | "DXT3" | "DXT5"): RgbaImage {
         const image = Buffer.alloc(width * height * 4);
         const blockBytes = format === "DXT1" ? 8 : 16;
         const blockWidth = Math.ceil(width / 4);

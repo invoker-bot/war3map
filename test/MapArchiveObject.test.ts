@@ -4,6 +4,7 @@ import {
     createMapFileObject,
     BlpImageObject,
     CustomTextTriggerObject,
+    DdsImageObject,
     InfoObject,
     MapArchiveObject,
     MenuMinimapObject,
@@ -105,6 +106,9 @@ describe("createMapFileObject", () => {
         assert.ok(createMapFileObject("war3mapMap.b00") instanceof BlpImageObject);
         assert.ok(createMapFileObject("war3mapMap.tga") instanceof TgaImageObject);
         assert.ok(createMapFileObject("war3mapPreview.tga") instanceof TgaImageObject);
+        assert.ok(createMapFileObject("war3mapPreview.dds") instanceof DdsImageObject);
+        assert.ok(createMapFileObject("UI\\FrameDef\\Custom.fdf") instanceof TextFileObject);
+        assert.ok(createMapFileObject("Units\\CustomUnitData.slk") instanceof TextFileObject);
     });
 });
 

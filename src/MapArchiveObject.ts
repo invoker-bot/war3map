@@ -7,6 +7,7 @@ import { ReadDumpObject } from "./BinaryBuffer";
 import { BlpImageObject } from "./BlpImageObject";
 import { CamerasObject } from "./CamerasObject";
 import { CustomTextTriggerObject } from "./CustomTextTriggerObject";
+import { DdsImageObject } from "./DdsImageObject";
 import { DoodadsObject } from "./DoodadsObject";
 import { EnvironmentObject } from "./EnvironmentObject";
 import { GameConfigurationObject } from "./GameConfigurationObject";
@@ -179,8 +180,14 @@ export function createMapFileObject(name: string, context?: { pathmap?: PathmapO
             if (basename.endsWith(".blp") || basename.endsWith(".b00")) {
                 return new BlpImageObject();
             }
+            if (basename.endsWith(".dds")) {
+                return new DdsImageObject();
+            }
             if (basename.endsWith(".tga")) {
                 return new TgaImageObject();
+            }
+            if (/\.(ai|fdf|ini|slk|toc|txt)$/i.test(basename)) {
+                return new TextFileObject();
             }
             return new RawFileObject();
     }
