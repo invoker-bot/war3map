@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>UpgradeInfo | war3map</title>
+	<title>MdxCollisionShapeInfo | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="upgradeinfo.html">UpgradeInfo</a>
+					<a href="mdxcollisionshapeinfo.html">MdxCollisionShapeInfo</a>
 				</li>
 			</ul>
-			<h1>Interface UpgradeInfo</h1>
+			<h1>Interface MdxCollisionShapeInfo</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">UpgradeInfo</span>
+						<span class="target">MdxCollisionShapeInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -81,10 +81,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="upgradeinfo.html#availability" class="tsd-kind-icon">availability</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="upgradeinfo.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="upgradeinfo.html#level" class="tsd-kind-icon">level</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="upgradeinfo.html#players" class="tsd-kind-icon">players</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxcollisionshapeinfo.html#height" class="tsd-kind-icon">height</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxcollisionshapeinfo.html#length" class="tsd-kind-icon">length</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxcollisionshapeinfo.html#node" class="tsd-kind-icon">node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxcollisionshapeinfo.html#radius" class="tsd-kind-icon">radius</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxcollisionshapeinfo.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxcollisionshapeinfo.html#vertices" class="tsd-kind-icon">vertices</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxcollisionshapeinfo.html#width" class="tsd-kind-icon">width</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,42 +96,72 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="availability" class="tsd-anchor"></a>
-					<h3>availability</h3>
-					<div class="tsd-signature tsd-kind-icon">availability<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="height" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> height</h3>
+					<div class="tsd-signature tsd-kind-icon">height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/InfoObject.ts#L95">InfoObject.ts:95</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L171">MdxModelObject.ts:171</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="length" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> length</h3>
+					<div class="tsd-signature tsd-kind-icon">length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/InfoObject.ts#L93">InfoObject.ts:93</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L172">MdxModelObject.ts:172</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="level" class="tsd-anchor"></a>
-					<h3>level</h3>
-					<div class="tsd-signature tsd-kind-icon">level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="node" class="tsd-anchor"></a>
+					<h3>node</h3>
+					<div class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">:</span> <a href="mdxnodeinfo.html" class="tsd-signature-type">MdxNodeInfo</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/InfoObject.ts#L94">InfoObject.ts:94</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L167">MdxModelObject.ts:167</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="players" class="tsd-anchor"></a>
-					<h3>players</h3>
-					<div class="tsd-signature tsd-kind-icon">players<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="radius" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> radius</h3>
+					<div class="tsd-signature tsd-kind-icon">radius<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/InfoObject.ts#L92">InfoObject.ts:92</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L170">MdxModelObject.ts:170</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L168">MdxModelObject.ts:168</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="vertices" class="tsd-anchor"></a>
+					<h3>vertices</h3>
+					<div class="tsd-signature tsd-kind-icon">vertices<span class="tsd-signature-symbol">:</span> <a href="../globals.html#mdxvector3" class="tsd-signature-type">MdxVector3</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L169">MdxModelObject.ts:169</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="width" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> width</h3>
+					<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L173">MdxModelObject.ts:173</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -147,19 +180,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="upgradeinfo.html" class="tsd-kind-icon">Upgrade<wbr>Info</a>
+						<a href="mdxcollisionshapeinfo.html" class="tsd-kind-icon">Mdx<wbr>Collision<wbr>Shape<wbr>Info</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="upgradeinfo.html#availability" class="tsd-kind-icon">availability</a>
+								<a href="mdxcollisionshapeinfo.html#height" class="tsd-kind-icon">height</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="upgradeinfo.html#id" class="tsd-kind-icon">id</a>
+								<a href="mdxcollisionshapeinfo.html#length" class="tsd-kind-icon">length</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="upgradeinfo.html#level" class="tsd-kind-icon">level</a>
+								<a href="mdxcollisionshapeinfo.html#node" class="tsd-kind-icon">node</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="upgradeinfo.html#players" class="tsd-kind-icon">players</a>
+								<a href="mdxcollisionshapeinfo.html#radius" class="tsd-kind-icon">radius</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxcollisionshapeinfo.html#type" class="tsd-kind-icon">type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxcollisionshapeinfo.html#vertices" class="tsd-kind-icon">vertices</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxcollisionshapeinfo.html#width" class="tsd-kind-icon">width</a>
 							</li>
 						</ul>
 					</li>

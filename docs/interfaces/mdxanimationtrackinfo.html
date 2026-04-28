@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Camera | war3map</title>
+	<title>MdxAnimationTrackInfo | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,28 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="camera.html">Camera</a>
+					<a href="mdxanimationtrackinfo.html">MdxAnimationTrackInfo</a>
 				</li>
 			</ul>
-			<h1>Interface Camera</h1>
+			<h1>Interface MdxAnimationTrackInfo</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Camera represents a camera in the game.</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Camera</span>
+						<span class="target">MdxAnimationTrackInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -88,16 +81,15 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#angleofattack" class="tsd-kind-icon">angle<wbr>OfAttack</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#angleofrotation" class="tsd-kind-icon">angle<wbr>OfRotation</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#distance" class="tsd-kind-icon">distance</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#editorvalue" class="tsd-kind-icon">editor<wbr>Value</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#farclipping" class="tsd-kind-icon">far<wbr>Clipping</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#fieldofview" class="tsd-kind-icon">field<wbr>OfView</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#offsetz" class="tsd-kind-icon">offsetZ</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#roll" class="tsd-kind-icon">roll</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="camera.html#target" class="tsd-kind-icon">target</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxanimationtrackinfo.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxanimationtrackinfo.html#globalsequenceid" class="tsd-kind-icon">global<wbr>Sequence<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxanimationtrackinfo.html#interpolationtype" class="tsd-kind-icon">interpolation<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxanimationtrackinfo.html#keycount" class="tsd-kind-icon">key<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxanimationtrackinfo.html#keyframes" class="tsd-kind-icon">keyframes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxanimationtrackinfo.html#offset" class="tsd-kind-icon">offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxanimationtrackinfo.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxanimationtrackinfo.html#tag" class="tsd-kind-icon">tag</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxanimationtrackinfo.html#valuetype" class="tsd-kind-icon">value<wbr>Type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -106,115 +98,94 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="angleofattack" class="tsd-anchor"></a>
-					<h3>angle<wbr>OfAttack</h3>
-					<div class="tsd-signature tsd-kind-icon">angle<wbr>OfAttack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L16">CamerasObject.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L115">MdxModelObject.ts:115</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="angleofrotation" class="tsd-anchor"></a>
-					<h3>angle<wbr>OfRotation</h3>
-					<div class="tsd-signature tsd-kind-icon">angle<wbr>OfRotation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="globalsequenceid" class="tsd-anchor"></a>
+					<h3>global<wbr>Sequence<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">global<wbr>Sequence<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L15">CamerasObject.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L113">MdxModelObject.ts:113</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="distance" class="tsd-anchor"></a>
-					<h3>distance</h3>
-					<div class="tsd-signature tsd-kind-icon">distance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="interpolationtype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> interpolation<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">interpolation<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L17">CamerasObject.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L112">MdxModelObject.ts:112</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="editorvalue" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> editor<wbr>Value</h3>
-					<div class="tsd-signature tsd-kind-icon">editor<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<a name="keycount" class="tsd-anchor"></a>
+					<h3>key<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">key<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L21">CamerasObject.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L111">MdxModelObject.ts:111</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="farclipping" class="tsd-anchor"></a>
-					<h3>far<wbr>Clipping</h3>
-					<div class="tsd-signature tsd-kind-icon">far<wbr>Clipping<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="keyframes" class="tsd-anchor"></a>
+					<h3>keyframes</h3>
+					<div class="tsd-signature tsd-kind-icon">keyframes<span class="tsd-signature-symbol">:</span> <a href="mdxanimationkeyframeinfo.html" class="tsd-signature-type">MdxAnimationKeyframeInfo</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L20">CamerasObject.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L114">MdxModelObject.ts:114</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="fieldofview" class="tsd-anchor"></a>
-					<h3>field<wbr>OfView</h3>
-					<div class="tsd-signature tsd-kind-icon">field<wbr>OfView<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="offset" class="tsd-anchor"></a>
+					<h3>offset</h3>
+					<div class="tsd-signature tsd-kind-icon">offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L19">CamerasObject.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L108">MdxModelObject.ts:108</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="size" class="tsd-anchor"></a>
+					<h3>size</h3>
+					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L22">CamerasObject.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L109">MdxModelObject.ts:109</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="offsetz" class="tsd-anchor"></a>
-					<h3>offsetZ</h3>
-					<div class="tsd-signature tsd-kind-icon">offsetZ<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="tag" class="tsd-anchor"></a>
+					<h3>tag</h3>
+					<div class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L14">CamerasObject.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L107">MdxModelObject.ts:107</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="roll" class="tsd-anchor"></a>
-					<h3>roll</h3>
-					<div class="tsd-signature tsd-kind-icon">roll<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="valuetype" class="tsd-anchor"></a>
+					<h3>value<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">value<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../globals.html#mdxtrackvaluetype" class="tsd-signature-type">MdxTrackValueType</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L18">CamerasObject.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L110">MdxModelObject.ts:110</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="target" class="tsd-anchor"></a>
-					<h3>target</h3>
-					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/CamerasObject.ts#L12">CamerasObject.ts:12</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-						</ul>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -231,37 +202,34 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="camera.html" class="tsd-kind-icon">Camera</a>
+						<a href="mdxanimationtrackinfo.html" class="tsd-kind-icon">Mdx<wbr>Animation<wbr>Track<wbr>Info</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#angleofattack" class="tsd-kind-icon">angle<wbr>OfAttack</a>
+								<a href="mdxanimationtrackinfo.html#data" class="tsd-kind-icon">data</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#angleofrotation" class="tsd-kind-icon">angle<wbr>OfRotation</a>
+								<a href="mdxanimationtrackinfo.html#globalsequenceid" class="tsd-kind-icon">global<wbr>Sequence<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#distance" class="tsd-kind-icon">distance</a>
+								<a href="mdxanimationtrackinfo.html#interpolationtype" class="tsd-kind-icon">interpolation<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#editorvalue" class="tsd-kind-icon">editor<wbr>Value</a>
+								<a href="mdxanimationtrackinfo.html#keycount" class="tsd-kind-icon">key<wbr>Count</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#farclipping" class="tsd-kind-icon">far<wbr>Clipping</a>
+								<a href="mdxanimationtrackinfo.html#keyframes" class="tsd-kind-icon">keyframes</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#fieldofview" class="tsd-kind-icon">field<wbr>OfView</a>
+								<a href="mdxanimationtrackinfo.html#offset" class="tsd-kind-icon">offset</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#name" class="tsd-kind-icon">name</a>
+								<a href="mdxanimationtrackinfo.html#size" class="tsd-kind-icon">size</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#offsetz" class="tsd-kind-icon">offsetZ</a>
+								<a href="mdxanimationtrackinfo.html#tag" class="tsd-kind-icon">tag</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#roll" class="tsd-kind-icon">roll</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="camera.html#target" class="tsd-kind-icon">target</a>
+								<a href="mdxanimationtrackinfo.html#valuetype" class="tsd-kind-icon">value<wbr>Type</a>
 							</li>
 						</ul>
 					</li>

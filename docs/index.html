@@ -349,7 +349,7 @@
 					<li><img src="docs/img/ok.png" alt="check"> BLP1/BLP2 minimap and imported images (<code>war3mapMap.blp</code>, <code>*.blp</code>)</li>
 					<li><img src="docs/img/ok.png" alt="check"> TGA and DDS preview, pathing, and imported images (<code>*.tga</code>, <code>*.dds</code>)</li>
 					<li><img src="docs/img/ok.png" alt="check"> Image conversion helpers for PNG, TGA, DDS, BLP1 JPEG/paletted images, and BLP2 BGRA/DXT images</li>
-					<li><img src="docs/img/ok.png" alt="check"> MDX model chunks, materials, geosets, geoset animations, global sequences, pivots, bones, helpers, and attachments (<code>*.mdx</code>)</li>
+					<li><img src="docs/img/ok.png" alt="check"> MDX model chunks, materials, geosets, animation tracks, geoset animations, texture animations, global sequences, pivots, bones, helpers, attachments, cameras, events, collision shapes, ribbon emitters, and particle emitters 2 (<code>*.mdx</code>)</li>
 					<li><img src="docs/img/ok.png" alt="check"> WAV/MP3 audio headers, including empty WAV override placeholders (<code>*.wav</code>, <code>*.mp3</code>)</li>
 					<li><img src="docs/img/ok.png" alt="check"> WAI AI editor headers plus condition/string summaries (<code>*.wai</code>)</li>
 					<li><img src="docs/img/ok.png" alt="check"> Text resource pass-through for SLK/FDF/TOC/INI/TXT/AI files</li>
@@ -436,7 +436,7 @@ map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, {
 				<a href="#contact" id="contact" style="color: inherit; text-decoration: none;">
 					<h2>Contact</h2>
 				</a>
-				<p>Invoker Bot - <a href="mailto:&#105;&#110;&#x76;&#111;&#107;&#x65;&#x72;&#45;&#98;&#111;&#116;&#64;&#x6f;&#x75;&#116;&#x6c;&#x6f;&#111;&#107;&#x2e;&#99;&#111;&#109;">&#105;&#110;&#x76;&#111;&#107;&#x65;&#x72;&#45;&#98;&#111;&#116;&#64;&#x6f;&#x75;&#116;&#x6c;&#x6f;&#111;&#107;&#x2e;&#99;&#111;&#109;</a></p>
+				<p>Invoker Bot - <a href="mailto:&#x69;&#110;&#x76;&#111;&#107;&#x65;&#114;&#45;&#98;&#111;&#116;&#64;&#111;&#x75;&#x74;&#x6c;&#111;&#x6f;&#107;&#46;&#99;&#x6f;&#x6d;">&#x69;&#110;&#x76;&#111;&#107;&#x65;&#114;&#45;&#98;&#111;&#116;&#64;&#111;&#x75;&#x74;&#x6c;&#111;&#x6f;&#107;&#46;&#99;&#x6f;&#x6d;</a></p>
 				<p>Project Link: <a href="https://github.com/invoker-bot/war3map">https://github.com/invoker-bot/war3map</a></p>
 				<a href="#acknowledgements" id="acknowledgements" style="color: inherit; text-decoration: none;">
 					<h2>Acknowledgements</h2>
@@ -637,13 +637,28 @@ map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, {
 						<a href="interfaces/mapinfo.html" class="tsd-kind-icon">Map<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxanimationkeyframeinfo.html" class="tsd-kind-icon">Mdx<wbr>Animation<wbr>Keyframe<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxanimationtrackinfo.html" class="tsd-kind-icon">Mdx<wbr>Animation<wbr>Track<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxattachmentinfo.html" class="tsd-kind-icon">Mdx<wbr>Attachment<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxboneinfo.html" class="tsd-kind-icon">Mdx<wbr>Bone<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxcamerainfo.html" class="tsd-kind-icon">Mdx<wbr>Camera<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxchunk.html" class="tsd-kind-icon">Mdx<wbr>Chunk</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxcollisionshapeinfo.html" class="tsd-kind-icon">Mdx<wbr>Collision<wbr>Shape<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxeventobjectinfo.html" class="tsd-kind-icon">Mdx<wbr>Event<wbr>Object<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxextent.html" class="tsd-kind-icon">Mdx<wbr>Extent</a>
@@ -667,7 +682,16 @@ map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, {
 						<a href="interfaces/mdxnodeinfo.html" class="tsd-kind-icon">Mdx<wbr>Node<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxparticleemitter2info.html" class="tsd-kind-icon">Mdx<wbr>Particle<wbr>Emitter2<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxribbonemitterinfo.html" class="tsd-kind-icon">Mdx<wbr>Ribbon<wbr>Emitter<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxsequenceinfo.html" class="tsd-kind-icon">Mdx<wbr>Sequence<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxtextureanimationinfo.html" class="tsd-kind-icon">Mdx<wbr>Texture<wbr>Animation<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxtextureinfo.html" class="tsd-kind-icon">Mdx<wbr>Texture<wbr>Info</a>
@@ -817,10 +841,19 @@ map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, {
 						<a href="globals.html#audiofilekind" class="tsd-kind-icon">Audio<wbr>File<wbr>Kind</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#mdxtrackvalue" class="tsd-kind-icon">Mdx<wbr>Track<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#mdxtrackvaluetype" class="tsd-kind-icon">Mdx<wbr>Track<wbr>Value<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#mdxvector2" class="tsd-kind-icon">Mdx<wbr>Vector2</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#mdxvector3" class="tsd-kind-icon">Mdx<wbr>Vector3</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#mdxvector4" class="tsd-kind-icon">Mdx<wbr>Vector4</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#randomentity" class="tsd-kind-icon">Random<wbr>Entity</a>

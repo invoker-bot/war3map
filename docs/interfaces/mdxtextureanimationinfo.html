@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RandomItemTable | war3map</title>
+	<title>MdxTextureAnimationInfo | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="randomitemtable.html">RandomItemTable</a>
+					<a href="mdxtextureanimationinfo.html">MdxTextureAnimationInfo</a>
 				</li>
 			</ul>
-			<h1>Interface RandomItemTable</h1>
+			<h1>Interface MdxTextureAnimationInfo</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RandomItemTable</span>
+						<span class="target">MdxTextureAnimationInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -81,9 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="randomitemtable.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="randomitemtable.html#number" class="tsd-kind-icon">number</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="randomitemtable.html#sets" class="tsd-kind-icon">sets</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxtextureanimationinfo.html#animationpayload" class="tsd-kind-icon">animation<wbr>Payload</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxtextureanimationinfo.html#animationtracks" class="tsd-kind-icon">animation<wbr>Tracks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxtextureanimationinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,32 +92,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="animationpayload" class="tsd-anchor"></a>
+					<h3>animation<wbr>Payload</h3>
+					<div class="tsd-signature tsd-kind-icon">animation<wbr>Payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/InfoObject.ts#L122">InfoObject.ts:122</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L145">MdxModelObject.ts:145</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="number" class="tsd-anchor"></a>
-					<h3>number</h3>
-					<div class="tsd-signature tsd-kind-icon">number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="animationtracks" class="tsd-anchor"></a>
+					<h3>animation<wbr>Tracks</h3>
+					<div class="tsd-signature tsd-kind-icon">animation<wbr>Tracks<span class="tsd-signature-symbol">:</span> <a href="mdxanimationtrackinfo.html" class="tsd-signature-type">MdxAnimationTrackInfo</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/InfoObject.ts#L121">InfoObject.ts:121</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L146">MdxModelObject.ts:146</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="sets" class="tsd-anchor"></a>
-					<h3>sets</h3>
-					<div class="tsd-signature tsd-kind-icon">sets<span class="tsd-signature-symbol">:</span> <a href="randomitem.html" class="tsd-signature-type">RandomItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="inclusivesize" class="tsd-anchor"></a>
+					<h3>inclusive<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">inclusive<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/InfoObject.ts#L123">InfoObject.ts:123</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0e44fd9/src/MdxModelObject.ts#L144">MdxModelObject.ts:144</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -136,16 +136,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="randomitemtable.html" class="tsd-kind-icon">Random<wbr>Item<wbr>Table</a>
+						<a href="mdxtextureanimationinfo.html" class="tsd-kind-icon">Mdx<wbr>Texture<wbr>Animation<wbr>Info</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="randomitemtable.html#name" class="tsd-kind-icon">name</a>
+								<a href="mdxtextureanimationinfo.html#animationpayload" class="tsd-kind-icon">animation<wbr>Payload</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="randomitemtable.html#number" class="tsd-kind-icon">number</a>
+								<a href="mdxtextureanimationinfo.html#animationtracks" class="tsd-kind-icon">animation<wbr>Tracks</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="randomitemtable.html#sets" class="tsd-kind-icon">sets</a>
+								<a href="mdxtextureanimationinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a>
 							</li>
 						</ul>
 					</li>

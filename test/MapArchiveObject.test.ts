@@ -159,6 +159,28 @@ function createMdxNode(name: string, objectId: number, parentId: number, flags: 
     ]);
 }
 
+function createMdxVector3Track(tag: string, time: number, value: number[]): Buffer {
+    return Buffer.concat([
+        Buffer.from(tag, "ascii"),
+        createUInt32(1),
+        createUInt32(1),
+        createUInt32(0xffffffff),
+        createInt32(time),
+        createFloat32(value[0]),
+        createFloat32(value[1]),
+        createFloat32(value[2])
+    ]);
+}
+
+function createMdxEventTrack(time: number): Buffer {
+    return Buffer.concat([
+        Buffer.from("KEVT", "ascii"),
+        createUInt32(1),
+        createUInt32(0xffffffff),
+        createInt32(time)
+    ]);
+}
+
 function createWaveChunk(id: string, data: Buffer): Buffer {
     const header = Buffer.alloc(8);
     header.write(id, 0, 4, "ascii");
@@ -289,6 +311,8 @@ describe("MdxModelObject", () => {
             createInt32(0),
             Buffer.from("KGAO", "ascii")
         ]);
+        const textureAnimationPayload = createMdxVector3Track("KTAT", 100, [1, 2, 3]);
+        const textureAnimation = Buffer.concat([createUInt32(4 + textureAnimationPayload.length), textureAnimationPayload]);
         const boneNode = createMdxNode("Bone01", 1, -1, 0, Buffer.from("KRTX", "ascii"));
         const helperNode = createMdxNode("Helper01", 2, 1, 0);
         const attachmentNode = createMdxNode("Head Ref", 3, 2, 0x800);
@@ -300,6 +324,95 @@ describe("MdxModelObject", () => {
             createInt32(7),
             attachmentPayload
         ]);
+        const camera = Buffer.concat([
+            createUInt32(120),
+            createFixedString("Camera01", 80),
+            createFloat32(10),
+            createFloat32(20),
+            createFloat32(30),
+            createFloat32(1.0471977),
+            createFloat32(1000),
+            createFloat32(8),
+            createFloat32(40),
+            createFloat32(50),
+            createFloat32(60)
+        ]);
+        const eventObject = Buffer.concat([
+            createMdxNode("SNDxTEST", 4, -1, 0x200),
+            createMdxEventTrack(33)
+        ]);
+        const collisionShape = Buffer.concat([
+            createMdxNode("Collision", 5, -1, 0x1000),
+            createUInt32(2),
+            createFloat32(1),
+            createFloat32(2),
+            createFloat32(3),
+            createFloat32(64)
+        ]);
+        const ribbonFields = Buffer.concat([
+            createFloat32(30),
+            createFloat32(15),
+            createFloat32(0.9),
+            createFloat32(1),
+            createFloat32(0.5),
+            createFloat32(0.25),
+            createFloat32(2),
+            createUInt32(0),
+            createUInt32(40),
+            createUInt32(1),
+            createUInt32(2),
+            createInt32(0),
+            createFloat32(0)
+        ]);
+        const ribbonNode = createMdxNode("Ribbon01", 6, -1, 0x2000);
+        const ribbonEmitter = Buffer.concat([createUInt32(4 + ribbonNode.length + ribbonFields.length), ribbonNode, ribbonFields]);
+        const particleFields = Buffer.concat([
+            createFloat32(10),
+            createFloat32(0.25),
+            createFloat32(45),
+            createFloat32(9.8),
+            createFloat32(2),
+            createFloat32(100),
+            createFloat32(64),
+            createFloat32(32),
+            createUInt32(1),
+            createUInt32(2),
+            createUInt32(4),
+            createUInt32(2),
+            createFloat32(0.7),
+            createFloat32(1.5),
+            createFloat32(1),
+            createFloat32(0),
+            createFloat32(0),
+            createFloat32(0),
+            createFloat32(1),
+            createFloat32(0),
+            createFloat32(0),
+            createFloat32(0),
+            createFloat32(1),
+            Buffer.from([255, 128, 0]),
+            createFloat32(1),
+            createFloat32(0.5),
+            createFloat32(0.25),
+            createUInt32(0),
+            createUInt32(100),
+            createUInt32(200),
+            createUInt32(0),
+            createUInt32(50),
+            createUInt32(100),
+            createUInt32(10),
+            createUInt32(20),
+            createUInt32(30),
+            createUInt32(40),
+            createUInt32(50),
+            createUInt32(60),
+            createInt32(1),
+            createUInt32(1),
+            createInt32(0),
+            createInt32(-1)
+        ]);
+        const particleNode = createMdxNode("Particle01", 7, -1, 0x800);
+        const particleEmitter2 = Buffer.concat([createUInt32(4 + particleNode.length + particleFields.length), particleNode, particleFields]);
         const source = Buffer.concat([
             Buffer.from("MDLX", "ascii"),
             createMdxChunk("VERS", version),
@@ -309,10 +422,16 @@ describe("MdxModelObject", () => {
             createMdxChunk("GEOS", geoset),
             createMdxChunk("GEOA", geosetAnimation),
             createMdxChunk("GLBS", Buffer.concat([createUInt32(1000), createUInt32(2500)])),
+            createMdxChunk("TXAN", textureAnimation),
             createMdxChunk("PIVT", Buffer.concat([createFloat32(1), createFloat32(2), createFloat32(3)])),
             createMdxChunk("BONE", Buffer.concat([boneNode, createInt32(0), createInt32(-1)])),
             createMdxChunk("HELP", helperNode),
-            createMdxChunk("ATCH", attachment)
+            createMdxChunk("ATCH", attachment),
+            createMdxChunk("CAMS", camera),
+            createMdxChunk("EVTS", eventObject),
+            createMdxChunk("CLID", collisionShape),
+            createMdxChunk("RIBB", ribbonEmitter),
+            createMdxChunk("PRE2", particleEmitter2)
         ]);
         const object = new MdxModelObject();
 
@@ -342,6 +461,8 @@ describe("MdxModelObject", () => {
         assert.ok(Math.abs(object.geosetAnimations[0].color[2] - 0.3) < 0.000001);
         assert.strictEqual(object.geosetAnimations[0].geosetId, 0);
         assert.deepStrictEqual(object.globalSequences, [1000, 2500]);
+        assert.strictEqual(object.textureAnimations[0].animationTracks[0].tag, "KTAT");
+        assert.deepStrictEqual(object.textureAnimations[0].animationTracks[0].keyframes[0].value, [1, 2, 3]);
         assert.deepStrictEqual(object.pivots, [[1, 2, 3]]);
         assert.strictEqual(object.bones[0].node.name, "Bone01");
         assert.strictEqual(object.bones[0].geosetAnimationId, -1);
@@ -349,6 +470,16 @@ describe("MdxModelObject", () => {
         assert.strictEqual(object.attachments[0].node.name, "Head Ref");
         assert.strictEqual(object.attachments[0].path, "Objects\\Spawn.mdl");
         assert.strictEqual(object.attachments[0].attachmentId, 7);
+        assert.strictEqual(object.cameras[0].name, "Camera01");
+        assert.deepStrictEqual(object.cameras[0].position, [10, 20, 30]);
+        assert.strictEqual(object.eventObjects[0].eventTrack.keyframes[0].time, 33);
+        assert.strictEqual(object.collisionShapes[0].type, 2);
+        assert.strictEqual(object.collisionShapes[0].radius, 64);
+        assert.strictEqual(object.ribbonEmitters[0].emissionRate, 40);
+        assert.strictEqual(object.ribbonEmitters[0].columns, 2);
+        assert.strictEqual(object.particleEmitters2[0].node.name, "Particle01");
+        assert.deepStrictEqual(object.particleEmitters2[0].segmentAlpha, [255, 128, 0]);
+        assert.deepStrictEqual(object.particleEmitters2[0].headInterval, [0, 100, 200]);
         assert.deepStrictEqual(object.dump(), source);
     });
 });

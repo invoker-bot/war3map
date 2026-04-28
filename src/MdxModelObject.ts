@@ -7,6 +7,9 @@ import { ReadDumpObject } from "./BinaryBuffer";
 
 export type MdxVector2 = [number, number];
 export type MdxVector3 = [number, number, number];
+export type MdxVector4 = [number, number, number, number];
+export type MdxTrackValue = number | MdxVector3 | MdxVector4;
+export type MdxTrackValueType = "event" | "float" | "uint32" | "vector3" | "vector4";
 
 export interface MdxExtent {
     boundsRadius: number;
@@ -54,6 +57,7 @@ export interface MdxLayerInfo {
     coordId: number;
     alpha: number;
     animationPayload: Buffer;
+    animationTracks: MdxAnimationTrackInfo[];
 }
 
 export interface MdxMaterialInfo {
@@ -89,6 +93,26 @@ export interface MdxGeosetAnimationInfo {
     color: MdxVector3;
     geosetId: number;
     animationPayload: Buffer;
+    animationTracks: MdxAnimationTrackInfo[];
+}
+
+export interface MdxAnimationKeyframeInfo {
+    time: number;
+    value?: MdxTrackValue;
+    inTangent?: MdxTrackValue;
+    outTangent?: MdxTrackValue;
+}
+
+export interface MdxAnimationTrackInfo {
+    tag: string;
+    offset: number;
+    size: number;
+    valueType: MdxTrackValueType;
+    keyCount: number;
+    interpolationType?: number;
+    globalSequenceId: number;
+    keyframes: MdxAnimationKeyframeInfo[];
+    data: Buffer;
 }
 
 export interface MdxNodeInfo {
@@ -98,6 +122,7 @@ export interface MdxNodeInfo {
     parentId: number;
     flags: number;
     animationPayload: Buffer;
+    animationTracks: MdxAnimationTrackInfo[];
 }
 
 export interface MdxBoneInfo {
@@ -112,6 +137,90 @@ export interface MdxAttachmentInfo {
     path: string;
     attachmentId: number;
     animationPayload: Buffer;
+    animationTracks: MdxAnimationTrackInfo[];
+}
+
+export interface MdxTextureAnimationInfo {
+    inclusiveSize: number;
+    animationPayload: Buffer;
+    animationTracks: MdxAnimationTrackInfo[];
+}
+
+export interface MdxCameraInfo {
+    inclusiveSize: number;
+    name: string;
+    position: MdxVector3;
+    fieldOfView: number;
+    farClippingPlane: number;
+    nearClippingPlane: number;
+    targetPosition: MdxVector3;
+    animationPayload: Buffer;
+    animationTracks: MdxAnimationTrackInfo[];
+}
+
+export interface MdxEventObjectInfo {
+    node: MdxNodeInfo;
+    eventTrack: MdxAnimationTrackInfo;
+}
+
+export interface MdxCollisionShapeInfo {
+    node: MdxNodeInfo;
+    type: number;
+    vertices: MdxVector3[];
+    radius?: number;
+    height?: number;
+    length?: number;
+    width?: number;
+}
+
+export interface MdxRibbonEmitterInfo {
+    inclusiveSize: number;
+    node: MdxNodeInfo;
+    heightAbove: number;
+    heightBelow: number;
+    alpha: number;
+    color: MdxVector3;
+    lifespan: number;
+    textureSlot: number;
+    emissionRate: number;
+    rows: number;
+    columns: number;
+    materialId: number;
+    gravity: number;
+    animationPayload: Buffer;
+    animationTracks: MdxAnimationTrackInfo[];
+}
+
+export interface MdxParticleEmitter2Info {
+    inclusiveSize: number;
+    node: MdxNodeInfo;
+    speed: number;
+    variation: number;
+    latitude: number;
+    gravity: number;
+    lifespan: number;
+    emissionRate: number;
+    length: number;
+    width: number;
+    filterMode: number;
+    rows: number;
+    columns: number;
+    headOrTail: number;
+    tailLength: number;
+    time: number;
+    segmentColors: [MdxVector3, MdxVector3, MdxVector3];
+    segmentAlpha: [number, number, number];
+    segmentScaling: [number, number, number];
+    headInterval: [number, number, number];
+    headDecayInterval: [number, number, number];
+    tailInterval: [number, number, number];
+    tailDecayInterval: [number, number, number];
+    textureId: number;
+    squirt: number;
+    priorityPlane: number;
+    replaceableId: number;
+    animationPayload: Buffer;
+    animationTracks: MdxAnimationTrackInfo[];
 }
 
 /**
@@ -128,10 +237,16 @@ export class MdxModelObject implements ReadDumpObject {
     protected _geosets: MdxGeosetInfo[] = [];
     protected _geosetAnimations: MdxGeosetAnimationInfo[] = [];
     protected _globalSequences: number[] = [];
+    protected _textureAnimations: MdxTextureAnimationInfo[] = [];
     protected _pivots: MdxVector3[] = [];
     protected _bones: MdxBoneInfo[] = [];
     protected _helpers: MdxNodeInfo[] = [];
     protected _attachments: MdxAttachmentInfo[] = [];
+    protected _cameras: MdxCameraInfo[] = [];
+    protected _eventObjects: MdxEventObjectInfo[] = [];
+    protected _collisionShapes: MdxCollisionShapeInfo[] = [];
+    protected _ribbonEmitters: MdxRibbonEmitterInfo[] = [];
+    protected _particleEmitters2: MdxParticleEmitter2Info[] = [];
 
     public read(buffer: Buffer): void {
         assert.ok(buffer.length >= 4, "MDX model is too short.");
@@ -178,10 +293,16 @@ export class MdxModelObject implements ReadDumpObject {
         this._geosets = [];
         this._geosetAnimations = [];
         this._globalSequences = [];
+        this._textureAnimations = [];
         this._pivots = [];
         this._bones = [];
         this._helpers = [];
         this._attachments = [];
+        this._cameras = [];
+        this._eventObjects = [];
+        this._collisionShapes = [];
+        this._ribbonEmitters = [];
+        this._particleEmitters2 = [];
 
         this._chunks.forEach((chunk) => {
             if (chunk.tag === "VERS" && chunk.data.length >= 4) {
@@ -200,6 +321,8 @@ export class MdxModelObject implements ReadDumpObject {
                 this._geosetAnimations = MdxModelObject.tryRead(() => MdxModelObject.readGeosetAnimations(chunk.data), []);
             } else if (chunk.tag === "GLBS" && chunk.data.length % 4 === 0) {
                 this._globalSequences = MdxModelObject.readUInt32List(chunk.data, 0, chunk.data.length / 4);
+            } else if (chunk.tag === "TXAN") {
+                this._textureAnimations = MdxModelObject.tryRead(() => MdxModelObject.readTextureAnimations(chunk.data), []);
             } else if (chunk.tag === "PIVT" && chunk.data.length % 12 === 0) {
                 this._pivots = MdxModelObject.readVector3List(chunk.data, 0, chunk.data.length / 12);
             } else if (chunk.tag === "BONE") {
@@ -208,6 +331,16 @@ export class MdxModelObject implements ReadDumpObject {
                 this._helpers = MdxModelObject.tryRead(() => MdxModelObject.readNodes(chunk.data), []);
             } else if (chunk.tag === "ATCH") {
                 this._attachments = MdxModelObject.tryRead(() => MdxModelObject.readAttachments(chunk.data), []);
+            } else if (chunk.tag === "CAMS") {
+                this._cameras = MdxModelObject.tryRead(() => MdxModelObject.readCameras(chunk.data), []);
+            } else if (chunk.tag === "EVTS") {
+                this._eventObjects = MdxModelObject.tryRead(() => MdxModelObject.readEventObjects(chunk.data), []);
+            } else if (chunk.tag === "CLID") {
+                this._collisionShapes = MdxModelObject.tryRead(() => MdxModelObject.readCollisionShapes(chunk.data), []);
+            } else if (chunk.tag === "RIBB") {
+                this._ribbonEmitters = MdxModelObject.tryRead(() => MdxModelObject.readRibbonEmitters(chunk.data), []);
+            } else if (chunk.tag === "PRE2") {
+                this._particleEmitters2 = MdxModelObject.tryRead(() => MdxModelObject.readParticleEmitters2(chunk.data), []);
             }
         });
     }
@@ -275,7 +408,8 @@ export class MdxModelObject implements ReadDumpObject {
                     textureAnimationId: buffer.readInt32LE(layerOffset + 16),
                     coordId: buffer.readUInt32LE(layerOffset + 20),
                     alpha: buffer.readFloatLE(layerOffset + 24),
-                    animationPayload: Buffer.from(buffer.slice(layerOffset + 28, layerEndOffset))
+                    animationPayload: Buffer.from(buffer.slice(layerOffset + 28, layerEndOffset)),
+                    animationTracks: MdxModelObject.readAnimationTracksSafely(buffer.slice(layerOffset + 28, layerEndOffset))
                 });
                 layerOffset = layerEndOffset;
             }
@@ -368,7 +502,8 @@ export class MdxModelObject implements ReadDumpObject {
                     buffer.readFloatLE(offset + 20)
                 ],
                 geosetId: buffer.readInt32LE(offset + 24),
-                animationPayload: Buffer.from(buffer.slice(offset + 28, endOffset))
+                animationPayload: Buffer.from(buffer.slice(offset + 28, endOffset)),
+                animationTracks: MdxModelObject.readAnimationTracksSafely(buffer.slice(offset + 28, endOffset))
             });
             offset = endOffset;
         }
@@ -417,11 +552,212 @@ export class MdxModelObject implements ReadDumpObject {
                 node: result.node,
                 path: MdxModelObject.readFixedString(buffer, result.nextOffset, 260),
                 attachmentId: buffer.readInt32LE(result.nextOffset + 260),
-                animationPayload: Buffer.from(buffer.slice(result.nextOffset + 264, endOffset))
+                animationPayload: Buffer.from(buffer.slice(result.nextOffset + 264, endOffset)),
+                animationTracks: MdxModelObject.readAnimationTracksSafely(buffer.slice(result.nextOffset + 264, endOffset))
             });
             offset = endOffset;
         }
         return attachments;
+    }
+
+    protected static readTextureAnimations(buffer: Buffer): MdxTextureAnimationInfo[] {
+        const animations: MdxTextureAnimationInfo[] = [];
+        let offset = 0;
+        while (offset < buffer.length) {
+            assert.ok(offset + 4 <= buffer.length, "MDX texture animation header is truncated.");
+            const inclusiveSize = buffer.readUInt32LE(offset);
+            const endOffset = offset + inclusiveSize;
+            assert.ok(inclusiveSize >= 4 && endOffset <= buffer.length, "MDX texture animation size points outside the TXAN chunk.");
+            const animationPayload = Buffer.from(buffer.slice(offset + 4, endOffset));
+            animations.push({
+                inclusiveSize,
+                animationPayload,
+                animationTracks: MdxModelObject.readAnimationTracksSafely(animationPayload)
+            });
+            offset = endOffset;
+        }
+        return animations;
+    }
+
+    protected static readCameras(buffer: Buffer): MdxCameraInfo[] {
+        const cameras: MdxCameraInfo[] = [];
+        let offset = 0;
+        while (offset < buffer.length) {
+            assert.ok(offset + 120 <= buffer.length, "MDX camera data is truncated.");
+            const inclusiveSize = buffer.readUInt32LE(offset);
+            const endOffset = offset + inclusiveSize;
+            assert.ok(inclusiveSize >= 120 && endOffset <= buffer.length, "MDX camera size points outside the CAMS chunk.");
+            const animationPayload = Buffer.from(buffer.slice(offset + 120, endOffset));
+            cameras.push({
+                inclusiveSize,
+                name: MdxModelObject.readFixedString(buffer, offset + 4, 80),
+                position: MdxModelObject.readVector3(buffer, offset + 84),
+                fieldOfView: buffer.readFloatLE(offset + 96),
+                farClippingPlane: buffer.readFloatLE(offset + 100),
+                nearClippingPlane: buffer.readFloatLE(offset + 104),
+                targetPosition: MdxModelObject.readVector3(buffer, offset + 108),
+                animationPayload,
+                animationTracks: MdxModelObject.readAnimationTracksSafely(animationPayload)
+            });
+            offset = endOffset;
+        }
+        return cameras;
+    }
+
+    protected static readEventObjects(buffer: Buffer): MdxEventObjectInfo[] {
+        const events: MdxEventObjectInfo[] = [];
+        let offset = 0;
+        while (offset < buffer.length) {
+            const result = MdxModelObject.readNode(buffer, offset);
+            assert.ok(result.nextOffset + 12 <= buffer.length, "MDX event track is truncated.");
+            const eventTrack = MdxModelObject.readAnimationTrack(buffer, result.nextOffset);
+            assert.strictEqual(eventTrack.tag, "KEVT", "MDX event object is missing KEVT data.");
+            events.push({
+                node: result.node,
+                eventTrack
+            });
+            offset = result.nextOffset + eventTrack.size;
+        }
+        return events;
+    }
+
+    protected static readCollisionShapes(buffer: Buffer): MdxCollisionShapeInfo[] {
+        const shapes: MdxCollisionShapeInfo[] = [];
+        let offset = 0;
+        while (offset < buffer.length) {
+            const result = MdxModelObject.readNode(buffer, offset);
+            assert.ok(result.nextOffset + 4 <= buffer.length, "MDX collision shape type is truncated.");
+            const type = buffer.readUInt32LE(result.nextOffset);
+            const dataOffset = result.nextOffset + 4;
+            const shape: MdxCollisionShapeInfo = {
+                node: result.node,
+                type,
+                vertices: []
+            };
+
+            if (type === 0) {
+                assert.ok(dataOffset + 24 <= buffer.length, "MDX collision box is truncated.");
+                shape.vertices = [
+                    MdxModelObject.readVector3(buffer, dataOffset),
+                    MdxModelObject.readVector3(buffer, dataOffset + 12)
+                ];
+                offset = dataOffset + 24;
+            } else if (type === 1) {
+                assert.ok(dataOffset + 20 <= buffer.length, "MDX collision cylinder is truncated.");
+                shape.vertices = [MdxModelObject.readVector3(buffer, dataOffset)];
+                shape.height = buffer.readFloatLE(dataOffset + 12);
+                shape.radius = buffer.readFloatLE(dataOffset + 16);
+                offset = dataOffset + 20;
+            } else if (type === 2) {
+                assert.ok(dataOffset + 16 <= buffer.length, "MDX collision sphere is truncated.");
+                shape.vertices = [MdxModelObject.readVector3(buffer, dataOffset)];
+                shape.radius = buffer.readFloatLE(dataOffset + 12);
+                offset = dataOffset + 16;
+            } else if (type === 3) {
+                assert.ok(dataOffset + 8 <= buffer.length, "MDX collision plane is truncated.");
+                shape.length = buffer.readFloatLE(dataOffset);
+                shape.width = buffer.readFloatLE(dataOffset + 4);
+                offset = dataOffset + 8;
+            } else {
+                throw new Error(`Unsupported MDX collision shape type: ${type}.`);
+            }
+            shapes.push(shape);
+        }
+        return shapes;
+    }
+
+    protected static readRibbonEmitters(buffer: Buffer): MdxRibbonEmitterInfo[] {
+        const emitters: MdxRibbonEmitterInfo[] = [];
+        let offset = 0;
+        while (offset < buffer.length) {
+            assert.ok(offset + 4 <= buffer.length, "MDX ribbon emitter header is truncated.");
+            const inclusiveSize = buffer.readUInt32LE(offset);
+            const endOffset = offset + inclusiveSize;
+            assert.ok(inclusiveSize >= 152 && endOffset <= buffer.length, "MDX ribbon emitter size points outside the RIBB chunk.");
+            const result = MdxModelObject.readNode(buffer, offset + 4);
+            const fixedOffset = result.nextOffset;
+            assert.ok(fixedOffset + 52 <= endOffset, "MDX ribbon emitter fields are truncated.");
+            const animationPayload = Buffer.from(buffer.slice(fixedOffset + 52, endOffset));
+            emitters.push({
+                inclusiveSize,
+                node: result.node,
+                heightAbove: buffer.readFloatLE(fixedOffset),
+                heightBelow: buffer.readFloatLE(fixedOffset + 4),
+                alpha: buffer.readFloatLE(fixedOffset + 8),
+                color: MdxModelObject.readVector3(buffer, fixedOffset + 12),
+                lifespan: buffer.readFloatLE(fixedOffset + 24),
+                textureSlot: buffer.readUInt32LE(fixedOffset + 28),
+                emissionRate: buffer.readUInt32LE(fixedOffset + 32),
+                rows: buffer.readUInt32LE(fixedOffset + 36),
+                columns: buffer.readUInt32LE(fixedOffset + 40),
+                materialId: buffer.readInt32LE(fixedOffset + 44),
+                gravity: buffer.readFloatLE(fixedOffset + 48),
+                animationPayload,
+                animationTracks: MdxModelObject.readAnimationTracksSafely(animationPayload)
+            });
+            offset = endOffset;
+        }
+        return emitters;
+    }
+
+    protected static readParticleEmitters2(buffer: Buffer): MdxParticleEmitter2Info[] {
+        const emitters: MdxParticleEmitter2Info[] = [];
+        let offset = 0;
+        while (offset < buffer.length) {
+            assert.ok(offset + 4 <= buffer.length, "MDX particle emitter 2 header is truncated.");
+            const inclusiveSize = buffer.readUInt32LE(offset);
+            const endOffset = offset + inclusiveSize;
+            assert.ok(inclusiveSize >= 271 && endOffset <= buffer.length, "MDX particle emitter 2 size points outside the PRE2 chunk.");
+            const result = MdxModelObject.readNode(buffer, offset + 4);
+            const fixedOffset = result.nextOffset;
+            assert.ok(fixedOffset + 171 <= endOffset, "MDX particle emitter 2 fields are truncated.");
+            const animationPayload = Buffer.from(buffer.slice(fixedOffset + 171, endOffset));
+            emitters.push({
+                inclusiveSize,
+                node: result.node,
+                speed: buffer.readFloatLE(fixedOffset),
+                variation: buffer.readFloatLE(fixedOffset + 4),
+                latitude: buffer.readFloatLE(fixedOffset + 8),
+                gravity: buffer.readFloatLE(fixedOffset + 12),
+                lifespan: buffer.readFloatLE(fixedOffset + 16),
+                emissionRate: buffer.readFloatLE(fixedOffset + 20),
+                length: buffer.readFloatLE(fixedOffset + 24),
+                width: buffer.readFloatLE(fixedOffset + 28),
+                filterMode: buffer.readUInt32LE(fixedOffset + 32),
+                rows: buffer.readUInt32LE(fixedOffset + 36),
+                columns: buffer.readUInt32LE(fixedOffset + 40),
+                headOrTail: buffer.readUInt32LE(fixedOffset + 44),
+                tailLength: buffer.readFloatLE(fixedOffset + 48),
+                time: buffer.readFloatLE(fixedOffset + 52),
+                segmentColors: [
+                    MdxModelObject.readVector3(buffer, fixedOffset + 56),
+                    MdxModelObject.readVector3(buffer, fixedOffset + 68),
+                    MdxModelObject.readVector3(buffer, fixedOffset + 80)
+                ],
+                segmentAlpha: [
+                    buffer.readUInt8(fixedOffset + 92),
+                    buffer.readUInt8(fixedOffset + 93),
+                    buffer.readUInt8(fixedOffset + 94)
+                ],
+                segmentScaling: [
+                    buffer.readFloatLE(fixedOffset + 95),
+                    buffer.readFloatLE(fixedOffset + 99),
+                    buffer.readFloatLE(fixedOffset + 103)
+                ],
+                headInterval: MdxModelObject.readUInt32Tuple3(buffer, fixedOffset + 107),
+                headDecayInterval: MdxModelObject.readUInt32Tuple3(buffer, fixedOffset + 119),
+                tailInterval: MdxModelObject.readUInt32Tuple3(buffer, fixedOffset + 131),
+                tailDecayInterval: MdxModelObject.readUInt32Tuple3(buffer, fixedOffset + 143),
+                textureId: buffer.readInt32LE(fixedOffset + 155),
+                squirt: buffer.readUInt32LE(fixedOffset + 159),
+                priorityPlane: buffer.readInt32LE(fixedOffset + 163),
+                replaceableId: buffer.readInt32LE(fixedOffset + 167),
+                animationPayload,
+                animationTracks: MdxModelObject.readAnimationTracksSafely(animationPayload)
+            });
+            offset = endOffset;
+        }
+        return emitters;
     }
 
     protected static readNode(buffer: Buffer, offset: number): { node: MdxNodeInfo; nextOffset: number } {
@@ -436,7 +772,8 @@ export class MdxModelObject implements ReadDumpObject {
                 objectId: buffer.readInt32LE(offset + 84),
                 parentId: buffer.readInt32LE(offset + 88),
                 flags: buffer.readUInt32LE(offset + 92),
-                animationPayload: Buffer.from(buffer.slice(offset + 96, nextOffset))
+                animationPayload: Buffer.from(buffer.slice(offset + 96, nextOffset)),
+                animationTracks: MdxModelObject.readAnimationTracksSafely(buffer.slice(offset + 96, nextOffset))
             },
             nextOffset
         };
@@ -458,6 +795,14 @@ export class MdxModelObject implements ReadDumpObject {
         };
     }
 
+    protected static readVector3(buffer: Buffer, offset: number): MdxVector3 {
+        return [
+            buffer.readFloatLE(offset),
+            buffer.readFloatLE(offset + 4),
+            buffer.readFloatLE(offset + 8)
+        ];
+    }
+
     protected static readTaggedVector3Array(buffer: Buffer, state: { offset: number; end: number }, tag: string): MdxVector3[] {
         const count = MdxModelObject.readTaggedCount(buffer, state, tag);
         assert.ok(state.offset + count * 12 <= state.end, `MDX ${tag} data is truncated.`);
@@ -470,13 +815,17 @@ export class MdxModelObject implements ReadDumpObject {
         const values: MdxVector3[] = [];
         for (let i = 0; i < count; ++i) {
             const valueOffset = offset + i * 12;
-            values.push([
-                buffer.readFloatLE(valueOffset),
-                buffer.readFloatLE(valueOffset + 4),
-                buffer.readFloatLE(valueOffset + 8)
-            ]);
+            values.push(MdxModelObject.readVector3(buffer, valueOffset));
         }
         return values;
+    }
+
+    protected static readUInt32Tuple3(buffer: Buffer, offset: number): [number, number, number] {
+        return [
+            buffer.readUInt32LE(offset),
+            buffer.readUInt32LE(offset + 4),
+            buffer.readUInt32LE(offset + 8)
+        ];
     }
 
     protected static readTaggedUInt32Array(buffer: Buffer, state: { offset: number; end: number }, tag: string): number[] {
@@ -546,6 +895,206 @@ export class MdxModelObject implements ReadDumpObject {
         return count;
     }
 
+    protected static readAnimationTracksSafely(buffer: Buffer): MdxAnimationTrackInfo[] {
+        if (buffer.length === 0) {
+            return [];
+        }
+        return MdxModelObject.tryRead(() => MdxModelObject.readAnimationTracks(buffer), []);
+    }
+
+    protected static readAnimationTracks(buffer: Buffer): MdxAnimationTrackInfo[] {
+        const tracks: MdxAnimationTrackInfo[] = [];
+        let offset = 0;
+        while (offset < buffer.length) {
+            const track = MdxModelObject.readAnimationTrack(buffer, offset);
+            tracks.push(track);
+            offset += track.size;
+        }
+        return tracks;
+    }
+
+    protected static readAnimationTrack(buffer: Buffer, offset: number): MdxAnimationTrackInfo {
+        assert.ok(offset + 12 <= buffer.length, "MDX animation track header is truncated.");
+        const tag = buffer.toString("ascii", offset, offset + 4);
+        const valueType = MdxModelObject.getTrackValueType(tag);
+        if (tag === "KEVT" || tag === "KRTX") {
+            return MdxModelObject.readSimpleAnimationTrack(buffer, offset, tag, valueType);
+        }
+
+        assert.ok(offset + 16 <= buffer.length, "MDX animation track header is truncated.");
+        const keyCount = buffer.readUInt32LE(offset + 4);
+        const interpolationType = buffer.readUInt32LE(offset + 8);
+        const globalSequenceId = buffer.readUInt32LE(offset + 12);
+        assert.ok(interpolationType <= 3, "MDX animation interpolation type is invalid.");
+        const valueSize = MdxModelObject.getTrackValueSize(valueType);
+        const valueCount = interpolationType > 1 ? 3 : 1;
+        const keySize = 4 + valueSize * valueCount;
+        const size = 16 + keyCount * keySize;
+        assert.ok(offset + size <= buffer.length, `MDX ${tag} track data is truncated.`);
+
+        const keyframes: MdxAnimationKeyframeInfo[] = [];
+        let cursor = offset + 16;
+        for (let i = 0; i < keyCount; ++i) {
+            const time = buffer.readInt32LE(cursor);
+            cursor += 4;
+            const value = MdxModelObject.readTrackValue(buffer, cursor, valueType);
+            cursor += valueSize;
+            const keyframe: MdxAnimationKeyframeInfo = { time, value };
+            if (interpolationType > 1) {
+                keyframe.inTangent = MdxModelObject.readTrackValue(buffer, cursor, valueType);
+                cursor += valueSize;
+                keyframe.outTangent = MdxModelObject.readTrackValue(buffer, cursor, valueType);
+                cursor += valueSize;
+            }
+            keyframes.push(keyframe);
+        }
+
+        return {
+            tag,
+            offset,
+            size,
+            valueType,
+            keyCount,
+            interpolationType,
+            globalSequenceId,
+            keyframes,
+            data: Buffer.from(buffer.slice(offset, offset + size))
+        };
+    }
+
+    protected static readSimpleAnimationTrack(buffer: Buffer, offset: number, tag: string, valueType: MdxTrackValueType): MdxAnimationTrackInfo {
+        const keyCount = buffer.readUInt32LE(offset + 4);
+        const globalSequenceId = buffer.readUInt32LE(offset + 8);
+        const keySize = tag === "KEVT" ? 4 : 8;
+        const size = 12 + keyCount * keySize;
+        assert.ok(offset + size <= buffer.length, `MDX ${tag} track data is truncated.`);
+        const keyframes: MdxAnimationKeyframeInfo[] = [];
+        let cursor = offset + 12;
+        for (let i = 0; i < keyCount; ++i) {
+            const time = buffer.readInt32LE(cursor);
+            cursor += 4;
+            const keyframe: MdxAnimationKeyframeInfo = { time };
+            if (tag !== "KEVT") {
+                keyframe.value = buffer.readUInt32LE(cursor);
+                cursor += 4;
+            }
+            keyframes.push(keyframe);
+        }
+
+        return {
+            tag,
+            offset,
+            size,
+            valueType,
+            keyCount,
+            globalSequenceId,
+            keyframes,
+            data: Buffer.from(buffer.slice(offset, offset + size))
+        };
+    }
+
+    protected static getTrackValueType(tag: string): MdxTrackValueType {
+        switch (tag) {
+            case "KGRT":
+            case "KTAR":
+                return "vector4";
+            case "KGTR":
+            case "KGSC":
+            case "KGAC":
+            case "KLAC":
+            case "KLBC":
+            case "KCTR":
+            case "KTTR":
+            case "KTAT":
+            case "KTAS":
+            case "KRCO":
+            case "KFC3":
+                return "vector3";
+            case "KMTF":
+            case "KRTX":
+                return "uint32";
+            case "KEVT":
+                return "event";
+            case "KMTA":
+            case "KMTE":
+            case "KFCA":
+            case "KFTC":
+            case "KGAO":
+            case "KLAS":
+            case "KLAE":
+            case "KLAI":
+            case "KLBI":
+            case "KVIS":
+            case "KATV":
+            case "KPEE":
+            case "KPEG":
+            case "KPLN":
+            case "KPLT":
+            case "KPEL":
+            case "KPES":
+            case "KPEV":
+            case "KCRL":
+            case "KP2S":
+            case "KP2R":
+            case "KP2L":
+            case "KP2G":
+            case "KP2E":
+            case "KP2N":
+            case "KP2W":
+            case "KP2V":
+            case "KP2Z":
+            case "KRHA":
+            case "KRHB":
+            case "KRAL":
+            case "KPPA":
+            case "KPPE":
+            case "KPPL":
+            case "KPPS":
+            case "KPPV":
+                return "float";
+            case "KPPC":
+                return "vector3";
+            default:
+                throw new Error(`Unsupported MDX animation track tag: ${tag}.`);
+        }
+    }
+
+    protected static getTrackValueSize(valueType: MdxTrackValueType): number {
+        switch (valueType) {
+            case "float":
+            case "uint32":
+                return 4;
+            case "vector3":
+                return 12;
+            case "vector4":
+                return 16;
+            case "event":
+                return 0;
+            default:
+                throw new Error(`Unsupported MDX animation value type: ${valueType}.`);
+        }
+    }
+
+    protected static readTrackValue(buffer: Buffer, offset: number, valueType: MdxTrackValueType): MdxTrackValue {
+        switch (valueType) {
+            case "float":
+                return buffer.readFloatLE(offset);
+            case "uint32":
+                return buffer.readUInt32LE(offset);
+            case "vector3":
+                return MdxModelObject.readVector3(buffer, offset);
+            case "vector4":
+                return [
+                    buffer.readFloatLE(offset),
+                    buffer.readFloatLE(offset + 4),
+                    buffer.readFloatLE(offset + 8),
+                    buffer.readFloatLE(offset + 12)
+                ];
+            default:
+                throw new Error(`Unsupported MDX animation value type: ${valueType}.`);
+        }
+    }
+
     protected static readFixedString(buffer: Buffer, offset: number, length: number): string {
         const endOffset = offset + length;
         const nullOffset = buffer.indexOf(0, offset);
@@ -608,6 +1157,10 @@ export class MdxModelObject implements ReadDumpObject {
         return this._globalSequences;
     }
 
+    public get textureAnimations(): MdxTextureAnimationInfo[] {
+        return this._textureAnimations;
+    }
+
     public get pivots(): MdxVector3[] {
         return this._pivots;
     }
@@ -622,5 +1175,25 @@ export class MdxModelObject implements ReadDumpObject {
 
     public get attachments(): MdxAttachmentInfo[] {
         return this._attachments;
+    }
+
+    public get cameras(): MdxCameraInfo[] {
+        return this._cameras;
+    }
+
+    public get eventObjects(): MdxEventObjectInfo[] {
+        return this._eventObjects;
+    }
+
+    public get collisionShapes(): MdxCollisionShapeInfo[] {
+        return this._collisionShapes;
+    }
+
+    public get ribbonEmitters(): MdxRibbonEmitterInfo[] {
+        return this._ribbonEmitters;
+    }
+
+    public get particleEmitters2(): MdxParticleEmitter2Info[] {
+        return this._particleEmitters2;
     }
 }
