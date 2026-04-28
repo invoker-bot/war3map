@@ -96,6 +96,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="aiscriptobject.html#_payload" class="tsd-kind-icon">_payload</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="aiscriptobject.html#_summary" class="tsd-kind-icon">_summary</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -104,6 +105,7 @@
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="aiscriptobject.html#header" class="tsd-kind-icon">header</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="aiscriptobject.html#name" class="tsd-kind-icon">name</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="aiscriptobject.html#payload" class="tsd-kind-icon">payload</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="aiscriptobject.html#summary" class="tsd-kind-icon">summary</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="aiscriptobject.html#version" class="tsd-kind-icon">version</a></li>
 							</ul>
 						</section>
@@ -112,6 +114,13 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aiscriptobject.html#dump" class="tsd-kind-icon">dump</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="aiscriptobject.html#read" class="tsd-kind-icon">read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="aiscriptobject.html#createemptysummary" class="tsd-kind-icon">create<wbr>Empty<wbr>Summary</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="aiscriptobject.html#extractconditions" class="tsd-kind-icon">extract<wbr>Conditions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="aiscriptobject.html#extractpayloadstrings" class="tsd-kind-icon">extract<wbr>Payload<wbr>Strings</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="aiscriptobject.html#findcondition" class="tsd-kind-icon">find<wbr>Condition</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="aiscriptobject.html#lookslikeaifunctionname" class="tsd-kind-icon">looks<wbr>Like<wbr>AiFunction<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="aiscriptobject.html#readprintablestring" class="tsd-kind-icon">read<wbr>Printable<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="aiscriptobject.html#summarizepayload" class="tsd-kind-icon">summarize<wbr>Payload</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-private-protected">
@@ -131,7 +140,17 @@
 					<div class="tsd-signature tsd-kind-icon">_payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol"> = Buffer.alloc(0)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L35">AiScriptObject.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L56">AiScriptObject.ts:56</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_summary" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _summary</h3>
+					<div class="tsd-signature tsd-kind-icon">_summary<span class="tsd-signature-symbol">:</span> <a href="../interfaces/aiscriptpayloadsummary.html" class="tsd-signature-type">AiScriptPayloadSummary</a><span class="tsd-signature-symbol"> = AiScriptObject.createEmptySummary(0)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L57">AiScriptObject.ts:57</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -149,7 +168,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L72">AiScriptObject.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L95">AiScriptObject.ts:95</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/aiscriptheader.html" class="tsd-signature-type">AiScriptHeader</a></h4>
@@ -157,7 +176,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L78">AiScriptObject.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L101">AiScriptObject.ts:101</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -181,7 +200,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L92">AiScriptObject.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L115">AiScriptObject.ts:115</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -189,7 +208,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L95">AiScriptObject.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L118">AiScriptObject.ts:118</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -213,7 +232,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L99">AiScriptObject.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L122">AiScriptObject.ts:122</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
@@ -221,7 +240,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L102">AiScriptObject.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L125">AiScriptObject.ts:125</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -231,6 +250,23 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="summary" class="tsd-anchor"></a>
+					<h3>summary</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> summary<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/aiscriptpayloadsummary.html" class="tsd-signature-type">AiScriptPayloadSummary</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L130">AiScriptObject.ts:130</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/aiscriptpayloadsummary.html" class="tsd-signature-type">AiScriptPayloadSummary</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -245,7 +281,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L85">AiScriptObject.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L108">AiScriptObject.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -253,7 +289,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L88">AiScriptObject.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L111">AiScriptObject.ts:111</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -280,7 +316,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L60">AiScriptObject.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L83">AiScriptObject.ts:83</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
@@ -298,7 +334,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L37">AiScriptObject.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L59">AiScriptObject.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -311,6 +347,179 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="createemptysummary" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> create<wbr>Empty<wbr>Summary</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Empty<wbr>Summary<span class="tsd-signature-symbol">(</span>rawSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/aiscriptpayloadsummary.html" class="tsd-signature-type">AiScriptPayloadSummary</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L159">AiScriptObject.ts:159</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rawSize: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/aiscriptpayloadsummary.html" class="tsd-signature-type">AiScriptPayloadSummary</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="extractconditions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> extract<wbr>Conditions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">extract<wbr>Conditions<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, conditionCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/aiscriptconditionsummary.html" class="tsd-signature-type">AiScriptConditionSummary</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L183">AiScriptObject.ts:183</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payload: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>conditionCount: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/aiscriptconditionsummary.html" class="tsd-signature-type">AiScriptConditionSummary</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="extractpayloadstrings" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> extract<wbr>Payload<wbr>Strings</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">extract<wbr>Payload<wbr>Strings<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/aiscriptpayloadstring.html" class="tsd-signature-type">AiScriptPayloadString</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L168">AiScriptObject.ts:168</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payload: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/aiscriptpayloadstring.html" class="tsd-signature-type">AiScriptPayloadString</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="findcondition" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> find<wbr>Condition</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Condition<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, startOffset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/aiscriptconditionsummary.html" class="tsd-signature-type">AiScriptConditionSummary</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L202">AiScriptObject.ts:202</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payload: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>id: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>startOffset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/aiscriptconditionsummary.html" class="tsd-signature-type">AiScriptConditionSummary</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="lookslikeaifunctionname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> looks<wbr>Like<wbr>AiFunction<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">looks<wbr>Like<wbr>AiFunction<wbr>Name<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L240">AiScriptObject.ts:240</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="readprintablestring" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Printable<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Printable<wbr>String<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/aiscriptpayloadstring.html" class="tsd-signature-type">AiScriptPayloadString</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L221">AiScriptObject.ts:221</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payload: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/aiscriptpayloadstring.html" class="tsd-signature-type">AiScriptPayloadString</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="summarizepayload" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> summarize<wbr>Payload</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">summarize<wbr>Payload<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/aiscriptpayloadsummary.html" class="tsd-signature-type">AiScriptPayloadSummary</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L139">AiScriptObject.ts:139</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>payload: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/aiscriptpayloadsummary.html" class="tsd-signature-type">AiScriptPayloadSummary</a></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 				<h2>Object literals</h2>
@@ -320,7 +529,7 @@
 					<div class="tsd-signature tsd-kind-icon">_header<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L28">AiScriptObject.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L49">AiScriptObject.ts:49</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -329,7 +538,7 @@
 						<div class="tsd-signature tsd-kind-icon">editor<wbr>Flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L31">AiScriptObject.ts:31</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L52">AiScriptObject.ts:52</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -339,7 +548,7 @@
 						<div class="tsd-signature tsd-kind-icon">game<wbr>Flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L32">AiScriptObject.ts:32</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L53">AiScriptObject.ts:53</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -349,7 +558,7 @@
 						<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L30">AiScriptObject.ts:30</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L51">AiScriptObject.ts:51</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -359,7 +568,7 @@
 						<div class="tsd-signature tsd-kind-icon">unit<wbr>Ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L33">AiScriptObject.ts:33</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L54">AiScriptObject.ts:54</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -369,7 +578,7 @@
 						<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 2</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/AiScriptObject.ts#L29">AiScriptObject.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/a3f178c/src/AiScriptObject.ts#L50">AiScriptObject.ts:50</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -394,6 +603,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 								<a href="aiscriptobject.html#_payload" class="tsd-kind-icon">_payload</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="aiscriptobject.html#_summary" class="tsd-kind-icon">_summary</a>
+							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="aiscriptobject.html#header" class="tsd-kind-icon">header</a>
 							</li>
@@ -403,6 +615,9 @@
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="aiscriptobject.html#payload" class="tsd-kind-icon">payload</a>
 							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="aiscriptobject.html#summary" class="tsd-kind-icon">summary</a>
+							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="aiscriptobject.html#version" class="tsd-kind-icon">version</a>
 							</li>
@@ -411,6 +626,27 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="aiscriptobject.html#read" class="tsd-kind-icon">read</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="aiscriptobject.html#createemptysummary" class="tsd-kind-icon">create<wbr>Empty<wbr>Summary</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="aiscriptobject.html#extractconditions" class="tsd-kind-icon">extract<wbr>Conditions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="aiscriptobject.html#extractpayloadstrings" class="tsd-kind-icon">extract<wbr>Payload<wbr>Strings</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="aiscriptobject.html#findcondition" class="tsd-kind-icon">find<wbr>Condition</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="aiscriptobject.html#lookslikeaifunctionname" class="tsd-kind-icon">looks<wbr>Like<wbr>AiFunction<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="aiscriptobject.html#readprintablestring" class="tsd-kind-icon">read<wbr>Printable<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="aiscriptobject.html#summarizepayload" class="tsd-kind-icon">summarize<wbr>Payload</a>
 							</li>
 							<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-protected">
 								<a href="aiscriptobject.html#_header" class="tsd-kind-icon">_header</a>

@@ -20,6 +20,27 @@ export interface AiScriptHeader {
     unitIds: string[];
 }
 
+export interface AiScriptPayloadString {
+    offset: number;
+    text: string;
+}
+
+export interface AiScriptConditionSummary {
+    id: number;
+    offset: number;
+    name: string;
+    expressionOffset: number;
+    expressionSize?: number;
+}
+
+export interface AiScriptPayloadSummary {
+    rawSize: number;
+    conditionCount?: number;
+    conditions: AiScriptConditionSummary[];
+    strings: AiScriptPayloadString[];
+    mapPaths: string[];
+}
+
 /**
  * AiScriptObject parses the stable .wai header and preserves the AI graph
  * payload byte-for-byte.
@@ -33,6 +54,7 @@ export class AiScriptObject implements ReadDumpObject {
         unitIds: []
     };
     protected _payload: Buffer = Buffer.alloc(0);
+    protected _summary: AiScriptPayloadSummary = AiScriptObject.createEmptySummary(0);
 
     public read(buffer: Buffer): void {
         const reader = new BinaryReadBuffer(buffer);
@@ -55,6 +77,7 @@ export class AiScriptObject implements ReadDumpObject {
 
         this._header = { version, name, editorFlags, gameFlags, unitIds };
         this._payload = reader.readBytes(reader.remainingBytes());
+        this._summary = AiScriptObject.summarizePayload(this._payload);
     }
 
     public dump(): Buffer {
@@ -101,5 +124,120 @@ export class AiScriptObject implements ReadDumpObject {
     }
     public set payload(payload: Buffer) {
         this._payload = Buffer.from(payload);
+        this._summary = AiScriptObject.summarizePayload(this._payload);
+    }
+
+    public get summary(): AiScriptPayloadSummary {
+        return {
+            ...this._summary,
+            conditions: this._summary.conditions.map((condition) => ({ ...condition })),
+            strings: this._summary.strings.map((entry) => ({ ...entry })),
+            mapPaths: [...this._summary.mapPaths]
+        };
+    }
+
+    protected static summarizePayload(payload: Buffer): AiScriptPayloadSummary {
+        const summary = AiScriptObject.createEmptySummary(payload.length);
+        summary.strings = AiScriptObject.extractPayloadStrings(payload);
+        summary.mapPaths = summary.strings
+            .map((entry) => entry.text)
+            .filter((text, index, values) => /\.(w3m|w3x)$/i.test(text) && values.indexOf(text) === index);
+
+        if (payload.length < 12) {
+            return summary;
+        }
+
+        const conditionCount = payload.readInt32LE(0);
+        if (conditionCount < 0 || conditionCount > 256) {
+            return summary;
+        }
+        summary.conditionCount = conditionCount;
+        summary.conditions = AiScriptObject.extractConditions(payload, conditionCount);
+        return summary;
+    }
+
+    protected static createEmptySummary(rawSize: number): AiScriptPayloadSummary {
+        return {
+            rawSize,
+            conditions: [],
+            strings: [],
+            mapPaths: []
+        };
+    }
+
+    protected static extractPayloadStrings(payload: Buffer): AiScriptPayloadString[] {
+        const strings: AiScriptPayloadString[] = [];
+        let offset = 0;
+        while (offset < payload.length) {
+            const value = AiScriptObject.readPrintableString(payload, offset);
+            if (value) {
+                strings.push(value);
+                offset = value.offset + value.text.length + 1;
+                continue;
+            }
+            ++offset;
+        }
+        return strings;
+    }
+
+    protected static extractConditions(payload: Buffer, conditionCount: number): AiScriptConditionSummary[] {
+        const conditions: AiScriptConditionSummary[] = [];
+        let searchOffset = 8;
+
+        for (let id = 0; id < conditionCount; ++id) {
+            const condition = AiScriptObject.findCondition(payload, id, searchOffset);
+            if (!condition) {
+                break;
+            }
+            conditions.push(condition);
+            searchOffset = condition.expressionOffset;
+        }
+
+        for (let i = 0; i + 1 < conditions.length; ++i) {
+            conditions[i].expressionSize = conditions[i + 1].offset - conditions[i].expressionOffset;
+        }
+        return conditions;
+    }
+
+    protected static findCondition(payload: Buffer, id: number, startOffset: number): AiScriptConditionSummary | undefined {
+        for (let offset = startOffset; offset + 5 < payload.length; ++offset) {
+            if (payload.readInt32LE(offset) !== id) {
+                continue;
+            }
+            const name = AiScriptObject.readPrintableString(payload, offset + 4);
+            if (!name || AiScriptObject.looksLikeAiFunctionName(name.text)) {
+                continue;
+            }
+            return {
+                id,
+                offset,
+                name: name.text,
+                expressionOffset: name.offset + name.text.length + 1
+            };
+        }
+        return undefined;
+    }
+
+    protected static readPrintableString(payload: Buffer, offset: number): AiScriptPayloadString | undefined {
+        let endOffset = offset;
+        while (endOffset < payload.length && payload[endOffset] !== 0) {
+            const byte = payload[endOffset];
+            if (byte < 32 || byte > 126) {
+                return undefined;
+            }
+            ++endOffset;
+        }
+        const length = endOffset - offset;
+        if (length < 2 || endOffset >= payload.length) {
+            return undefined;
+        }
+        return {
+            offset,
+            text: payload.toString("utf8", offset, endOffset)
+        };
+    }
+
+    protected static looksLikeAiFunctionName(name: string): boolean {
+        return /^(AICommand|Check|Food|Get|Operator)/.test(name) || /^\d+$/.test(name);
     }
 }

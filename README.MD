@@ -130,6 +130,7 @@ bytes for byte-for-byte archive rebuilds.
 * ![check][ok] Image conversion helpers for PNG, TGA, DDS, BLP1 JPEG/paletted images, and BLP2 BGRA/DXT images
 * ![check][ok] MDX model chunks, materials, geosets, pivots, bones, helpers, and attachments (`*.mdx`)
 * ![check][ok] WAV/MP3 audio headers, including empty WAV override placeholders (`*.wav`, `*.mp3`)
+* ![check][ok] WAI AI editor headers plus condition/string summaries (`*.wai`)
 * ![check][ok] Text resource pass-through for SLK/FDF/TOC/INI/TXT/AI files
 * ![check][ok] Opaque fallback payloads through `RawFileObject`
 

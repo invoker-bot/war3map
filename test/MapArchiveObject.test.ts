@@ -94,6 +94,10 @@ function createFixedString(value: string, length: number): Buffer {
     return buffer;
 }
 
+function createCString(value: string): Buffer {
+    return Buffer.from(`${value}\0`, "utf8");
+}
+
 function createMdxExtent(): Buffer {
     return Buffer.concat([
         createFloat32(10),
@@ -415,6 +419,39 @@ describe("AiScriptObject", () => {
             unitIds: ["n008", "n008", "o008", "o008"]
         });
         assert.deepStrictEqual(object.dump(), source);
+    });
+
+    it("should summarize condition names and strings in the WAI payload", () => {
+        const payload = Buffer.concat([
+            createInt32(2),
+            createInt32(5),
+            createInt32(0),
+            createCString("First Attack"),
+            createInt32(1),
+            createCString("OperatorCompareInteger"),
+            createInt32(0),
+            createInt32(1),
+            createCString("Need Lumber"),
+            createInt32(1),
+            createCString("GetWood"),
+            createCString("Maps\\(2)PlunderIsle.w3m")
+        ]);
+        const object = new AiScriptObject();
+
+        object.payload = payload;
+
+        assert.strictEqual(object.summary.rawSize, payload.length);
+        assert.strictEqual(object.summary.conditionCount, 2);
+        assert.deepStrictEqual(object.summary.conditions.map((condition) => ({
+            id: condition.id,
+            name: condition.name
+        })), [
+            { id: 0, name: "First Attack" },
+            { id: 1, name: "Need Lumber" }
+        ]);
+        assert.ok(object.summary.strings.some((entry) => entry.text === "OperatorCompareInteger"));
+        assert.deepStrictEqual(object.summary.mapPaths, ["Maps\\(2)PlunderIsle.w3m"]);
+        assert.deepStrictEqual(object.dump().slice(object.dump().length - payload.length), payload);
     });
 });
 
