@@ -1,7 +1,7 @@
 /**
  *  @packageDocumentation
  */
-import { createRequire } from "module";
+import { createRequire, createRequireFromPath } from "module";
 import * as path from "path";
 import { ReadDumpObject } from "./BinaryBuffer";
 import { AiScriptObject } from "./AiScriptObject";
@@ -29,7 +29,7 @@ import { TgaImageObject } from "./TgaImageObject";
 import { TriggerNamesObject } from "./TriggerNamesObject";
 import { UnitsObject } from "./UnitsObject";
 
-const dynamicRequire = createRequire(__filename);
+const dynamicRequire = createRequire ? createRequire(__filename) : createRequireFromPath(__filename);
 
 export interface StormArchiveEntry {
     name: string;

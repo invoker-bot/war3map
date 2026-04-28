@@ -3,6 +3,17 @@
 *.png -text
 *war3map.??? -text
 
+# Keep extracted test map fixtures out of normal Git blobs.
+/test/map*/*.blp filter=lfs diff=lfs merge=lfs -text
+/test/map*/*.doo filter=lfs diff=lfs merge=lfs -text
+/test/map*/*.imp filter=lfs diff=lfs merge=lfs -text
+/test/map*/*.mmp filter=lfs diff=lfs merge=lfs -text
+/test/map*/*.shd filter=lfs diff=lfs merge=lfs -text
+/test/map*/*.w3? filter=lfs diff=lfs merge=lfs -text
+/test/map*/*.wct filter=lfs diff=lfs merge=lfs -text
+/test/map*/*.wpm filter=lfs diff=lfs merge=lfs -text
+/test/map*/*.wtg filter=lfs diff=lfs merge=lfs -text
+
 *.json linguist-language=typescript
 *.css linguist-language=typescript
 *.html linguist-language=typescript
