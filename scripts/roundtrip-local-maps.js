@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
-const { MapArchiveObject, loadStormArchiveModule } = require("../dist/src/index");
+const { MapArchiveObject, RawFileObject, loadStormArchiveModule } = require("../dist/src/index");
 
 const mapsDir = process.env.WAR3_MAPS_DIR || "D:/Games/Warcraft III/Maps";
 const maxEntries = Number(process.env.WAR3_MAP_MAX_ENTRIES || 20000);
@@ -39,6 +39,7 @@ const result = {
   mismatches: [],
   dumpFailures: [],
   parseErrors: [],
+  rawFiles: [],
   readFailures: []
 };
 
@@ -72,6 +73,13 @@ for (const mapPath of maps) {
   }
 
   for (const file of archive.files) {
+    if (file.object instanceof RawFileObject) {
+      result.rawFiles.push({
+        map: path.basename(mapPath),
+        file: file.name
+      });
+    }
+
     if (file.parseError) {
       result.parseErrors.push({
         map: path.basename(mapPath),
