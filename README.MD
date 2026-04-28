@@ -99,6 +99,10 @@ texture flag layouts.
 | Custom Text Triggers | ![check][ok] | ![check][ok] | war3map.wct |
 | Trigger Definitions | ![check][ok] | ![check][ok] | war3map.wtg |
 
+`TriggerNamesObject` preserves full `war3map.wtg` bytes and exposes Reforged
+root metadata, type counts, variable definitions, and safe tree-object
+summaries. GUI function parameter parsing still requires `triggerdata.txt`.
+
 
 ### Map files
 

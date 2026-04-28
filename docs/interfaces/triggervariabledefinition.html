@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MapArchiveWriteOptions | war3map</title>
+	<title>TriggerVariableDefinition | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="maparchivewriteoptions.html">MapArchiveWriteOptions</a>
+					<a href="triggervariabledefinition.html">TriggerVariableDefinition</a>
 				</li>
 			</ul>
-			<h1>Interface MapArchiveWriteOptions</h1>
+			<h1>Interface TriggerVariableDefinition</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">MapArchiveWriteOptions</span>
+						<span class="target">TriggerVariableDefinition</span>
 					</li>
 				</ul>
 			</section>
@@ -81,13 +81,15 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="maparchivewriteoptions.html#compact" class="tsd-kind-icon">compact</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="maparchivewriteoptions.html#compression" class="tsd-kind-icon">compression</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="maparchivewriteoptions.html#maxbytes" class="tsd-kind-icon">max<wbr>Bytes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="maparchivewriteoptions.html#maxfilecount" class="tsd-kind-icon">max<wbr>File<wbr>Count</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="maparchivewriteoptions.html#overwrite" class="tsd-kind-icon">overwrite</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="maparchivewriteoptions.html#rootdir" class="tsd-kind-icon">root<wbr>Dir</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="maparchivewriteoptions.html#version" class="tsd-kind-icon">version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggervariabledefinition.html#arraysize" class="tsd-kind-icon">array<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggervariabledefinition.html#category" class="tsd-kind-icon">category</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggervariabledefinition.html#initialvalue" class="tsd-kind-icon">initial<wbr>Value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggervariabledefinition.html#isarray" class="tsd-kind-icon">is<wbr>Array</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggervariabledefinition.html#isinitialized" class="tsd-kind-icon">is<wbr>Initialized</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggervariabledefinition.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggervariabledefinition.html#objectid" class="tsd-kind-icon">object<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggervariabledefinition.html#parentid" class="tsd-kind-icon">parent<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggervariabledefinition.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,72 +98,92 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="compact" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> compact</h3>
-					<div class="tsd-signature tsd-kind-icon">compact<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<a name="arraysize" class="tsd-anchor"></a>
+					<h3>array<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">array<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/MapArchiveObject.ts#L66">MapArchiveObject.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/TriggerNamesObject.ts#L22">TriggerNamesObject.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="compression" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> compression</h3>
-					<div class="tsd-signature tsd-kind-icon">compression<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<a name="category" class="tsd-anchor"></a>
+					<h3>category</h3>
+					<div class="tsd-signature tsd-kind-icon">category<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/MapArchiveObject.ts#L64">MapArchiveObject.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/TriggerNamesObject.ts#L20">TriggerNamesObject.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="maxbytes" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> max<wbr>Bytes</h3>
-					<div class="tsd-signature tsd-kind-icon">max<wbr>Bytes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<a name="initialvalue" class="tsd-anchor"></a>
+					<h3>initial<wbr>Value</h3>
+					<div class="tsd-signature tsd-kind-icon">initial<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/MapArchiveObject.ts#L63">MapArchiveObject.ts:63</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/TriggerNamesObject.ts#L24">TriggerNamesObject.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="maxfilecount" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> max<wbr>File<wbr>Count</h3>
-					<div class="tsd-signature tsd-kind-icon">max<wbr>File<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<a name="isarray" class="tsd-anchor"></a>
+					<h3>is<wbr>Array</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/MapArchiveObject.ts#L62">MapArchiveObject.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/TriggerNamesObject.ts#L21">TriggerNamesObject.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="overwrite" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> overwrite</h3>
-					<div class="tsd-signature tsd-kind-icon">overwrite<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<a name="isinitialized" class="tsd-anchor"></a>
+					<h3>is<wbr>Initialized</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Initialized<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/MapArchiveObject.ts#L61">MapArchiveObject.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/TriggerNamesObject.ts#L23">TriggerNamesObject.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="rootdir" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> root<wbr>Dir</h3>
-					<div class="tsd-signature tsd-kind-icon">root<wbr>Dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/MapArchiveObject.ts#L60">MapArchiveObject.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/TriggerNamesObject.ts#L18">TriggerNamesObject.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="version" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> version</h3>
-					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">2</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">4</span></div>
+					<a name="objectid" class="tsd-anchor"></a>
+					<h3>object<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">object<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/MapArchiveObject.ts#L65">MapArchiveObject.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/TriggerNamesObject.ts#L25">TriggerNamesObject.ts:25</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="parentid" class="tsd-anchor"></a>
+					<h3>parent<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/TriggerNamesObject.ts#L26">TriggerNamesObject.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3eafe21/src/TriggerNamesObject.ts#L19">TriggerNamesObject.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -180,28 +202,34 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="maparchivewriteoptions.html" class="tsd-kind-icon">Map<wbr>Archive<wbr>Write<wbr>Options</a>
+						<a href="triggervariabledefinition.html" class="tsd-kind-icon">Trigger<wbr>Variable<wbr>Definition</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="maparchivewriteoptions.html#compact" class="tsd-kind-icon">compact</a>
+								<a href="triggervariabledefinition.html#arraysize" class="tsd-kind-icon">array<wbr>Size</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="maparchivewriteoptions.html#compression" class="tsd-kind-icon">compression</a>
+								<a href="triggervariabledefinition.html#category" class="tsd-kind-icon">category</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="maparchivewriteoptions.html#maxbytes" class="tsd-kind-icon">max<wbr>Bytes</a>
+								<a href="triggervariabledefinition.html#initialvalue" class="tsd-kind-icon">initial<wbr>Value</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="maparchivewriteoptions.html#maxfilecount" class="tsd-kind-icon">max<wbr>File<wbr>Count</a>
+								<a href="triggervariabledefinition.html#isarray" class="tsd-kind-icon">is<wbr>Array</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="maparchivewriteoptions.html#overwrite" class="tsd-kind-icon">overwrite</a>
+								<a href="triggervariabledefinition.html#isinitialized" class="tsd-kind-icon">is<wbr>Initialized</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="maparchivewriteoptions.html#rootdir" class="tsd-kind-icon">root<wbr>Dir</a>
+								<a href="triggervariabledefinition.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="maparchivewriteoptions.html#version" class="tsd-kind-icon">version</a>
+								<a href="triggervariabledefinition.html#objectid" class="tsd-kind-icon">object<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="triggervariabledefinition.html#parentid" class="tsd-kind-icon">parent<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="triggervariabledefinition.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
