@@ -74,6 +74,8 @@ Here's some places where you can use this library:
 
 `UnitsObject` supports both RoC `war3mapUnits.doo` v7/subversion 9 and TFT
 v8/subversion 11 layouts, including byte-preserving duplicate item drops.
+`EnvironmentObject` supports terrain `war3map.w3e` v11 and Reforged v12
+texture flag layouts.
 
 ### Object data files
 

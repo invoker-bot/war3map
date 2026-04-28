@@ -62,7 +62,8 @@ export class EnvironmentObject implements ReadDumpObject{
         const fileID = reader.readChars(4);
         assert.strictEqual(fileID, "W3E!", "File should be `w3e` format.");
         const fileVersion = reader.readInt();
-        assert.strictEqual(fileVersion, 11, `Unsupport file version:${fileVersion}`);
+        assert.ok(fileVersion === 11 || fileVersion === 12, `Unsupport file version:${fileVersion}`);
+        this._fileVersion=fileVersion;
         const mainTileset =this.charToTileset(reader.readChars(1));
         //const b=reader.readByte();
         const useCustomTilesets=reader.readInt()===1;
@@ -87,7 +88,7 @@ export class EnvironmentObject implements ReadDumpObject{
             for(let j=0;j<maxY;++j){
                 const groundHeight=reader.readShort();
                 const waterLevelAndMapEdgeLevelFlag=reader.readShort();
-                const waterAndRampFlagAndGroundTextureType=reader.readByte();
+                const waterAndRampFlagAndGroundTextureType=fileVersion>=12?reader.readUnsignedShort():reader.readByte();
                 const textureDetailsType=reader.readByte();
                 const cliffTextureTypeAndLayerHeight=reader.readByte();
                 tilesetsDataX.push({
@@ -137,7 +138,11 @@ export class EnvironmentObject implements ReadDumpObject{
                 tilesetsDataX.forEach((tilesetData)=>{
                     writer.writeShort(tilesetData.groundHeight);
                     writer.writeShort(tilesetData.waterLevelAndMapEdgeLevelFlag);
-                    writer.writeByte(tilesetData.waterAndRampFlagAndGroundTextureType);
+                    if(this._fileVersion>=12){
+                        writer.writeUnsignedShort(tilesetData.waterAndRampFlagAndGroundTextureType);
+                    }else{
+                        writer.writeByte(tilesetData.waterAndRampFlagAndGroundTextureType);
+                    }
                     writer.writeByte(tilesetData.textureDetailsType);
                     writer.writeByte(tilesetData.cliffTextureTypeAndLayerHeight);
                 });
@@ -202,5 +207,11 @@ export class EnvironmentObject implements ReadDumpObject{
     } 
     public set environment(_environment:Environment){
         this._environment=_environment;
+    }
+    public get fileVersion():number{
+        return this._fileVersion;
+    }
+    public set fileVersion(fileVersion:number){
+        this._fileVersion=fileVersion;
     }
 } 

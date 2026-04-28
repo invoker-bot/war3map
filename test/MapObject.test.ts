@@ -32,6 +32,20 @@ describe("EnvironmentObject", () => {
     it("should support map2", () => {
         assertObjectReadDump(new EnvironmentObject(), new EnvironmentObject(), "map2", "w3e");
     });
+    it("should support version 12 terrain texture flags", () => {
+        const environmentObject = new EnvironmentObject();
+        environmentObject.read(readFileSync("./test/map1/war3map.w3e"));
+        environmentObject.fileVersion = 12;
+        environmentObject.environment.tilesetsData[0][0].waterAndRampFlagAndGroundTextureType = 0x8041;
+
+        const dumped = environmentObject.dump();
+        const reread = new EnvironmentObject();
+        reread.read(dumped);
+
+        assert.strictEqual(reread.fileVersion, 12);
+        assert.strictEqual(reread.environment.tilesetsData[0][0].waterAndRampFlagAndGroundTextureType, 0x8041);
+        assert.deepStrictEqual(reread.dump(), dumped);
+    });
 });
 describe("DoodadsObject", () => {
     it("should support map1", () => {

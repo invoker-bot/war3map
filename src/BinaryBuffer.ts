@@ -83,6 +83,15 @@ export class BinaryWriteBuffer{
         this.writeInt(short,true);
     }
     /**
+     * Push unsigned short to binary buffer.
+     * @param short The unsigned short(16-bit) to write.
+     */
+    public writeUnsignedShort(short:number):void{
+        const buf=Buffer.alloc(2);
+        buf.writeUInt16LE(short,0);
+        this._buffer.push(buf[0],buf[1]);
+    }
+    /**
      * Push a signed 24-bit integer to binary buffer.
      * @param intValue The signed 24-bit integer to write.
      */
@@ -163,6 +172,14 @@ export class BinaryReadBuffer{
      */
     public readShort():number{
         const short=this._buffer.readInt16LE(this._offset);
+        this._offset+=2;
+        return short;
+    }
+    /**
+     * Read an unsigned short int(16-bit).
+     */
+    public readUnsignedShort():number{
+        const short=this._buffer.readUInt16LE(this._offset);
         this._offset+=2;
         return short;
     }
