@@ -1,7 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
-const { MapArchiveObject, RawFileObject, loadStormArchiveModule } = require("../dist/src/index");
+const {
+  MapArchiveObject,
+  MdxModelObject,
+  RawFileObject,
+  loadStormArchiveModule
+} = require("../dist/src/index");
 
 const mapsDir = process.env.WAR3_MAPS_DIR || "D:/Games/Warcraft III/Maps";
 const maxEntries = Number(process.env.WAR3_MAP_MAX_ENTRIES || 20000);
@@ -38,6 +43,7 @@ const result = {
   files: 0,
   mismatches: [],
   dumpFailures: [],
+  knownChunkErrors: [],
   parseErrors: [],
   rawFiles: [],
   readFailures: []
@@ -77,6 +83,17 @@ for (const mapPath of maps) {
       result.rawFiles.push({
         map: path.basename(mapPath),
         file: file.name
+      });
+    }
+
+    if (file.object instanceof MdxModelObject) {
+      file.object.knownChunkErrors.forEach((error) => {
+        result.knownChunkErrors.push({
+          map: path.basename(mapPath),
+          file: file.name,
+          tag: error.tag,
+          message: error.message
+        });
       });
     }
 
@@ -138,6 +155,7 @@ console.log(JSON.stringify(result, null, 2));
 if (
   result.readFailures.length > 0 ||
   result.dumpFailures.length > 0 ||
+  result.knownChunkErrors.length > 0 ||
   result.parseErrors.length > 0 ||
   result.mismatches.length > 0
 ) {
