@@ -115,6 +115,7 @@ bytes for byte-for-byte archive rebuilds.
 
 * ![check][ok] BLP1 minimap and imported images (`war3mapMap.blp`, `*.blp`)
 * ![check][ok] TGA preview, pathing, and imported images (`*.tga`)
+* ![check][ok] Image conversion helpers for PNG, TGA, and BLP1 JPEG/paletted images
 * ![check][ok] Opaque imported payloads through `RawFileObject`
 
 

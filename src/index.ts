@@ -6,6 +6,7 @@ export * from "./EnvironmentObject";
 export * from "./DoodadsObject";
 export * from "./InfoObject";
 export * from "./ImportsObject";
+export * from "./ImageData";
 export * from "./MapArchiveObject";
 export * from "./MenuMinimapObject";
 export * from "./ObjectsObject";
