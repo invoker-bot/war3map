@@ -1,5 +1,6 @@
 export * from "./BinaryBuffer";
 export * from "./AiScriptObject";
+export * from "./AudioFileObject";
 export * from "./BlpImageObject";
 export * from "./CamerasObject";
 export * from "./CustomTextTriggerObject";
@@ -12,6 +13,7 @@ export * from "./ImportsObject";
 export * from "./ImageData";
 export * from "./MapArchiveObject";
 export * from "./MenuMinimapObject";
+export * from "./MdxModelObject";
 export * from "./ObjectsObject";
 export * from "./PathmapObject";
 export * from "./RawFileObject";

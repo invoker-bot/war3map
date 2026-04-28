@@ -5,6 +5,7 @@ import { createRequire } from "module";
 import * as path from "path";
 import { ReadDumpObject } from "./BinaryBuffer";
 import { AiScriptObject } from "./AiScriptObject";
+import { AudioFileObject } from "./AudioFileObject";
 import { BlpImageObject } from "./BlpImageObject";
 import { CamerasObject } from "./CamerasObject";
 import { CustomTextTriggerObject } from "./CustomTextTriggerObject";
@@ -15,6 +16,7 @@ import { GameConfigurationObject } from "./GameConfigurationObject";
 import { InfoObject } from "./InfoObject";
 import { ImportsObject } from "./ImportsObject";
 import { MenuMinimapObject } from "./MenuMinimapObject";
+import { MdxModelObject } from "./MdxModelObject";
 import { ObjectsObject } from "./ObjectsObject";
 import { PathmapObject } from "./PathmapObject";
 import { RawFileObject } from "./RawFileObject";
@@ -183,6 +185,9 @@ export function createMapFileObject(name: string, context?: { pathmap?: PathmapO
             if (basename.endsWith(".wai")) {
                 return new AiScriptObject();
             }
+            if (basename.endsWith(".mdx")) {
+                return new MdxModelObject();
+            }
             if (basename.endsWith(".blp") || basename.endsWith(".b00")) {
                 return new BlpImageObject();
             }
@@ -192,7 +197,13 @@ export function createMapFileObject(name: string, context?: { pathmap?: PathmapO
             if (basename.endsWith(".tga")) {
                 return new TgaImageObject();
             }
-            if (/\.(ai|fdf|ini|slk|toc|txt)$/i.test(basename)) {
+            if (basename.endsWith(".wav")) {
+                return new AudioFileObject("WAVE");
+            }
+            if (basename.endsWith(".mp3")) {
+                return new AudioFileObject("MP3");
+            }
+            if (/\.(ai|fdf|ini|mdl|slk|toc|txt)$/i.test(basename)) {
                 return new TextFileObject();
             }
             return new RawFileObject();

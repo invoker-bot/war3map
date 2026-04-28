@@ -1,0 +1,820 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AudioFileObject | war3map</title>
+	<meta name="description" content="Documentation for war3map">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">war3map</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="audiofileobject.html">AudioFileObject</a>
+				</li>
+			</ul>
+			<h1>Class AudioFileObject</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>AudioFileObject validates imported WAV/MP3 assets and exposes stable header
+						metadata while preserving the original bytes.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">AudioFileObject</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/readdumpobject.html" class="tsd-signature-type">ReadDumpObject</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="audiofileobject.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="audiofileobject.html#_buffer" class="tsd-kind-icon">_buffer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="audiofileobject.html#_id3v2" class="tsd-kind-icon">_id3v2</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="audiofileobject.html#_kind" class="tsd-kind-icon">_kind</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="audiofileobject.html#_mp3frame" class="tsd-kind-icon">_mp3<wbr>Frame</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="audiofileobject.html#_wavechunks" class="tsd-kind-icon">_wave<wbr>Chunks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="audiofileobject.html#_waveformat" class="tsd-kind-icon">_wave<wbr>Format</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="audiofileobject.html#expectedkind" class="tsd-kind-icon">expected<wbr>Kind</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="audiofileobject.html#buffer" class="tsd-kind-icon">buffer</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="audiofileobject.html#id3v2" class="tsd-kind-icon">id3v2</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="audiofileobject.html#kind" class="tsd-kind-icon">kind</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="audiofileobject.html#mp3frame" class="tsd-kind-icon">mp3<wbr>Frame</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="audiofileobject.html#wavechunks" class="tsd-kind-icon">wave<wbr>Chunks</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="audiofileobject.html#waveformat" class="tsd-kind-icon">wave<wbr>Format</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="audiofileobject.html#dump" class="tsd-kind-icon">dump</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="audiofileobject.html#read" class="tsd-kind-icon">read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="audiofileobject.html#readmp3" class="tsd-kind-icon">read<wbr>Mp3</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="audiofileobject.html#readwave" class="tsd-kind-icon">read<wbr>Wave</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="audiofileobject.html#findmp3frame" class="tsd-kind-icon">find<wbr>Mp3<wbr>Frame</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="audiofileobject.html#parsemp3frame" class="tsd-kind-icon">parse<wbr>Mp3<wbr>Frame</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="audiofileobject.html#readmpegbitrate" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Bitrate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="audiofileobject.html#readmpegchannelmode" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Channel<wbr>Mode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="audiofileobject.html#readmpeglayer" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Layer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="audiofileobject.html#readmpegsamplerate" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Sample<wbr>Rate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="audiofileobject.html#readmpegversion" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Version</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="audiofileobject.html#readsynchsafeint" class="tsd-kind-icon">read<wbr>Synchsafe<wbr>Int</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="audiofileobject.html#readwaveformat" class="tsd-kind-icon">read<wbr>Wave<wbr>Format</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Audio<wbr>File<wbr>Object<span class="tsd-signature-symbol">(</span>expectedKind<span class="tsd-signature-symbol">?: </span><a href="../globals.html#audiofilekind" class="tsd-signature-type">AudioFileKind</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="audiofileobject.html" class="tsd-signature-type">AudioFileObject</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:54</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> expectedKind: <a href="../globals.html#audiofilekind" class="tsd-signature-type">AudioFileKind</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="audiofileobject.html" class="tsd-signature-type">AudioFileObject</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_buffer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _buffer</h3>
+					<div class="tsd-signature tsd-kind-icon">_buffer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol"> = Buffer.alloc(0)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in AudioFileObject.ts:50</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_id3v2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _id3v2</h3>
+					<div class="tsd-signature tsd-kind-icon">_id3v2<span class="tsd-signature-symbol">:</span> <a href="../interfaces/mp3id3v2tag.html" class="tsd-signature-type">Mp3Id3v2Tag</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in AudioFileObject.ts:53</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_kind" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _kind</h3>
+					<div class="tsd-signature tsd-kind-icon">_kind<span class="tsd-signature-symbol">:</span> <a href="../globals.html#audiofilekind" class="tsd-signature-type">AudioFileKind</a><span class="tsd-signature-symbol"> = &quot;MP3&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in AudioFileObject.ts:49</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_mp3frame" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _mp3<wbr>Frame</h3>
+					<div class="tsd-signature tsd-kind-icon">_mp3<wbr>Frame<span class="tsd-signature-symbol">:</span> <a href="../interfaces/mp3frameinfo.html" class="tsd-signature-type">Mp3FrameInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in AudioFileObject.ts:54</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_wavechunks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _wave<wbr>Chunks</h3>
+					<div class="tsd-signature tsd-kind-icon">_wave<wbr>Chunks<span class="tsd-signature-symbol">:</span> <a href="../interfaces/wavechunk.html" class="tsd-signature-type">WaveChunk</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in AudioFileObject.ts:51</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_waveformat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _wave<wbr>Format</h3>
+					<div class="tsd-signature tsd-kind-icon">_wave<wbr>Format<span class="tsd-signature-symbol">:</span> <a href="../interfaces/waveformat.html" class="tsd-signature-type">WaveFormat</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in AudioFileObject.ts:52</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="expectedkind" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> expected<wbr>Kind</h3>
+					<div class="tsd-signature tsd-kind-icon">expected<wbr>Kind<span class="tsd-signature-symbol">:</span> <a href="../globals.html#audiofilekind" class="tsd-signature-type">AudioFileKind</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in AudioFileObject.ts:56</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="buffer" class="tsd-anchor"></a>
+					<h3>buffer</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> buffer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> buffer<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:264</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:267</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="id3v2" class="tsd-anchor"></a>
+					<h3>id3v2</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> id3v2<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/mp3id3v2tag.html" class="tsd-signature-type">Mp3Id3v2Tag</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:256</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/mp3id3v2tag.html" class="tsd-signature-type">Mp3Id3v2Tag</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="kind" class="tsd-anchor"></a>
+					<h3>kind</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> kind<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#audiofilekind" class="tsd-signature-type">AudioFileKind</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:235</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#audiofilekind" class="tsd-signature-type">AudioFileKind</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="mp3frame" class="tsd-anchor"></a>
+					<h3>mp3<wbr>Frame</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> mp3Frame<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/mp3frameinfo.html" class="tsd-signature-type">Mp3FrameInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:260</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/mp3frameinfo.html" class="tsd-signature-type">Mp3FrameInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="wavechunks" class="tsd-anchor"></a>
+					<h3>wave<wbr>Chunks</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> waveChunks<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/wavechunk.html" class="tsd-signature-type">WaveChunk</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:239</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/wavechunk.html" class="tsd-signature-type">WaveChunk</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="waveformat" class="tsd-anchor"></a>
+					<h3>wave<wbr>Format</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> waveFormat<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/waveformat.html" class="tsd-signature-type">WaveFormat</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:246</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/waveformat.html" class="tsd-signature-type">WaveFormat</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="dump" class="tsd-anchor"></a>
+					<h3>dump</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dump<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#dump">dump</a></p>
+								<ul>
+									<li>Defined in AudioFileObject.ts:83</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="read" class="tsd-anchor"></a>
+					<h3>read</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">read<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/readdumpobject.html">ReadDumpObject</a>.<a href="../interfaces/readdumpobject.html#read">read</a></p>
+								<ul>
+									<li>Defined in AudioFileObject.ts:62</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="readmp3" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Mp3</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Mp3<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:110</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="readwave" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Wave</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Wave<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:87</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="findmp3frame" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> find<wbr>Mp3<wbr>Frame</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Mp3<wbr>Frame<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, startOffset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/mp3frameinfo.html" class="tsd-signature-type">Mp3FrameInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:145</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>startOffset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/mp3frameinfo.html" class="tsd-signature-type">Mp3FrameInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="parsemp3frame" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> parse<wbr>Mp3<wbr>Frame</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Mp3<wbr>Frame<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/mp3frameinfo.html" class="tsd-signature-type">Mp3FrameInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:158</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/mp3frameinfo.html" class="tsd-signature-type">Mp3FrameInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="readmpegbitrate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Mpeg<wbr>Bitrate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Mpeg<wbr>Bitrate<span class="tsd-signature-symbol">(</span>version<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, layer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:200</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>version: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>layer: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="readmpegchannelmode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Mpeg<wbr>Channel<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Mpeg<wbr>Channel<wbr>Mode<span class="tsd-signature-symbol">(</span>channelMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:231</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>channelMode: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="readmpeglayer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Mpeg<wbr>Layer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Mpeg<wbr>Layer<span class="tsd-signature-symbol">(</span>layerBits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:190</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>layerBits: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="readmpegsamplerate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Mpeg<wbr>Sample<wbr>Rate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Mpeg<wbr>Sample<wbr>Rate<span class="tsd-signature-symbol">(</span>version<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:222</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>version: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="readmpegversion" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Mpeg<wbr>Version</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Mpeg<wbr>Version<span class="tsd-signature-symbol">(</span>versionBits<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:180</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>versionBits: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="readsynchsafeint" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Synchsafe<wbr>Int</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Synchsafe<wbr>Int<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:141</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+					<a name="readwaveformat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> read<wbr>Wave<wbr>Format</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Wave<wbr>Format<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/waveformat.html" class="tsd-signature-type">WaveFormat</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in AudioFileObject.ts:129</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/waveformat.html" class="tsd-signature-type">WaveFormat</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="audiofileobject.html" class="tsd-kind-icon">Audio<wbr>File<wbr>Object</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="audiofileobject.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="audiofileobject.html#_buffer" class="tsd-kind-icon">_buffer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="audiofileobject.html#_id3v2" class="tsd-kind-icon">_id3v2</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="audiofileobject.html#_kind" class="tsd-kind-icon">_kind</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="audiofileobject.html#_mp3frame" class="tsd-kind-icon">_mp3<wbr>Frame</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="audiofileobject.html#_wavechunks" class="tsd-kind-icon">_wave<wbr>Chunks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="audiofileobject.html#_waveformat" class="tsd-kind-icon">_wave<wbr>Format</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="audiofileobject.html#expectedkind" class="tsd-kind-icon">expected<wbr>Kind</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="audiofileobject.html#buffer" class="tsd-kind-icon">buffer</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="audiofileobject.html#id3v2" class="tsd-kind-icon">id3v2</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="audiofileobject.html#kind" class="tsd-kind-icon">kind</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="audiofileobject.html#mp3frame" class="tsd-kind-icon">mp3<wbr>Frame</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="audiofileobject.html#wavechunks" class="tsd-kind-icon">wave<wbr>Chunks</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="audiofileobject.html#waveformat" class="tsd-kind-icon">wave<wbr>Format</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="audiofileobject.html#dump" class="tsd-kind-icon">dump</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="audiofileobject.html#read" class="tsd-kind-icon">read</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="audiofileobject.html#readmp3" class="tsd-kind-icon">read<wbr>Mp3</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="audiofileobject.html#readwave" class="tsd-kind-icon">read<wbr>Wave</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="audiofileobject.html#findmp3frame" class="tsd-kind-icon">find<wbr>Mp3<wbr>Frame</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="audiofileobject.html#parsemp3frame" class="tsd-kind-icon">parse<wbr>Mp3<wbr>Frame</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="audiofileobject.html#readmpegbitrate" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Bitrate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="audiofileobject.html#readmpegchannelmode" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Channel<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="audiofileobject.html#readmpeglayer" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Layer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="audiofileobject.html#readmpegsamplerate" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Sample<wbr>Rate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="audiofileobject.html#readmpegversion" class="tsd-kind-icon">read<wbr>Mpeg<wbr>Version</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="audiofileobject.html#readsynchsafeint" class="tsd-kind-icon">read<wbr>Synchsafe<wbr>Int</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-static">
+								<a href="audiofileobject.html#readwaveformat" class="tsd-kind-icon">read<wbr>Wave<wbr>Format</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

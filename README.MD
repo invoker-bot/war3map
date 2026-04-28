@@ -128,8 +128,10 @@ bytes for byte-for-byte archive rebuilds.
 * ![check][ok] BLP1/BLP2 minimap and imported images (`war3mapMap.blp`, `*.blp`)
 * ![check][ok] TGA and DDS preview, pathing, and imported images (`*.tga`, `*.dds`)
 * ![check][ok] Image conversion helpers for PNG, TGA, DDS, BLP1 JPEG/paletted images, and BLP2 BGRA/DXT images
+* ![check][ok] MDX model chunk metadata with byte-preserving payloads (`*.mdx`)
+* ![check][ok] WAV/MP3 audio headers, including empty WAV override placeholders (`*.wav`, `*.mp3`)
 * ![check][ok] Text resource pass-through for SLK/FDF/TOC/INI/TXT/AI files
-* ![check][ok] Opaque imported payloads through `RawFileObject`
+* ![check][ok] Opaque fallback payloads through `RawFileObject`
 
 
 ## Getting Started

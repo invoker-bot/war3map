@@ -4,12 +4,14 @@ import { readFileSync } from "fs";
 import {
     createMapFileObject,
     AiScriptObject,
+    AudioFileObject,
     BlpImageObject,
     CustomTextTriggerObject,
     DdsImageObject,
     InfoObject,
     MapArchiveObject,
     MenuMinimapObject,
+    MdxModelObject,
     RawFileObject,
     StormArchiveEntry,
     StormArchiveModule,
@@ -61,6 +63,20 @@ class FakeStormArchive implements StormArchiveModule {
     }
 }
 
+function createMdxChunk(tag: string, data: Buffer): Buffer {
+    const header = Buffer.alloc(8);
+    header.write(tag, 0, 4, "ascii");
+    header.writeUInt32LE(data.length, 4);
+    return Buffer.concat([header, data]);
+}
+
+function createWaveChunk(id: string, data: Buffer): Buffer {
+    const header = Buffer.alloc(8);
+    header.write(id, 0, 4, "ascii");
+    header.writeUInt32LE(data.length, 4);
+    return Buffer.concat([header, data, data.length % 2 === 0 ? Buffer.alloc(0) : Buffer.from([0])]);
+}
+
 describe("RawFileObject", () => {
     it("should preserve opaque binary files as base64", () => {
         const source = Buffer.from([0, 1, 2, 255]);
@@ -106,6 +122,10 @@ describe("createMapFileObject", () => {
         assert.ok(createMapFileObject("war3map.mmp") instanceof MenuMinimapObject);
         assert.ok(createMapFileObject("war3map.wai") instanceof AiScriptObject);
         assert.ok(createMapFileObject("war3mapImported\\CustomAI.wai") instanceof AiScriptObject);
+        assert.ok(createMapFileObject("war3mapImported\\LoadingScreen.mdx") instanceof MdxModelObject);
+        assert.ok(createMapFileObject("war3mapImported\\LoadingScreen.mdl") instanceof TextFileObject);
+        assert.ok(createMapFileObject("war3mapImported\\Music.wav") instanceof AudioFileObject);
+        assert.ok(createMapFileObject("war3mapImported\\Music.mp3") instanceof AudioFileObject);
         assert.ok(createMapFileObject("war3mapMap.blp") instanceof BlpImageObject);
         assert.ok(createMapFileObject("war3mapMap.b00") instanceof BlpImageObject);
         assert.ok(createMapFileObject("war3mapMap.tga") instanceof TgaImageObject);
@@ -113,6 +133,105 @@ describe("createMapFileObject", () => {
         assert.ok(createMapFileObject("war3mapPreview.dds") instanceof DdsImageObject);
         assert.ok(createMapFileObject("UI\\FrameDef\\Custom.fdf") instanceof TextFileObject);
         assert.ok(createMapFileObject("Units\\CustomUnitData.slk") instanceof TextFileObject);
+    });
+});
+
+describe("MdxModelObject", () => {
+    it("should expose stable MDX chunk metadata and preserve the model bytes", () => {
+        const version = Buffer.alloc(4);
+        version.writeUInt32LE(800, 0);
+        const model = Buffer.alloc(372);
+        model.write("LoadingScreen", 0, "utf8");
+        model.writeFloatLE(128.5, 340);
+        model.writeFloatLE(-1, 344);
+        model.writeFloatLE(-2, 348);
+        model.writeFloatLE(-3, 352);
+        model.writeFloatLE(4, 356);
+        model.writeFloatLE(5, 360);
+        model.writeFloatLE(6, 364);
+        model.writeUInt32LE(150, 368);
+        const texture = Buffer.alloc(268);
+        texture.writeUInt32LE(1, 0);
+        texture.write("Textures\\Preview.blp", 4, "utf8");
+        const source = Buffer.concat([
+            Buffer.from("MDLX", "ascii"),
+            createMdxChunk("VERS", version),
+            createMdxChunk("MODL", model),
+            createMdxChunk("TEXS", texture)
+        ]);
+        const object = new MdxModelObject();
+
+        object.read(source);
+
+        assert.strictEqual(object.version, 800);
+        assert.strictEqual(object.model?.name, "LoadingScreen");
+        assert.strictEqual(object.model?.blendTime, 150);
+        assert.deepStrictEqual(object.model?.extent.minimumExtent, [-1, -2, -3]);
+        assert.deepStrictEqual(object.textures, [{
+            replaceableId: 1,
+            path: "Textures\\Preview.blp",
+            flags: 0
+        }]);
+        assert.deepStrictEqual(object.dump(), source);
+    });
+});
+
+describe("AudioFileObject", () => {
+    it("should expose WAVE fmt metadata and preserve the audio bytes", () => {
+        const fmt = Buffer.alloc(16);
+        fmt.writeUInt16LE(1, 0);
+        fmt.writeUInt16LE(1, 2);
+        fmt.writeUInt32LE(22050, 4);
+        fmt.writeUInt32LE(44100, 8);
+        fmt.writeUInt16LE(2, 12);
+        fmt.writeUInt16LE(16, 14);
+        const data = Buffer.from([1, 2, 3, 4]);
+        const waveBody = Buffer.concat([Buffer.from("WAVE", "ascii"), createWaveChunk("fmt ", fmt), createWaveChunk("data", data)]);
+        const header = Buffer.alloc(8);
+        header.write("RIFF", 0, "ascii");
+        header.writeUInt32LE(waveBody.length, 4);
+        const source = Buffer.concat([header, waveBody]);
+        const object = new AudioFileObject();
+
+        object.read(source);
+
+        assert.strictEqual(object.kind, "WAVE");
+        assert.strictEqual(object.waveFormat?.sampleRate, 22050);
+        assert.strictEqual(object.waveFormat?.bitsPerSample, 16);
+        assert.deepStrictEqual(object.dump(), source);
+    });
+
+    it("should expose MP3 ID3 and frame metadata while preserving the bytes", () => {
+        const source = Buffer.concat([
+            Buffer.from("ID3", "ascii"),
+            Buffer.from([3, 0, 0, 0, 0, 0, 0]),
+            Buffer.from([0xff, 0xfb, 0x90, 0x64, 0, 0, 0, 0])
+        ]);
+        const object = new AudioFileObject();
+
+        object.read(source);
+
+        assert.strictEqual(object.kind, "MP3");
+        assert.deepStrictEqual(object.id3v2, {
+            majorVersion: 3,
+            revision: 0,
+            flags: 0,
+            size: 0
+        });
+        assert.strictEqual(object.mp3Frame?.version, "MPEG1");
+        assert.strictEqual(object.mp3Frame?.layer, "Layer III");
+        assert.strictEqual(object.mp3Frame?.bitrateKbps, 128);
+        assert.strictEqual(object.mp3Frame?.sampleRate, 44100);
+        assert.deepStrictEqual(object.dump(), source);
+    });
+
+    it("should preserve empty WAVE placeholders selected by extension", () => {
+        const object = new AudioFileObject("WAVE");
+
+        object.read(Buffer.alloc(0));
+
+        assert.strictEqual(object.kind, "WAVE");
+        assert.deepStrictEqual(object.dump(), Buffer.alloc(0));
     });
 });
 
