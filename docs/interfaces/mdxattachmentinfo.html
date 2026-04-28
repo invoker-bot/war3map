@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RandomEntityAny | war3map</title>
+	<title>MdxAttachmentInfo | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="randomentityany.html">RandomEntityAny</a>
+					<a href="mdxattachmentinfo.html">MdxAttachmentInfo</a>
 				</li>
 			</ul>
-			<h1>Interface RandomEntityAny</h1>
+			<h1>Interface MdxAttachmentInfo</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RandomEntityAny</span>
+						<span class="target">MdxAttachmentInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -81,8 +81,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="randomentityany.html#itemclass" class="tsd-kind-icon">item<wbr>Class</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="randomentityany.html#level" class="tsd-kind-icon">level</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxattachmentinfo.html#animationpayload" class="tsd-kind-icon">animation<wbr>Payload</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxattachmentinfo.html#attachmentid" class="tsd-kind-icon">attachment<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxattachmentinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxattachmentinfo.html#node" class="tsd-kind-icon">node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxattachmentinfo.html#path" class="tsd-kind-icon">path</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,22 +94,52 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="itemclass" class="tsd-anchor"></a>
-					<h3>item<wbr>Class</h3>
-					<div class="tsd-signature tsd-kind-icon">item<wbr>Class<span class="tsd-signature-symbol">:</span> <a href="../enums/itemclass.html" class="tsd-signature-type">ItemClass</a></div>
+					<a name="animationpayload" class="tsd-anchor"></a>
+					<h3>animation<wbr>Payload</h3>
+					<div class="tsd-signature tsd-kind-icon">animation<wbr>Payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/UnitsObject.ts#L56">UnitsObject.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L105">MdxModelObject.ts:105</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="level" class="tsd-anchor"></a>
-					<h3>level</h3>
-					<div class="tsd-signature tsd-kind-icon">level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="attachmentid" class="tsd-anchor"></a>
+					<h3>attachment<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">attachment<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/UnitsObject.ts#L55">UnitsObject.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L104">MdxModelObject.ts:104</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="inclusivesize" class="tsd-anchor"></a>
+					<h3>inclusive<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">inclusive<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L101">MdxModelObject.ts:101</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="node" class="tsd-anchor"></a>
+					<h3>node</h3>
+					<div class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">:</span> <a href="mdxnodeinfo.html" class="tsd-signature-type">MdxNodeInfo</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L102">MdxModelObject.ts:102</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="path" class="tsd-anchor"></a>
+					<h3>path</h3>
+					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L103">MdxModelObject.ts:103</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -125,13 +158,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="randomentityany.html" class="tsd-kind-icon">Random<wbr>Entity<wbr>Any</a>
+						<a href="mdxattachmentinfo.html" class="tsd-kind-icon">Mdx<wbr>Attachment<wbr>Info</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="randomentityany.html#itemclass" class="tsd-kind-icon">item<wbr>Class</a>
+								<a href="mdxattachmentinfo.html#animationpayload" class="tsd-kind-icon">animation<wbr>Payload</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="randomentityany.html#level" class="tsd-kind-icon">level</a>
+								<a href="mdxattachmentinfo.html#attachmentid" class="tsd-kind-icon">attachment<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxattachmentinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxattachmentinfo.html#node" class="tsd-kind-icon">node</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxattachmentinfo.html#path" class="tsd-kind-icon">path</a>
 							</li>
 						</ul>
 					</li>

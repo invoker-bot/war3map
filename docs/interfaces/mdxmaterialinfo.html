@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RandomEntityAny | war3map</title>
+	<title>MdxMaterialInfo | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="randomentityany.html">RandomEntityAny</a>
+					<a href="mdxmaterialinfo.html">MdxMaterialInfo</a>
 				</li>
 			</ul>
-			<h1>Interface RandomEntityAny</h1>
+			<h1>Interface MdxMaterialInfo</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RandomEntityAny</span>
+						<span class="target">MdxMaterialInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -81,8 +81,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="randomentityany.html#itemclass" class="tsd-kind-icon">item<wbr>Class</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="randomentityany.html#level" class="tsd-kind-icon">level</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxmaterialinfo.html#flags" class="tsd-kind-icon">flags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxmaterialinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxmaterialinfo.html#layers" class="tsd-kind-icon">layers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxmaterialinfo.html#priorityplane" class="tsd-kind-icon">priority<wbr>Plane</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,22 +93,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="itemclass" class="tsd-anchor"></a>
-					<h3>item<wbr>Class</h3>
-					<div class="tsd-signature tsd-kind-icon">item<wbr>Class<span class="tsd-signature-symbol">:</span> <a href="../enums/itemclass.html" class="tsd-signature-type">ItemClass</a></div>
+					<a name="flags" class="tsd-anchor"></a>
+					<h3>flags</h3>
+					<div class="tsd-signature tsd-kind-icon">flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/UnitsObject.ts#L56">UnitsObject.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L62">MdxModelObject.ts:62</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="level" class="tsd-anchor"></a>
-					<h3>level</h3>
-					<div class="tsd-signature tsd-kind-icon">level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="inclusivesize" class="tsd-anchor"></a>
+					<h3>inclusive<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">inclusive<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/UnitsObject.ts#L55">UnitsObject.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L60">MdxModelObject.ts:60</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="layers" class="tsd-anchor"></a>
+					<h3>layers</h3>
+					<div class="tsd-signature tsd-kind-icon">layers<span class="tsd-signature-symbol">:</span> <a href="mdxlayerinfo.html" class="tsd-signature-type">MdxLayerInfo</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L63">MdxModelObject.ts:63</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="priorityplane" class="tsd-anchor"></a>
+					<h3>priority<wbr>Plane</h3>
+					<div class="tsd-signature tsd-kind-icon">priority<wbr>Plane<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L61">MdxModelObject.ts:61</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -125,13 +147,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="randomentityany.html" class="tsd-kind-icon">Random<wbr>Entity<wbr>Any</a>
+						<a href="mdxmaterialinfo.html" class="tsd-kind-icon">Mdx<wbr>Material<wbr>Info</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="randomentityany.html#itemclass" class="tsd-kind-icon">item<wbr>Class</a>
+								<a href="mdxmaterialinfo.html#flags" class="tsd-kind-icon">flags</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="randomentityany.html#level" class="tsd-kind-icon">level</a>
+								<a href="mdxmaterialinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxmaterialinfo.html#layers" class="tsd-kind-icon">layers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxmaterialinfo.html#priorityplane" class="tsd-kind-icon">priority<wbr>Plane</a>
 							</li>
 						</ul>
 					</li>

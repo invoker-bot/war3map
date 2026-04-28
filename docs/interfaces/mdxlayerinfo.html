@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FogInfo | war3map</title>
+	<title>MdxLayerInfo | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="foginfo.html">FogInfo</a>
+					<a href="mdxlayerinfo.html">MdxLayerInfo</a>
 				</li>
 			</ul>
-			<h1>Interface FogInfo</h1>
+			<h1>Interface MdxLayerInfo</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">FogInfo</span>
+						<span class="target">MdxLayerInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -81,11 +81,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#color" class="tsd-kind-icon">color</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#density" class="tsd-kind-icon">density</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#endheight" class="tsd-kind-icon">end<wbr>Height</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#startheight" class="tsd-kind-icon">start<wbr>Height</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxlayerinfo.html#alpha" class="tsd-kind-icon">alpha</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxlayerinfo.html#animationpayload" class="tsd-kind-icon">animation<wbr>Payload</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxlayerinfo.html#coordid" class="tsd-kind-icon">coord<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxlayerinfo.html#filtermode" class="tsd-kind-icon">filter<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxlayerinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxlayerinfo.html#shadingflags" class="tsd-kind-icon">shading<wbr>Flags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxlayerinfo.html#textureanimationid" class="tsd-kind-icon">texture<wbr>Animation<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxlayerinfo.html#textureid" class="tsd-kind-icon">texture<wbr>Id</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,52 +97,82 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="color" class="tsd-anchor"></a>
-					<h3>color</h3>
-					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="alpha" class="tsd-anchor"></a>
+					<h3>alpha</h3>
+					<div class="tsd-signature tsd-kind-icon">alpha<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/InfoObject.ts#L67">InfoObject.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L55">MdxModelObject.ts:55</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="density" class="tsd-anchor"></a>
-					<h3>density</h3>
-					<div class="tsd-signature tsd-kind-icon">density<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="animationpayload" class="tsd-anchor"></a>
+					<h3>animation<wbr>Payload</h3>
+					<div class="tsd-signature tsd-kind-icon">animation<wbr>Payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/InfoObject.ts#L66">InfoObject.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L56">MdxModelObject.ts:56</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="endheight" class="tsd-anchor"></a>
-					<h3>end<wbr>Height</h3>
-					<div class="tsd-signature tsd-kind-icon">end<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="coordid" class="tsd-anchor"></a>
+					<h3>coord<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">coord<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/InfoObject.ts#L65">InfoObject.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L54">MdxModelObject.ts:54</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="startheight" class="tsd-anchor"></a>
-					<h3>start<wbr>Height</h3>
-					<div class="tsd-signature tsd-kind-icon">start<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="filtermode" class="tsd-anchor"></a>
+					<h3>filter<wbr>Mode</h3>
+					<div class="tsd-signature tsd-kind-icon">filter<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/InfoObject.ts#L64">InfoObject.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L50">MdxModelObject.ts:50</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="inclusivesize" class="tsd-anchor"></a>
+					<h3>inclusive<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">inclusive<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/InfoObject.ts#L63">InfoObject.ts:63</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L49">MdxModelObject.ts:49</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="shadingflags" class="tsd-anchor"></a>
+					<h3>shading<wbr>Flags</h3>
+					<div class="tsd-signature tsd-kind-icon">shading<wbr>Flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L51">MdxModelObject.ts:51</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="textureanimationid" class="tsd-anchor"></a>
+					<h3>texture<wbr>Animation<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">texture<wbr>Animation<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L53">MdxModelObject.ts:53</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="textureid" class="tsd-anchor"></a>
+					<h3>texture<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">texture<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L52">MdxModelObject.ts:52</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -158,22 +191,31 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="foginfo.html" class="tsd-kind-icon">Fog<wbr>Info</a>
+						<a href="mdxlayerinfo.html" class="tsd-kind-icon">Mdx<wbr>Layer<wbr>Info</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#color" class="tsd-kind-icon">color</a>
+								<a href="mdxlayerinfo.html#alpha" class="tsd-kind-icon">alpha</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#density" class="tsd-kind-icon">density</a>
+								<a href="mdxlayerinfo.html#animationpayload" class="tsd-kind-icon">animation<wbr>Payload</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#endheight" class="tsd-kind-icon">end<wbr>Height</a>
+								<a href="mdxlayerinfo.html#coordid" class="tsd-kind-icon">coord<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#startheight" class="tsd-kind-icon">start<wbr>Height</a>
+								<a href="mdxlayerinfo.html#filtermode" class="tsd-kind-icon">filter<wbr>Mode</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#type" class="tsd-kind-icon">type</a>
+								<a href="mdxlayerinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxlayerinfo.html#shadingflags" class="tsd-kind-icon">shading<wbr>Flags</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxlayerinfo.html#textureanimationid" class="tsd-kind-icon">texture<wbr>Animation<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxlayerinfo.html#textureid" class="tsd-kind-icon">texture<wbr>Id</a>
 							</li>
 						</ul>
 					</li>

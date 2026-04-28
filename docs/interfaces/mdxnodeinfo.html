@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RandomEntityAny | war3map</title>
+	<title>MdxNodeInfo | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="randomentityany.html">RandomEntityAny</a>
+					<a href="mdxnodeinfo.html">MdxNodeInfo</a>
 				</li>
 			</ul>
-			<h1>Interface RandomEntityAny</h1>
+			<h1>Interface MdxNodeInfo</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RandomEntityAny</span>
+						<span class="target">MdxNodeInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -81,8 +81,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="randomentityany.html#itemclass" class="tsd-kind-icon">item<wbr>Class</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="randomentityany.html#level" class="tsd-kind-icon">level</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxnodeinfo.html#animationpayload" class="tsd-kind-icon">animation<wbr>Payload</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxnodeinfo.html#flags" class="tsd-kind-icon">flags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxnodeinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxnodeinfo.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxnodeinfo.html#objectid" class="tsd-kind-icon">object<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mdxnodeinfo.html#parentid" class="tsd-kind-icon">parent<wbr>Id</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,22 +95,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="itemclass" class="tsd-anchor"></a>
-					<h3>item<wbr>Class</h3>
-					<div class="tsd-signature tsd-kind-icon">item<wbr>Class<span class="tsd-signature-symbol">:</span> <a href="../enums/itemclass.html" class="tsd-signature-type">ItemClass</a></div>
+					<a name="animationpayload" class="tsd-anchor"></a>
+					<h3>animation<wbr>Payload</h3>
+					<div class="tsd-signature tsd-kind-icon">animation<wbr>Payload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/UnitsObject.ts#L56">UnitsObject.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L91">MdxModelObject.ts:91</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="level" class="tsd-anchor"></a>
-					<h3>level</h3>
-					<div class="tsd-signature tsd-kind-icon">level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="flags" class="tsd-anchor"></a>
+					<h3>flags</h3>
+					<div class="tsd-signature tsd-kind-icon">flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/UnitsObject.ts#L55">UnitsObject.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L90">MdxModelObject.ts:90</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="inclusivesize" class="tsd-anchor"></a>
+					<h3>inclusive<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">inclusive<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L86">MdxModelObject.ts:86</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L87">MdxModelObject.ts:87</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="objectid" class="tsd-anchor"></a>
+					<h3>object<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">object<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L88">MdxModelObject.ts:88</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="parentid" class="tsd-anchor"></a>
+					<h3>parent<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/0538983/src/MdxModelObject.ts#L89">MdxModelObject.ts:89</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -125,13 +169,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="randomentityany.html" class="tsd-kind-icon">Random<wbr>Entity<wbr>Any</a>
+						<a href="mdxnodeinfo.html" class="tsd-kind-icon">Mdx<wbr>Node<wbr>Info</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="randomentityany.html#itemclass" class="tsd-kind-icon">item<wbr>Class</a>
+								<a href="mdxnodeinfo.html#animationpayload" class="tsd-kind-icon">animation<wbr>Payload</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="randomentityany.html#level" class="tsd-kind-icon">level</a>
+								<a href="mdxnodeinfo.html#flags" class="tsd-kind-icon">flags</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxnodeinfo.html#inclusivesize" class="tsd-kind-icon">inclusive<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxnodeinfo.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxnodeinfo.html#objectid" class="tsd-kind-icon">object<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mdxnodeinfo.html#parentid" class="tsd-kind-icon">parent<wbr>Id</a>
 							</li>
 						</ul>
 					</li>

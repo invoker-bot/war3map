@@ -349,7 +349,7 @@
 					<li><img src="docs/img/ok.png" alt="check"> BLP1/BLP2 minimap and imported images (<code>war3mapMap.blp</code>, <code>*.blp</code>)</li>
 					<li><img src="docs/img/ok.png" alt="check"> TGA and DDS preview, pathing, and imported images (<code>*.tga</code>, <code>*.dds</code>)</li>
 					<li><img src="docs/img/ok.png" alt="check"> Image conversion helpers for PNG, TGA, DDS, BLP1 JPEG/paletted images, and BLP2 BGRA/DXT images</li>
-					<li><img src="docs/img/ok.png" alt="check"> MDX model chunk metadata with byte-preserving payloads (<code>*.mdx</code>)</li>
+					<li><img src="docs/img/ok.png" alt="check"> MDX model chunks, materials, geosets, pivots, bones, helpers, and attachments (<code>*.mdx</code>)</li>
 					<li><img src="docs/img/ok.png" alt="check"> WAV/MP3 audio headers, including empty WAV override placeholders (<code>*.wav</code>, <code>*.mp3</code>)</li>
 					<li><img src="docs/img/ok.png" alt="check"> Text resource pass-through for SLK/FDF/TOC/INI/TXT/AI files</li>
 					<li><img src="docs/img/ok.png" alt="check"> Opaque fallback payloads through <code>RawFileObject</code></li>
@@ -435,7 +435,7 @@ map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, {
 				<a href="#contact" id="contact" style="color: inherit; text-decoration: none;">
 					<h2>Contact</h2>
 				</a>
-				<p>Invoker Bot - <a href="mailto:&#x69;&#110;&#118;&#111;&#107;&#x65;&#114;&#45;&#98;&#x6f;&#116;&#x40;&#x6f;&#x75;&#x74;&#x6c;&#111;&#x6f;&#x6b;&#46;&#x63;&#111;&#109;">&#x69;&#110;&#118;&#111;&#107;&#x65;&#114;&#45;&#98;&#x6f;&#116;&#x40;&#x6f;&#x75;&#x74;&#x6c;&#111;&#x6f;&#x6b;&#46;&#x63;&#111;&#109;</a></p>
+				<p>Invoker Bot - <a href="mailto:&#x69;&#x6e;&#118;&#x6f;&#107;&#x65;&#114;&#x2d;&#98;&#111;&#x74;&#x40;&#111;&#117;&#x74;&#x6c;&#x6f;&#111;&#x6b;&#x2e;&#99;&#x6f;&#x6d;">&#x69;&#x6e;&#118;&#x6f;&#107;&#x65;&#114;&#x2d;&#98;&#111;&#x74;&#x40;&#111;&#117;&#x74;&#x6c;&#x6f;&#111;&#x6b;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 				<p>Project Link: <a href="https://github.com/invoker-bot/war3map">https://github.com/invoker-bot/war3map</a></p>
 				<a href="#acknowledgements" id="acknowledgements" style="color: inherit; text-decoration: none;">
 					<h2>Acknowledgements</h2>
@@ -627,13 +627,31 @@ map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, {
 						<a href="interfaces/mapinfo.html" class="tsd-kind-icon">Map<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxattachmentinfo.html" class="tsd-kind-icon">Mdx<wbr>Attachment<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxboneinfo.html" class="tsd-kind-icon">Mdx<wbr>Bone<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxchunk.html" class="tsd-kind-icon">Mdx<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxextent.html" class="tsd-kind-icon">Mdx<wbr>Extent</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxgeosetinfo.html" class="tsd-kind-icon">Mdx<wbr>Geoset<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxlayerinfo.html" class="tsd-kind-icon">Mdx<wbr>Layer<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxmaterialinfo.html" class="tsd-kind-icon">Mdx<wbr>Material<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxmodelinfo.html" class="tsd-kind-icon">Mdx<wbr>Model<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxnodeinfo.html" class="tsd-kind-icon">Mdx<wbr>Node<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxsequenceinfo.html" class="tsd-kind-icon">Mdx<wbr>Sequence<wbr>Info</a>
@@ -784,6 +802,12 @@ map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, {
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#audiofilekind" class="tsd-kind-icon">Audio<wbr>File<wbr>Kind</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#mdxvector2" class="tsd-kind-icon">Mdx<wbr>Vector2</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#mdxvector3" class="tsd-kind-icon">Mdx<wbr>Vector3</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#randomentity" class="tsd-kind-icon">Random<wbr>Entity</a>
