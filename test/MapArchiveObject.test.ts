@@ -600,6 +600,8 @@ describe("AiScriptObject", () => {
             { id: 1, name: "Need Lumber" }
         ]);
         assert.ok(object.summary.strings.some((entry) => entry.text === "OperatorCompareInteger"));
+        assert.ok(object.summary.functions.some((entry) => entry.text === "OperatorCompareInteger"));
+        assert.ok(object.summary.functions.some((entry) => entry.text === "GetWood"));
         assert.deepStrictEqual(object.summary.mapPaths, ["Maps\\(2)PlunderIsle.w3m"]);
         assert.deepStrictEqual(object.dump().slice(object.dump().length - payload.length), payload);
     });

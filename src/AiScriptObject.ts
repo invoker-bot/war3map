@@ -37,6 +37,7 @@ export interface AiScriptPayloadSummary {
     rawSize: number;
     conditionCount?: number;
     conditions: AiScriptConditionSummary[];
+    functions: AiScriptPayloadString[];
     strings: AiScriptPayloadString[];
     mapPaths: string[];
 }
@@ -131,6 +132,7 @@ export class AiScriptObject implements ReadDumpObject {
         return {
             ...this._summary,
             conditions: this._summary.conditions.map((condition) => ({ ...condition })),
+            functions: this._summary.functions.map((entry) => ({ ...entry })),
             strings: this._summary.strings.map((entry) => ({ ...entry })),
             mapPaths: [...this._summary.mapPaths]
         };
@@ -139,6 +141,7 @@ export class AiScriptObject implements ReadDumpObject {
     protected static summarizePayload(payload: Buffer): AiScriptPayloadSummary {
         const summary = AiScriptObject.createEmptySummary(payload.length);
         summary.strings = AiScriptObject.extractPayloadStrings(payload);
+        summary.functions = summary.strings.filter((entry) => AiScriptObject.looksLikeAiFunctionName(entry.text));
         summary.mapPaths = summary.strings
             .map((entry) => entry.text)
             .filter((text, index, values) => /\.(w3m|w3x)$/i.test(text) && values.indexOf(text) === index);
@@ -160,6 +163,7 @@ export class AiScriptObject implements ReadDumpObject {
         return {
             rawSize,
             conditions: [],
+            functions: [],
             strings: [],
             mapPaths: []
         };
