@@ -40,7 +40,6 @@ jobs:
     if: github.ref == 'refs/heads/master' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     permissions:
       contents: read
-      id-token: write
 
     steps:
       - uses: actions/checkout@v6
@@ -54,9 +53,6 @@ jobs:
 
       - name: Build package
         run: npm run build
-
-      - name: Enable trusted publishing npm CLI
-        run: npm install -g npm@latest
 
       - name: Check published version
         id: version
@@ -75,3 +71,5 @@ jobs:
       - name: Publish to npm
         if: steps.version.outputs.should_publish == 'true'
         run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
