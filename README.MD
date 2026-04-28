@@ -134,6 +134,10 @@ bytes for byte-for-byte archive rebuilds.
 * ![check][ok] Text resource pass-through for SLK/FDF/TOC/INI/TXT/AI files
 * ![check][ok] Opaque fallback payloads through `RawFileObject`
 
+MDX files also expose `knownChunkErrors` when a known chunk is preserved but
+cannot be safely decoded into the structured view. Treat these diagnostics as a
+conversion warning and keep the original chunk bytes unless the format variant is
+understood.
 
 ## Getting Started
 

@@ -482,6 +482,26 @@ describe("MdxModelObject", () => {
         assert.deepStrictEqual(object.particleEmitters2[0].headInterval, [0, 100, 200]);
         assert.deepStrictEqual(object.dump(), source);
     });
+
+    it("should expose known chunk parse errors while preserving malformed MDX bytes", () => {
+        const geoset = Buffer.concat([
+            createUInt32(12),
+            Buffer.from("VRTX", "ascii")
+        ]);
+        const source = Buffer.concat([
+            Buffer.from("MDLX", "ascii"),
+            createMdxChunk("GEOS", geoset)
+        ]);
+        const object = new MdxModelObject();
+
+        object.read(source);
+
+        assert.deepStrictEqual(object.geosets, []);
+        assert.strictEqual(object.knownChunkErrors.length, 1);
+        assert.strictEqual(object.knownChunkErrors[0].tag, "GEOS");
+        assert.ok(object.knownChunkErrors[0].message.includes("MDX"));
+        assert.deepStrictEqual(object.dump(), source);
+    });
 });
 
 describe("AudioFileObject", () => {

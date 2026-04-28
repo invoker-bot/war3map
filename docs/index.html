@@ -355,6 +355,10 @@
 					<li><img src="docs/img/ok.png" alt="check"> Text resource pass-through for SLK/FDF/TOC/INI/TXT/AI files</li>
 					<li><img src="docs/img/ok.png" alt="check"> Opaque fallback payloads through <code>RawFileObject</code></li>
 				</ul>
+				<p>MDX files also expose <code>knownChunkErrors</code> when a known chunk is preserved but
+					cannot be safely decoded into the structured view. Treat these diagnostics as a
+					conversion warning and keep the original chunk bytes unless the format variant is
+				understood.</p>
 				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
 					<h2>Getting Started</h2>
 				</a>
@@ -436,7 +440,7 @@ map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, {
 				<a href="#contact" id="contact" style="color: inherit; text-decoration: none;">
 					<h2>Contact</h2>
 				</a>
-				<p>Invoker Bot - <a href="mailto:&#105;&#x6e;&#x76;&#x6f;&#107;&#101;&#114;&#45;&#98;&#111;&#116;&#x40;&#x6f;&#117;&#116;&#x6c;&#x6f;&#111;&#107;&#x2e;&#99;&#x6f;&#x6d;">&#105;&#x6e;&#x76;&#x6f;&#107;&#101;&#114;&#45;&#98;&#111;&#116;&#x40;&#x6f;&#117;&#116;&#x6c;&#x6f;&#111;&#107;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+				<p>Invoker Bot - <a href="mailto:&#105;&#110;&#x76;&#111;&#107;&#x65;&#114;&#45;&#98;&#111;&#116;&#x40;&#x6f;&#x75;&#116;&#108;&#111;&#x6f;&#x6b;&#x2e;&#99;&#111;&#x6d;">&#105;&#110;&#x76;&#111;&#107;&#x65;&#114;&#45;&#98;&#111;&#116;&#x40;&#x6f;&#x75;&#116;&#108;&#111;&#x6f;&#x6b;&#x2e;&#99;&#111;&#x6d;</a></p>
 				<p>Project Link: <a href="https://github.com/invoker-bot/war3map">https://github.com/invoker-bot/war3map</a></p>
 				<a href="#acknowledgements" id="acknowledgements" style="color: inherit; text-decoration: none;">
 					<h2>Acknowledgements</h2>
@@ -668,6 +672,9 @@ map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, {
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxgeosetinfo.html" class="tsd-kind-icon">Mdx<wbr>Geoset<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mdxknownchunkparseerror.html" class="tsd-kind-icon">Mdx<wbr>Known<wbr>Chunk<wbr>Parse<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/mdxlayerinfo.html" class="tsd-kind-icon">Mdx<wbr>Layer<wbr>Info</a>

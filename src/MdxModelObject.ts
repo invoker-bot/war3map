@@ -24,6 +24,13 @@ export interface MdxChunk {
     data: Buffer;
 }
 
+export interface MdxKnownChunkParseError {
+    tag: string;
+    offset: number;
+    size: number;
+    message: string;
+}
+
 export interface MdxModelInfo {
     name: string;
     animationFileName: string;
@@ -229,6 +236,7 @@ export interface MdxParticleEmitter2Info {
  */
 export class MdxModelObject implements ReadDumpObject {
     protected _chunks: MdxChunk[] = [];
+    protected _knownChunkErrors: MdxKnownChunkParseError[] = [];
     protected _version: number | undefined;
     protected _model: MdxModelInfo | undefined;
     protected _sequences: MdxSequenceInfo[] = [];
@@ -285,6 +293,7 @@ export class MdxModelObject implements ReadDumpObject {
     }
 
     protected parseKnownChunks(): void {
+        this._knownChunkErrors = [];
         this._version = undefined;
         this._model = undefined;
         this._sequences = [];
@@ -314,35 +323,49 @@ export class MdxModelObject implements ReadDumpObject {
             } else if (chunk.tag === "TEXS" && chunk.data.length % 268 === 0) {
                 this._textures = MdxModelObject.readTextures(chunk.data);
             } else if (chunk.tag === "MTLS") {
-                this._materials = MdxModelObject.tryRead(() => MdxModelObject.readMaterials(chunk.data), []);
+                this._materials = this.readKnownChunk(chunk, () => MdxModelObject.readMaterials(chunk.data), []);
             } else if (chunk.tag === "GEOS") {
-                this._geosets = MdxModelObject.tryRead(() => MdxModelObject.readGeosets(chunk.data), []);
+                this._geosets = this.readKnownChunk(chunk, () => MdxModelObject.readGeosets(chunk.data), []);
             } else if (chunk.tag === "GEOA") {
-                this._geosetAnimations = MdxModelObject.tryRead(() => MdxModelObject.readGeosetAnimations(chunk.data), []);
+                this._geosetAnimations = this.readKnownChunk(chunk, () => MdxModelObject.readGeosetAnimations(chunk.data), []);
             } else if (chunk.tag === "GLBS" && chunk.data.length % 4 === 0) {
                 this._globalSequences = MdxModelObject.readUInt32List(chunk.data, 0, chunk.data.length / 4);
             } else if (chunk.tag === "TXAN") {
-                this._textureAnimations = MdxModelObject.tryRead(() => MdxModelObject.readTextureAnimations(chunk.data), []);
+                this._textureAnimations = this.readKnownChunk(chunk, () => MdxModelObject.readTextureAnimations(chunk.data), []);
             } else if (chunk.tag === "PIVT" && chunk.data.length % 12 === 0) {
                 this._pivots = MdxModelObject.readVector3List(chunk.data, 0, chunk.data.length / 12);
             } else if (chunk.tag === "BONE") {
-                this._bones = MdxModelObject.tryRead(() => MdxModelObject.readBones(chunk.data), []);
+                this._bones = this.readKnownChunk(chunk, () => MdxModelObject.readBones(chunk.data), []);
             } else if (chunk.tag === "HELP") {
-                this._helpers = MdxModelObject.tryRead(() => MdxModelObject.readNodes(chunk.data), []);
+                this._helpers = this.readKnownChunk(chunk, () => MdxModelObject.readNodes(chunk.data), []);
             } else if (chunk.tag === "ATCH") {
-                this._attachments = MdxModelObject.tryRead(() => MdxModelObject.readAttachments(chunk.data), []);
+                this._attachments = this.readKnownChunk(chunk, () => MdxModelObject.readAttachments(chunk.data), []);
             } else if (chunk.tag === "CAMS") {
-                this._cameras = MdxModelObject.tryRead(() => MdxModelObject.readCameras(chunk.data), []);
+                this._cameras = this.readKnownChunk(chunk, () => MdxModelObject.readCameras(chunk.data), []);
             } else if (chunk.tag === "EVTS") {
-                this._eventObjects = MdxModelObject.tryRead(() => MdxModelObject.readEventObjects(chunk.data), []);
+                this._eventObjects = this.readKnownChunk(chunk, () => MdxModelObject.readEventObjects(chunk.data), []);
             } else if (chunk.tag === "CLID") {
-                this._collisionShapes = MdxModelObject.tryRead(() => MdxModelObject.readCollisionShapes(chunk.data), []);
+                this._collisionShapes = this.readKnownChunk(chunk, () => MdxModelObject.readCollisionShapes(chunk.data), []);
             } else if (chunk.tag === "RIBB") {
-                this._ribbonEmitters = MdxModelObject.tryRead(() => MdxModelObject.readRibbonEmitters(chunk.data), []);
+                this._ribbonEmitters = this.readKnownChunk(chunk, () => MdxModelObject.readRibbonEmitters(chunk.data), []);
             } else if (chunk.tag === "PRE2") {
-                this._particleEmitters2 = MdxModelObject.tryRead(() => MdxModelObject.readParticleEmitters2(chunk.data), []);
+                this._particleEmitters2 = this.readKnownChunk(chunk, () => MdxModelObject.readParticleEmitters2(chunk.data), []);
             }
         });
+    }
+
+    protected readKnownChunk<T>(chunk: MdxChunk, read: () => T, fallback: T): T {
+        try {
+            return read();
+        } catch (error) {
+            this._knownChunkErrors.push({
+                tag: chunk.tag,
+                offset: chunk.offset,
+                size: chunk.size,
+                message: error instanceof Error ? error.message : String(error)
+            });
+            return fallback;
+        }
     }
 
     protected static readModelInfo(buffer: Buffer): MdxModelInfo {
@@ -1123,6 +1146,10 @@ export class MdxModelObject implements ReadDumpObject {
             size: chunk.data.length
         }));
         this.parseKnownChunks();
+    }
+
+    public get knownChunkErrors(): MdxKnownChunkParseError[] {
+        return this._knownChunkErrors.map((error) => ({ ...error }));
     }
 
     public get version(): number | undefined {
