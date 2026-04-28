@@ -82,6 +82,15 @@ export interface MdxGeosetInfo {
     tail: Buffer;
 }
 
+export interface MdxGeosetAnimationInfo {
+    inclusiveSize: number;
+    alpha: number;
+    flags: number;
+    color: MdxVector3;
+    geosetId: number;
+    animationPayload: Buffer;
+}
+
 export interface MdxNodeInfo {
     inclusiveSize: number;
     name: string;
@@ -117,6 +126,8 @@ export class MdxModelObject implements ReadDumpObject {
     protected _textures: MdxTextureInfo[] = [];
     protected _materials: MdxMaterialInfo[] = [];
     protected _geosets: MdxGeosetInfo[] = [];
+    protected _geosetAnimations: MdxGeosetAnimationInfo[] = [];
+    protected _globalSequences: number[] = [];
     protected _pivots: MdxVector3[] = [];
     protected _bones: MdxBoneInfo[] = [];
     protected _helpers: MdxNodeInfo[] = [];
@@ -165,6 +176,8 @@ export class MdxModelObject implements ReadDumpObject {
         this._textures = [];
         this._materials = [];
         this._geosets = [];
+        this._geosetAnimations = [];
+        this._globalSequences = [];
         this._pivots = [];
         this._bones = [];
         this._helpers = [];
@@ -183,6 +196,10 @@ export class MdxModelObject implements ReadDumpObject {
                 this._materials = MdxModelObject.tryRead(() => MdxModelObject.readMaterials(chunk.data), []);
             } else if (chunk.tag === "GEOS") {
                 this._geosets = MdxModelObject.tryRead(() => MdxModelObject.readGeosets(chunk.data), []);
+            } else if (chunk.tag === "GEOA") {
+                this._geosetAnimations = MdxModelObject.tryRead(() => MdxModelObject.readGeosetAnimations(chunk.data), []);
+            } else if (chunk.tag === "GLBS" && chunk.data.length % 4 === 0) {
+                this._globalSequences = MdxModelObject.readUInt32List(chunk.data, 0, chunk.data.length / 4);
             } else if (chunk.tag === "PIVT" && chunk.data.length % 12 === 0) {
                 this._pivots = MdxModelObject.readVector3List(chunk.data, 0, chunk.data.length / 12);
             } else if (chunk.tag === "BONE") {
@@ -333,6 +350,31 @@ export class MdxModelObject implements ReadDumpObject {
         return geosets;
     }
 
+    protected static readGeosetAnimations(buffer: Buffer): MdxGeosetAnimationInfo[] {
+        const animations: MdxGeosetAnimationInfo[] = [];
+        let offset = 0;
+        while (offset < buffer.length) {
+            assert.ok(offset + 28 <= buffer.length, "MDX geoset animation header is truncated.");
+            const inclusiveSize = buffer.readUInt32LE(offset);
+            const endOffset = offset + inclusiveSize;
+            assert.ok(inclusiveSize >= 28 && endOffset <= buffer.length, "MDX geoset animation size points outside the GEOA chunk.");
+            animations.push({
+                inclusiveSize,
+                alpha: buffer.readFloatLE(offset + 4),
+                flags: buffer.readUInt32LE(offset + 8),
+                color: [
+                    buffer.readFloatLE(offset + 12),
+                    buffer.readFloatLE(offset + 16),
+                    buffer.readFloatLE(offset + 20)
+                ],
+                geosetId: buffer.readInt32LE(offset + 24),
+                animationPayload: Buffer.from(buffer.slice(offset + 28, endOffset))
+            });
+            offset = endOffset;
+        }
+        return animations;
+    }
+
     protected static readNodes(buffer: Buffer): MdxNodeInfo[] {
         const nodes: MdxNodeInfo[] = [];
         let offset = 0;
@@ -440,11 +482,16 @@ export class MdxModelObject implements ReadDumpObject {
     protected static readTaggedUInt32Array(buffer: Buffer, state: { offset: number; end: number }, tag: string): number[] {
         const count = MdxModelObject.readTaggedCount(buffer, state, tag);
         assert.ok(state.offset + count * 4 <= state.end, `MDX ${tag} data is truncated.`);
+        const values = MdxModelObject.readUInt32List(buffer, state.offset, count);
+        state.offset += count * 4;
+        return values;
+    }
+
+    protected static readUInt32List(buffer: Buffer, offset: number, count: number): number[] {
         const values: number[] = [];
         for (let i = 0; i < count; ++i) {
-            values.push(buffer.readUInt32LE(state.offset + i * 4));
+            values.push(buffer.readUInt32LE(offset + i * 4));
         }
-        state.offset += count * 4;
         return values;
     }
 
@@ -551,6 +598,14 @@ export class MdxModelObject implements ReadDumpObject {
 
     public get geosets(): MdxGeosetInfo[] {
         return this._geosets;
+    }
+
+    public get geosetAnimations(): MdxGeosetAnimationInfo[] {
+        return this._geosetAnimations;
+    }
+
+    public get globalSequences(): number[] {
+        return this._globalSequences;
     }
 
     public get pivots(): MdxVector3[] {

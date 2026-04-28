@@ -279,6 +279,16 @@ describe("MdxModelObject", () => {
             createMdxVector2Chunk("UVBS", [[0.25, 0.75]])
         ]);
         const geoset = Buffer.concat([createUInt32(4 + geosetBody.length), geosetBody]);
+        const geosetAnimation = Buffer.concat([
+            createUInt32(28 + 4),
+            createFloat32(0.5),
+            createUInt32(2),
+            createFloat32(0.1),
+            createFloat32(0.2),
+            createFloat32(0.3),
+            createInt32(0),
+            Buffer.from("KGAO", "ascii")
+        ]);
         const boneNode = createMdxNode("Bone01", 1, -1, 0, Buffer.from("KRTX", "ascii"));
         const helperNode = createMdxNode("Helper01", 2, 1, 0);
         const attachmentNode = createMdxNode("Head Ref", 3, 2, 0x800);
@@ -297,6 +307,8 @@ describe("MdxModelObject", () => {
             createMdxChunk("TEXS", texture),
             createMdxChunk("MTLS", material),
             createMdxChunk("GEOS", geoset),
+            createMdxChunk("GEOA", geosetAnimation),
+            createMdxChunk("GLBS", Buffer.concat([createUInt32(1000), createUInt32(2500)])),
             createMdxChunk("PIVT", Buffer.concat([createFloat32(1), createFloat32(2), createFloat32(3)])),
             createMdxChunk("BONE", Buffer.concat([boneNode, createInt32(0), createInt32(-1)])),
             createMdxChunk("HELP", helperNode),
@@ -323,6 +335,13 @@ describe("MdxModelObject", () => {
         assert.strictEqual(object.geosets[0].selectionGroup, 1);
         assert.strictEqual(object.geosets[0].selectionFlags, 2);
         assert.deepStrictEqual(object.geosets[0].textureCoordinateSets, [[[0.25, 0.75]]]);
+        assert.strictEqual(object.geosetAnimations[0].alpha, 0.5);
+        assert.strictEqual(object.geosetAnimations[0].flags, 2);
+        assert.ok(Math.abs(object.geosetAnimations[0].color[0] - 0.1) < 0.000001);
+        assert.ok(Math.abs(object.geosetAnimations[0].color[1] - 0.2) < 0.000001);
+        assert.ok(Math.abs(object.geosetAnimations[0].color[2] - 0.3) < 0.000001);
+        assert.strictEqual(object.geosetAnimations[0].geosetId, 0);
+        assert.deepStrictEqual(object.globalSequences, [1000, 2500]);
         assert.deepStrictEqual(object.pivots, [[1, 2, 3]]);
         assert.strictEqual(object.bones[0].node.name, "Bone01");
         assert.strictEqual(object.bones[0].geosetAnimationId, -1);
