@@ -7,7 +7,8 @@ import {
     DoodadsObject, RegionObject, PathmapObject,
     ShadowObject, ObjectsObject, ImportsObject,
     SoundsObject, StringsObject, UnitsObject,
-    PlayerNumber, TargetAcquisition
+    PlayerNumber, TargetAcquisition,
+    InfoObject, MenuMinimapObject
 } from "../src/index";
 
 function assertObjectReadDump<T extends ReadDumpObject>(obj1: T, obj2: T, map: string, fileType: string) {
@@ -58,6 +59,22 @@ describe("PathmapObject", () => {
         assertObjectReadDump(new PathmapObject(), new PathmapObject(), "map2", "wpm");
     });
 });
+
+describe("InfoObject", () => {
+    it("should support map1", () => {
+        assertObjectReadDump(new InfoObject(), new InfoObject(), "map1", "w3i");
+    });
+    it("should support map2", () => {
+        assertObjectReadDump(new InfoObject(), new InfoObject(), "map2", "w3i");
+    });
+});
+
+describe("MenuMinimapObject", () => {
+    it("should support map2", () => {
+        assertObjectReadDump(new MenuMinimapObject(), new MenuMinimapObject(), "map2", "mmp");
+    });
+});
+
 describe("ObjectsObject", () => {
     it("should support map1", () => {
         assertObjectReadDump(new ObjectsObject(false), new ObjectsObject(false), "map1", "w3u");
@@ -136,6 +153,48 @@ describe("UnitsObject", () => {
         const dumped = unitsObject.dump();
         const reread = new UnitsObject();
         reread.read(dumped);
-        assert.deepStrictEqual(reread, unitsObject);
+        assert.strictEqual(reread.units.length, 1);
+        assert.strictEqual(reread.units[0].type, "hfoo");
+        assert.strictEqual(reread.units[0].rotation, 90);
+        assert.deepStrictEqual(reread.units[0].inventory, [{ slot: 1, type: "ratf" }]);
+        assert.deepStrictEqual(reread.units[0].abilities, [{ ability: "Adef", active: true, level: 1 }]);
+        assert.deepStrictEqual(reread.dump(), dumped);
+    });
+
+    it("should preserve version 7 units and duplicate item drops", () => {
+        const unitsObject = new UnitsObject();
+        unitsObject.fileVersion = 7;
+        unitsObject.fileSubVersion = 9;
+        unitsObject.units = [
+            {
+                type: "nfoo",
+                x: 64,
+                y: 128,
+                z: 0,
+                rotation: 270,
+                player: PlayerNumber.NeutralPassive,
+                id: 14,
+                flags: 2,
+                hero: {
+                    level: 1,
+                    strength: 0,
+                    agility: 0,
+                    intelligence: 0
+                },
+                customItemSetEntries: [[
+                    { type: "YYI5", chance: 50 },
+                    { type: "YYI5", chance: 50 }
+                ]],
+                randomFlag: -1
+            }
+        ];
+
+        const dumped = unitsObject.dump();
+        const reread = new UnitsObject();
+        reread.read(dumped);
+
+        assert.strictEqual(reread.fileVersion, 7);
+        assert.deepStrictEqual(reread.units[0].customItemSetEntries, unitsObject.units[0].customItemSetEntries);
+        assert.deepStrictEqual(reread.dump(), dumped);
     });
 });

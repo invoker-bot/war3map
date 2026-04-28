@@ -1,0 +1,38 @@
+{
+  "source": "Hive Workshop",
+  "sourcePage": "https://www.hiveworkshop.com/threads/tasspellview.349600/",
+  "archiveName": "TasSpellView 1.2b.w3x",
+  "w3iVersion": 28,
+  "unitsVersion": 8,
+  "unitsSubVersion": 11,
+  "extractedFiles": [
+    {
+      "name": "war3map.w3i",
+      "size": 319
+    },
+    {
+      "name": "war3mapUnits.doo",
+      "size": 4873
+    },
+    {
+      "name": "war3map.wct",
+      "size": 102526
+    },
+    {
+      "name": "war3map.wtg",
+      "size": 1390
+    },
+    {
+      "name": "war3map.mmp",
+      "size": 88
+    },
+    {
+      "name": "war3map.j",
+      "size": 71886
+    },
+    {
+      "name": "war3mapMap.blp",
+      "size": 9070
+    }
+  ]
+}

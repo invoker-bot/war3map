@@ -1,0 +1,39 @@
+{
+  "source": "Hive Workshop",
+  "sourcePage": "https://www.hiveworkshop.com/threads/2-noxious-v1-0.371534/",
+  "archiveName": "(2)Noxious_v1.0.w3m",
+  "w3iVersion": 33,
+  "unitsVersion": 8,
+  "unitsSubVersion": 11,
+  "extractedFiles": [
+    {
+      "name": "war3map.w3i",
+      "size": 355
+    },
+    {
+      "name": "war3mapUnits.doo",
+      "size": 15125
+    },
+    {
+      "name": "war3map.wct",
+      "size": 310
+    },
+    {
+      "name": "war3map.wtg",
+      "size": 567
+    },
+    {
+      "name": "war3map.mmp",
+      "size": 280
+    },
+    {
+      "name": "war3map.lua",
+      "size": 549482,
+      "skipped": "over-size-limit"
+    },
+    {
+      "name": "war3mapMap.blp",
+      "size": 31755
+    }
+  ]
+}

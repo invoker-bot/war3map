@@ -76,7 +76,7 @@
 				<br /></p>
 				<p align="center">
 					<a alt="WAR" href="https://github.com/invoker-bot/war3map">
-						<img src="img/logo.png" alt="Logo" width="115" height="80">
+						<img src="docs/img/logo.png" alt="Logo" width="115" height="80">
 					</a>
 					<h3 align="center">WAR3MAP</h3>
 					<p align="center">
@@ -102,7 +102,7 @@
 							<li><a href="#object-data-files">Object data files</a></li>
 							<li><a href="#trigger-files">Trigger files</a></li>
 							<li><a href="#map-files">Map files</a></li>
-							<li><a href="#Currently-Not-included">Currently Not included</a></li>
+							<li><a href="#raw-and-binary-pass-through-files">Raw and binary pass-through files</a></li>
 						</ul>
 					</li>
 					<li><a href="#getting-started">Getting Started</a><ul>
@@ -121,7 +121,7 @@
 					<h2>Overview</h2>
 				</a>
 				<p>War3map is a module to convert between a Object representation of WarCraft III (.w3x) data and <code>war3map</code> format files.</p>
-				<p><img src="img/example.png" alt="TranslationExample"></p>
+				<p><img src="docs/img/example.png" alt="TranslationExample"></p>
 				<p>War3map is written in <code>TypeScript</code>, offering type safety and improved development experience.</p>
 				<p>Here&#39;s some places where you can use this library:</p>
 				<ul>
@@ -146,41 +146,43 @@
 					</thead>
 					<tbody><tr>
 							<td>Environment</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3e</td>
 						</tr>
 						<tr>
 							<td>Units</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3mapUnits.doo</td>
 						</tr>
 						<tr>
 							<td>Doodads</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.doo</td>
 						</tr>
 						<tr>
 							<td>Regions</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3r</td>
 						</tr>
 						<tr>
 							<td>Cameras</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3c</td>
 						</tr>
 						<tr>
 							<td>Sounds(definitions)</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3s</td>
 						</tr>
 				</tbody></table>
+				<p><code>UnitsObject</code> supports both RoC <code>war3mapUnits.doo</code> v7/subversion 9 and TFT
+				v8/subversion 11 layouts, including byte-preserving duplicate item drops.</p>
 				<a href="#object-data-files" id="object-data-files" style="color: inherit; text-decoration: none;">
 					<h3>Object data files</h3>
 				</a>
@@ -195,44 +197,44 @@
 					</thead>
 					<tbody><tr>
 							<td>Units - Objects</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3u</td>
 						</tr>
 						<tr>
 							<td>Items - Objects</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3t</td>
 						</tr>
 						<tr>
 							<td>Abilities - Objects</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3a</td>
 						</tr>
 						<tr>
 							<td>Destructables - Objects</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3b</td>
 						</tr>
 						<tr>
 							<td>Doodads - Objects</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3d</td>
 						</tr>
 						<tr>
 							<td>Upgrades - Objects</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3q</td>
 						</tr>
 						<tr>
 							<td>Buffs - Objects</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3h</td>
 						</tr>
 				</tbody></table>
@@ -250,21 +252,33 @@
 					</thead>
 					<tbody><tr>
 							<td>LUA</td>
-							<td align="center"><img src="img/error.png" alt="check"></td>
-							<td align="center"><img src="img/error.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.lua</td>
 						</tr>
 						<tr>
 							<td>JASS</td>
-							<td align="center"><img src="img/error.png" alt="check"></td>
-							<td align="center"><img src="img/error.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.j</td>
 						</tr>
 						<tr>
 							<td>Strings</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.wts</td>
+						</tr>
+						<tr>
+							<td>Custom Text Triggers</td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td>war3map.wct</td>
+						</tr>
+						<tr>
+							<td>Trigger Definitions</td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td>war3map.wtg</td>
 						</tr>
 				</tbody></table>
 				<a href="#map-files" id="map-files" style="color: inherit; text-decoration: none;">
@@ -281,33 +295,45 @@
 					</thead>
 					<tbody><tr>
 							<td>Info File</td>
-							<td align="center"><img src="img/error.png" alt="check"></td>
-							<td align="center"><img src="img/error.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.w3i</td>
 						</tr>
 						<tr>
 							<td>Imported Files</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.imp</td>
 						</tr>
 						<tr>
 							<td>Pathing</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.wpm</td>
 						</tr>
 						<tr>
 							<td>Shadow map</td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
-							<td align="center"><img src="img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
 							<td>war3map.shd</td>
 						</tr>
+						<tr>
+							<td>Menu Minimap</td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td align="center"><img src="docs/img/ok.png" alt="check"></td>
+							<td>war3map.mmp</td>
+						</tr>
 				</tbody></table>
-				<a href="#currently-not-included" id="currently-not-included" style="color: inherit; text-decoration: none;">
-					<h3>Currently Not included</h3>
+				<a href="#image-and-payload-preserving-files" id="image-and-payload-preserving-files" style="color: inherit; text-decoration: none;">
+					<h3>Image and payload-preserving files</h3>
 				</a>
-				<p> <img src="img/error.png" alt="times"> Custom Text Trigger File (war3map.wct)<br> <img src="img/error.png" alt="times"> Trigger Names File (war3map.wtg)<br> <img src="img/error.png" alt="times"> Menu Minimap (war3map.mmp)<br> <img src="img/error.png" alt="times"> Minimap Image (war3mapMap.blp)<br> <img src="img/error.png" alt="times"> Minimap Image (war3mapMap.b00<br> <img src="img/error.png" alt="times"> Minimap Image (war3mapMap.tga)<br> <img src="img/error.png" alt="times"> Map Preview Image (war3mapPreview.tga)</p>
+				<p>These files expose validated headers or editable text while preserving payload
+				bytes for byte-for-byte archive rebuilds.</p>
+				<ul>
+					<li><img src="docs/img/ok.png" alt="check"> BLP1 minimap and imported images (<code>war3mapMap.blp</code>, <code>*.blp</code>)</li>
+					<li><img src="docs/img/ok.png" alt="check"> TGA preview, pathing, and imported images (<code>*.tga</code>)</li>
+					<li><img src="docs/img/ok.png" alt="check"> Opaque imported payloads through <code>RawFileObject</code></li>
+				</ul>
 				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
 					<h2>Getting Started</h2>
 				</a>
@@ -332,6 +358,19 @@
 				<p>Create your <code>.ts</code> or <code>.js</code> file, and type as follows:</p>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> war3map <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;war3map&quot;</span>;</code></pre>
 				<p><em>To get more examples or usages for war3map, see <a href="https://invoker-bot.github.io/war3map">Documentation</a>.</em></p>
+				<a href="#archive-support" id="archive-support" style="color: inherit; text-decoration: none;">
+					<h3>Archive Support</h3>
+				</a>
+				<p><code>MapArchiveObject</code> can read and write <code>.w3m</code>, <code>.w3x</code>, and <code>.mpq</code> archives through
+					<a href="https://github.com/invoker-bot/node-stormlib">node-stormlib</a>. <code>node-stormlib</code>
+					only handles the MPQ container; this package parses the map files inside the
+					archive. Install <code>node-stormlib</code> or set <code>NODE_STORMLIB_PATH</code> to a local checkout
+				such as <code>D:\Projects\GitHub\node-storm</code>.</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { MapArchiveObject } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;war3map&quot;</span>;
+
+<span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> MapArchiveObject();
+map.readArchive(<span class="hljs-string">&quot;example.w3x&quot;</span>);
+map.writeArchive(<span class="hljs-string">&quot;out/example.w3x&quot;</span>, { overwrite: <span class="hljs-literal">true</span> });</code></pre>
 				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
 					<h3>Development</h3>
 				</a>
@@ -376,7 +415,7 @@
 				<a href="#contact" id="contact" style="color: inherit; text-decoration: none;">
 					<h2>Contact</h2>
 				</a>
-				<p>Invoker Bot - <a href="mailto:&#105;&#x6e;&#118;&#111;&#x6b;&#101;&#x72;&#x2d;&#x62;&#x6f;&#x74;&#64;&#x6f;&#117;&#116;&#108;&#x6f;&#111;&#107;&#46;&#x63;&#x6f;&#109;">&#105;&#x6e;&#118;&#111;&#x6b;&#101;&#x72;&#x2d;&#x62;&#x6f;&#x74;&#64;&#x6f;&#117;&#116;&#108;&#x6f;&#111;&#107;&#46;&#x63;&#x6f;&#109;</a></p>
+				<p>Invoker Bot - <a href="mailto:&#105;&#x6e;&#x76;&#x6f;&#107;&#101;&#114;&#x2d;&#98;&#111;&#x74;&#x40;&#111;&#x75;&#116;&#108;&#x6f;&#x6f;&#x6b;&#46;&#99;&#x6f;&#109;">&#105;&#x6e;&#x76;&#x6f;&#107;&#101;&#114;&#x2d;&#98;&#111;&#x74;&#x40;&#111;&#x75;&#116;&#108;&#x6f;&#x6f;&#x6b;&#46;&#99;&#x6f;&#109;</a></p>
 				<p>Project Link: <a href="https://github.com/invoker-bot/war3map">https://github.com/invoker-bot/war3map</a></p>
 				<a href="#acknowledgements" id="acknowledgements" style="color: inherit; text-decoration: none;">
 					<h2>Acknowledgements</h2>
@@ -424,7 +463,13 @@
 						<a href="classes/binarywritebuffer.html" class="tsd-kind-icon">Binary<wbr>Write<wbr>Buffer</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/blpimageobject.html" class="tsd-kind-icon">Blp<wbr>Image<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/camerasobject.html" class="tsd-kind-icon">Cameras<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/customtexttriggerobject.html" class="tsd-kind-icon">Custom<wbr>Text<wbr>Trigger<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/doodadsobject.html" class="tsd-kind-icon">Doodads<wbr>Object</a>
@@ -436,10 +481,22 @@
 						<a href="classes/importsobject.html" class="tsd-kind-icon">Imports<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/infoobject.html" class="tsd-kind-icon">Info<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/maparchiveobject.html" class="tsd-kind-icon">Map<wbr>Archive<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/menuminimapobject.html" class="tsd-kind-icon">Menu<wbr>Minimap<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/objectsobject.html" class="tsd-kind-icon">Objects<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/pathmapobject.html" class="tsd-kind-icon">Pathmap<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/rawfileobject.html" class="tsd-kind-icon">Raw<wbr>File<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/regionobject.html" class="tsd-kind-icon">Region<wbr>Object</a>
@@ -454,13 +511,40 @@
 						<a href="classes/stringsobject.html" class="tsd-kind-icon">Strings<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/textfileobject.html" class="tsd-kind-icon">Text<wbr>File<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/tgaimageobject.html" class="tsd-kind-icon">Tga<wbr>Image<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/triggernamesobject.html" class="tsd-kind-icon">Trigger<wbr>Names<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/unitsobject.html" class="tsd-kind-icon">Units<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blpheader.html" class="tsd-kind-icon">Blp<wbr>Header</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/blpmipmap.html" class="tsd-kind-icon">Blp<wbr>Mipmap</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/camera.html" class="tsd-kind-icon">Camera</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/camerabounds.html" class="tsd-kind-icon">Camera<wbr>Bounds</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/environment.html" class="tsd-kind-icon">Environment</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/foginfo.html" class="tsd-kind-icon">Fog<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/forceinfo.html" class="tsd-kind-icon">Force<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/gameversion.html" class="tsd-kind-icon">Game<wbr>Version</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/importedfile.html" class="tsd-kind-icon">Imported<wbr>File</a>
@@ -469,10 +553,34 @@
 						<a href="interfaces/itemidandchoice.html" class="tsd-kind-icon">ItemIDAnd<wbr>Choice</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/loadingscreeninfo.html" class="tsd-kind-icon">Loading<wbr>Screen<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/maparchivefile.html" class="tsd-kind-icon">Map<wbr>Archive<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/maparchivereadoptions.html" class="tsd-kind-icon">Map<wbr>Archive<wbr>Read<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/maparchivewriteoptions.html" class="tsd-kind-icon">Map<wbr>Archive<wbr>Write<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mapflags.html" class="tsd-kind-icon">Map<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mapinfo.html" class="tsd-kind-icon">Map<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/menuminimapicon.html" class="tsd-kind-icon">Menu<wbr>Minimap<wbr>Icon</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/modification.html" class="tsd-kind-icon">Modification</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/objectdefination.html" class="tsd-kind-icon">Object<wbr>Defination</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/playerinfo.html" class="tsd-kind-icon">Player<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/randomentityany.html" class="tsd-kind-icon">Random<wbr>Entity<wbr>Any</a>
@@ -481,7 +589,22 @@
 						<a href="interfaces/randomentityglobal.html" class="tsd-kind-icon">Random<wbr>Entity<wbr>Global</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/randomgrouprow.html" class="tsd-kind-icon">Random<wbr>Group<wbr>Row</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/randomgrouptable.html" class="tsd-kind-icon">Random<wbr>Group<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/randomitem.html" class="tsd-kind-icon">Random<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/randomitemtable.html" class="tsd-kind-icon">Random<wbr>Item<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/readdumpobject.html" class="tsd-kind-icon">Read<wbr>Dump<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/reforgedinfo.html" class="tsd-kind-icon">Reforged<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/regiondefinition.html" class="tsd-kind-icon">Region<wbr>Definition</a>
@@ -499,13 +622,28 @@
 						<a href="interfaces/specialdoodad.html" class="tsd-kind-icon">Special<wbr>Doodad</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/stormarchiveentry.html" class="tsd-kind-icon">Storm<wbr>Archive<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/stormarchivemodule.html" class="tsd-kind-icon">Storm<wbr>Archive<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/stringdefinition.html" class="tsd-kind-icon">String<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/techtreeinfo.html" class="tsd-kind-icon">Techtree<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/tgaheader.html" class="tsd-kind-icon">Tga<wbr>Header</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/tilepoint.html" class="tsd-kind-icon">Tile<wbr>Point</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/tree.html" class="tsd-kind-icon">Tree</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/triggerstringreference.html" class="tsd-kind-icon">Trigger<wbr>String<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/unitability.html" class="tsd-kind-icon">Unit<wbr>Ability</a>
@@ -519,6 +657,12 @@
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/unitinventoryitem.html" class="tsd-kind-icon">Unit<wbr>Inventory<wbr>Item</a>
 					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/unititemsetentry.html" class="tsd-kind-icon">Unit<wbr>Item<wbr>Set<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/upgradeinfo.html" class="tsd-kind-icon">Upgrade<wbr>Info</a>
+					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#randomentity" class="tsd-kind-icon">Random<wbr>Entity</a>
 					</li>
@@ -529,10 +673,25 @@
 						<a href="globals.html#currentpathversion" class="tsd-kind-icon">Current<wbr>Path<wbr>Version</a>
 					</li>
 					<li class=" tsd-kind-variable">
+						<a href="globals.html#dynamicrequire" class="tsd-kind-icon">dynamic<wbr>Require</a>
+					</li>
+					<li class=" tsd-kind-variable">
 						<a href="globals.html#matchstringdefinitionblock" class="tsd-kind-icon">match<wbr>String<wbr>Definition<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#createmapfileobject" class="tsd-kind-icon">create<wbr>Map<wbr>File<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createrawfile" class="tsd-kind-icon">create<wbr>Raw<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#degtorad" class="tsd-kind-icon">deg<wbr>ToRad</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getdefaultgold" class="tsd-kind-icon">get<wbr>Default<wbr>Gold</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isgeneratedarchiveentry" class="tsd-kind-icon">is<wbr>Generated<wbr>Archive<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#israndomentityany" class="tsd-kind-icon">is<wbr>Random<wbr>Entity<wbr>Any</a>
@@ -544,7 +703,16 @@
 						<a href="globals.html#israndomentityunitset" class="tsd-kind-icon">is<wbr>Random<wbr>Entity<wbr>Unit<wbr>Set</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#loadstormarchivemodule" class="tsd-kind-icon">load<wbr>Storm<wbr>Archive<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#normalizearchivename" class="tsd-kind-icon">normalize<wbr>Archive<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#radtodeg" class="tsd-kind-icon">rad<wbr>ToDeg</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#tryrequire" class="tsd-kind-icon">try<wbr>Require</a>
 					</li>
 				</ul>
 			</nav>

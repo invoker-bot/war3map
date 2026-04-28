@@ -1,0 +1,38 @@
+{
+  "source": "Hive Workshop",
+  "sourcePage": "https://www.hiveworkshop.com/threads/1p-vs-4c-v0-32.371373/",
+  "archiveName": "(5)1P VS 4C v0.32.w3x",
+  "w3iVersion": 33,
+  "unitsVersion": 8,
+  "unitsSubVersion": 11,
+  "extractedFiles": [
+    {
+      "name": "war3map.w3i",
+      "size": 675
+    },
+    {
+      "name": "war3mapUnits.doo",
+      "size": 9880
+    },
+    {
+      "name": "war3map.wct",
+      "size": 317
+    },
+    {
+      "name": "war3map.wtg",
+      "size": 179495
+    },
+    {
+      "name": "war3map.mmp",
+      "size": 328
+    },
+    {
+      "name": "war3map.j",
+      "size": 246276
+    },
+    {
+      "name": "war3mapMap.blp",
+      "size": 16620
+    }
+  ]
+}

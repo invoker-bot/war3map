@@ -1,0 +1,31 @@
+{
+  "source": "Hive Workshop",
+  "sourcePage": "https://www.hiveworkshop.com/threads/map-adapter.326456/",
+  "archiveName": "df-v0-8-2-reforged_protected1311-w3x.361606",
+  "w3iVersion": 28,
+  "unitsVersion": 7,
+  "unitsSubVersion": 9,
+  "extractedFiles": [
+    {
+      "name": "war3map.w3i",
+      "size": 703
+    },
+    {
+      "name": "war3mapUnits.doo",
+      "size": 111
+    },
+    {
+      "name": "war3map.mmp",
+      "size": 216
+    },
+    {
+      "name": "war3mapMap.blp",
+      "size": 15650
+    },
+    {
+      "name": "war3mapPreview.tga",
+      "size": 262188,
+      "skipped": "over-size-limit"
+    }
+  ]
+}

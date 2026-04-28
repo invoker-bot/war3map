@@ -223,6 +223,12 @@ export class BinaryReadBuffer{
     public isEOF():boolean{
         return this._offset===this._buffer.length;
     }
+    public remainingBytes():number{
+        return this._buffer.length - this._offset;
+    }
+    public get offset():number{
+        return this._offset;
+    }
     private _offset=0;
     private _buffer:Buffer;
 }

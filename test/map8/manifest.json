@@ -1,0 +1,38 @@
+{
+  "source": "Hive Workshop",
+  "sourcePage": "https://www.hiveworkshop.com/threads/simple-hero-siege.371398/",
+  "archiveName": "PlatW27.w3m",
+  "w3iVersion": 33,
+  "unitsVersion": 8,
+  "unitsSubVersion": 11,
+  "extractedFiles": [
+    {
+      "name": "war3map.w3i",
+      "size": 657
+    },
+    {
+      "name": "war3mapUnits.doo",
+      "size": 2891
+    },
+    {
+      "name": "war3map.wct",
+      "size": 522
+    },
+    {
+      "name": "war3map.wtg",
+      "size": 64614
+    },
+    {
+      "name": "war3map.mmp",
+      "size": 184
+    },
+    {
+      "name": "war3map.j",
+      "size": 99407
+    },
+    {
+      "name": "war3mapMap.blp",
+      "size": 19710
+    }
+  ]
+}

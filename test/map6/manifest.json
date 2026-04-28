@@ -1,0 +1,38 @@
+{
+  "source": "Hive Workshop",
+  "sourcePage": "https://www.hiveworkshop.com/threads/ferocity.325860/",
+  "archiveName": "(8)Ferocity v1.1.w3x",
+  "w3iVersion": 31,
+  "unitsVersion": 8,
+  "unitsSubVersion": 11,
+  "extractedFiles": [
+    {
+      "name": "war3map.w3i",
+      "size": 655
+    },
+    {
+      "name": "war3mapUnits.doo",
+      "size": 47322
+    },
+    {
+      "name": "war3map.wct",
+      "size": 310
+    },
+    {
+      "name": "war3map.wtg",
+      "size": 571
+    },
+    {
+      "name": "war3map.mmp",
+      "size": 600
+    },
+    {
+      "name": "war3map.j",
+      "size": 216804
+    },
+    {
+      "name": "war3mapMap.blp",
+      "size": 19064
+    }
+  ]
+}

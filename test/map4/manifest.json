@@ -1,0 +1,40 @@
+{
+  "source": "Hive Workshop",
+  "sourcePage": "https://www.hiveworkshop.com/threads/map-adapter.326456/",
+  "archiveName": "ulf-for-131-w3x.361689",
+  "w3iVersion": 28,
+  "unitsVersion": 8,
+  "unitsSubVersion": 11,
+  "extractedFiles": [
+    {
+      "name": "war3map.w3i",
+      "size": 504
+    },
+    {
+      "name": "war3mapUnits.doo",
+      "size": 1237
+    },
+    {
+      "name": "war3map.wct",
+      "size": 27825
+    },
+    {
+      "name": "war3map.wtg",
+      "size": 1896719,
+      "skipped": "over-size-limit"
+    },
+    {
+      "name": "war3map.mmp",
+      "size": 120
+    },
+    {
+      "name": "war3map.j",
+      "size": 1633458,
+      "skipped": "over-size-limit"
+    },
+    {
+      "name": "war3mapMap.blp",
+      "size": 13697
+    }
+  ]
+}

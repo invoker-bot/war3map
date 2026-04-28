@@ -36,7 +36,7 @@
     * [Object data files](#object-data-files)
     * [Trigger files](#trigger-files)
     * [Map files](#map-files)
-    * [Currently Not included](#Currently-Not-included)
+    * [Raw and binary pass-through files](#raw-and-binary-pass-through-files)
 * [Getting Started](#getting-started)
     * [Prerequisites](#Prerequisites)
     * [Import](#Import)
@@ -72,6 +72,9 @@ Here's some places where you can use this library:
 | Cameras | ![check][ok]  | ![check][ok]  | war3map.w3c |
 | Sounds(definitions)| ![check][ok] | ![check][ok] | war3map.w3s|
 
+`UnitsObject` supports both RoC `war3mapUnits.doo` v7/subversion 9 and TFT
+v8/subversion 11 layouts, including byte-preserving duplicate item drops.
+
 ### Object data files
 
 | Type  | Object → War | War → Object  | File |
@@ -88,29 +91,31 @@ Here's some places where you can use this library:
 
 |   Type | Object → War  | War → Object  | File |
 |   ---  |   :-:   |   :-:   |   ---    |
-| LUA    | ![check][error] | ![check][error] | war3map.lua  |
-| JASS   | ![check][error] | ![check][error] | war3map.j    |
+| LUA    | ![check][ok] | ![check][ok] | war3map.lua  |
+| JASS   | ![check][ok] | ![check][ok] | war3map.j    |
 | Strings  | ![check][ok] | ![check][ok] | war3map.wts  |
+| Custom Text Triggers | ![check][ok] | ![check][ok] | war3map.wct |
+| Trigger Definitions | ![check][ok] | ![check][ok] | war3map.wtg |
 
 
 ### Map files
 
 | Type | Object → War  | War → Object  | File   |
 |   ---    |    :-: |   :-: |   --- |
-| Info File    | ![check][error] | ![check][error] | war3map.w3i  |
+| Info File    | ![check][ok] | ![check][ok] | war3map.w3i  |
 | Imported Files  | ![check][ok] | ![check][ok] | war3map.imp  |
 | Pathing      | ![check][ok] | ![check][ok] | war3map.wpm  |
 | Shadow map    | ![check][ok] | ![check][ok] | war3map.shd |
+| Menu Minimap | ![check][ok] | ![check][ok] | war3map.mmp |
 
 
-### Currently Not included
- ![times][error] Custom Text Trigger File (war3map.wct)  
- ![times][error] Trigger Names File (war3map.wtg)  
- ![times][error] Menu Minimap (war3map.mmp)  
- ![times][error] Minimap Image (war3mapMap.blp)  
- ![times][error] Minimap Image (war3mapMap.b00  
- ![times][error] Minimap Image (war3mapMap.tga)  
- ![times][error] Map Preview Image (war3mapPreview.tga)
+### Image and payload-preserving files
+These files expose validated headers or editable text while preserving payload
+bytes for byte-for-byte archive rebuilds.
+
+* ![check][ok] BLP1 minimap and imported images (`war3mapMap.blp`, `*.blp`)
+* ![check][ok] TGA preview, pathing, and imported images (`*.tga`)
+* ![check][ok] Opaque imported payloads through `RawFileObject`
 
 
 ## Getting Started
@@ -136,6 +141,22 @@ import * as war3map from "war3map";
 ```
 
 _To get more examples or usages for war3map, see [Documentation](https://invoker-bot.github.io/war3map)._
+
+### Archive Support
+
+`MapArchiveObject` can read and write `.w3m`, `.w3x`, and `.mpq` archives through
+[node-stormlib](https://github.com/invoker-bot/node-stormlib). `node-stormlib`
+only handles the MPQ container; this package parses the map files inside the
+archive. Install `node-stormlib` or set `NODE_STORMLIB_PATH` to a local checkout
+such as `D:\Projects\GitHub\node-storm`.
+
+```ts
+import { MapArchiveObject } from "war3map";
+
+const map = new MapArchiveObject();
+map.readArchive("example.w3x");
+map.writeArchive("out/example.w3x", { overwrite: true });
+```
 
 ### Development
 
