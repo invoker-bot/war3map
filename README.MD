@@ -100,8 +100,9 @@ texture flag layouts.
 | Trigger Definitions | ![check][ok] | ![check][ok] | war3map.wtg |
 
 `TriggerNamesObject` preserves full `war3map.wtg` bytes and exposes Reforged
-root metadata, type counts, variable definitions, and safe tree-object
-summaries. GUI function parameter parsing still requires `triggerdata.txt`.
+root metadata, type counts, variable definitions, and tree-object summaries.
+Pass `triggerData` from `UI\TriggerData.txt` to parse GUI functions and
+parameter lists; without it, the raw payload is still preserved.
 
 
 ### Map files

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FogInfo | war3map</title>
+	<title>TriggerParameter | war3map</title>
 	<meta name="description" content="Documentation for war3map">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="foginfo.html">FogInfo</a>
+					<a href="triggerparameter.html">TriggerParameter</a>
 				</li>
 			</ul>
-			<h1>Interface FogInfo</h1>
+			<h1>Interface TriggerParameter</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">FogInfo</span>
+						<span class="target">TriggerParameter</span>
 					</li>
 				</ul>
 			</section>
@@ -81,11 +81,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#color" class="tsd-kind-icon">color</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#density" class="tsd-kind-icon">density</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#endheight" class="tsd-kind-icon">end<wbr>Height</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#startheight" class="tsd-kind-icon">start<wbr>Height</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="foginfo.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggerparameter.html#arrayindexvalue" class="tsd-kind-icon">array<wbr>Index<wbr>Value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggerparameter.html#isarray" class="tsd-kind-icon">is<wbr>Array</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggerparameter.html#parametertypes" class="tsd-kind-icon">parameter<wbr>Types</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggerparameter.html#parameters" class="tsd-kind-icon">parameters</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggerparameter.html#supportsparameters" class="tsd-kind-icon">supports<wbr>Parameters</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggerparameter.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="triggerparameter.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,42 +96,52 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="color" class="tsd-anchor"></a>
-					<h3>color</h3>
-					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="arrayindexvalue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> array<wbr>Index<wbr>Value</h3>
+					<div class="tsd-signature tsd-kind-icon">array<wbr>Index<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/InfoObject.ts#L67">InfoObject.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/TriggerNamesObject.ts#L66">TriggerNamesObject.ts:66</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="density" class="tsd-anchor"></a>
-					<h3>density</h3>
-					<div class="tsd-signature tsd-kind-icon">density<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="isarray" class="tsd-anchor"></a>
+					<h3>is<wbr>Array</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/InfoObject.ts#L66">InfoObject.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/TriggerNamesObject.ts#L65">TriggerNamesObject.ts:65</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="endheight" class="tsd-anchor"></a>
-					<h3>end<wbr>Height</h3>
-					<div class="tsd-signature tsd-kind-icon">end<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="parametertypes" class="tsd-anchor"></a>
+					<h3>parameter<wbr>Types</h3>
+					<div class="tsd-signature tsd-kind-icon">parameter<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/InfoObject.ts#L65">InfoObject.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/TriggerNamesObject.ts#L63">TriggerNamesObject.ts:63</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="startheight" class="tsd-anchor"></a>
-					<h3>start<wbr>Height</h3>
-					<div class="tsd-signature tsd-kind-icon">start<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="parameters" class="tsd-anchor"></a>
+					<h3>parameters</h3>
+					<div class="tsd-signature tsd-kind-icon">parameters<span class="tsd-signature-symbol">:</span> <a href="triggerparameter.html" class="tsd-signature-type">TriggerParameter</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/InfoObject.ts#L64">InfoObject.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/TriggerNamesObject.ts#L64">TriggerNamesObject.ts:64</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="supportsparameters" class="tsd-anchor"></a>
+					<h3>supports<wbr>Parameters</h3>
+					<div class="tsd-signature tsd-kind-icon">supports<wbr>Parameters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/TriggerNamesObject.ts#L62">TriggerNamesObject.ts:62</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -139,7 +151,17 @@
 					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/InfoObject.ts#L63">InfoObject.ts:63</a></li>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/TriggerNamesObject.ts#L60">TriggerNamesObject.ts:60</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="value" class="tsd-anchor"></a>
+					<h3>value</h3>
+					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/invoker-bot/war3map/blob/3228a05/src/TriggerNamesObject.ts#L61">TriggerNamesObject.ts:61</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -158,22 +180,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="foginfo.html" class="tsd-kind-icon">Fog<wbr>Info</a>
+						<a href="triggerparameter.html" class="tsd-kind-icon">Trigger<wbr>Parameter</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#color" class="tsd-kind-icon">color</a>
+								<a href="triggerparameter.html#arrayindexvalue" class="tsd-kind-icon">array<wbr>Index<wbr>Value</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#density" class="tsd-kind-icon">density</a>
+								<a href="triggerparameter.html#isarray" class="tsd-kind-icon">is<wbr>Array</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#endheight" class="tsd-kind-icon">end<wbr>Height</a>
+								<a href="triggerparameter.html#parametertypes" class="tsd-kind-icon">parameter<wbr>Types</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#startheight" class="tsd-kind-icon">start<wbr>Height</a>
+								<a href="triggerparameter.html#parameters" class="tsd-kind-icon">parameters</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="foginfo.html#type" class="tsd-kind-icon">type</a>
+								<a href="triggerparameter.html#supportsparameters" class="tsd-kind-icon">supports<wbr>Parameters</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="triggerparameter.html#type" class="tsd-kind-icon">type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="triggerparameter.html#value" class="tsd-kind-icon">value</a>
 							</li>
 						</ul>
 					</li>

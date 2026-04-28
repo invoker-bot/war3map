@@ -41,15 +41,52 @@ export interface TriggerObjectSummary {
     isInitiallyOff?: boolean;
     runOnMapInitialization?: boolean;
     functionCount?: number;
+    functions?: TriggerFunction[];
     parseComplete: boolean;
+}
+
+export interface TriggerFunction {
+    type: number;
+    blockId?: number;
+    name: string;
+    isEnabled: boolean;
+    parameterTypes: string[];
+    parameters: TriggerParameter[];
+    nestedFunctionCount: number;
+    nestedFunctions: TriggerFunction[];
+}
+
+export interface TriggerParameter {
+    type: number;
+    value: string;
+    supportsParameters: boolean;
+    parameterTypes: string[];
+    parameters: TriggerParameter[];
+    isArray: boolean;
+    arrayIndexValue?: number;
+}
+
+export interface TriggerFunctionDefinition {
+    name: string;
+    parameterTypes: string[];
+}
+
+export type TriggerDataLookup = Record<string, TriggerFunctionDefinition>;
+
+export interface TriggerNamesReadOptions {
+    triggerData?: string | TriggerDataLookup;
 }
 
 export interface ReforgedTriggerAst {
     magicNumber: number;
     fileFormatVersion: number;
     typeInfo: TriggerTypeInfo[];
-    unknown1: number;
-    unknown2: number;
+    reserved1: number;
+    reserved2: number;
+    /** @deprecated Use reserved1 instead. */
+    unknown1?: number;
+    /** @deprecated Use reserved2 instead. */
+    unknown2?: number;
     triggerDefinitionVersion: number;
     variables: TriggerVariableDefinition[];
     triggerObjectCount: number;
@@ -68,7 +105,7 @@ export class TriggerNamesObject implements ReadDumpObject {
     protected _strings: TriggerStringReference[] = [];
     protected _reforgedAst?: ReforgedTriggerAst;
 
-    public read(buffer: Buffer): void {
+    public read(buffer: Buffer, options: TriggerNamesReadOptions = {}): void {
         const reader = new BinaryReadBuffer(buffer);
         const fileId = reader.readChars(4);
         assert.strictEqual(fileId, "WTG!", "File should be `wtg` format.");
@@ -76,7 +113,7 @@ export class TriggerNamesObject implements ReadDumpObject {
         this._fileVersion = reader.readInt();
         this._payload = reader.readBytes(buffer.length - 8);
         this._strings = TriggerNamesObject.extractStrings(this._payload, 8);
-        this._reforgedAst = this._fileVersionRaw === 0x80000004 ? this.parseReforgedAst(buffer) : undefined;
+        this._reforgedAst = this._fileVersionRaw === 0x80000004 ? this.parseReforgedAst(buffer, TriggerNamesObject.normalizeTriggerData(options.triggerData)) : undefined;
         assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
     }
 
@@ -134,20 +171,90 @@ export class TriggerNamesObject implements ReadDumpObject {
                 deletedIds: info.deletedIds.slice()
             })),
             variables: this._reforgedAst.variables.map((variable) => ({ ...variable })),
-            triggerObjects: this._reforgedAst.triggerObjects.map((object) => ({ ...object })),
+            triggerObjects: this._reforgedAst.triggerObjects.map((object) => ({
+                ...object,
+                functions: object.functions ? object.functions.map((func) => TriggerNamesObject.copyFunction(func)) : undefined
+            })),
             triggerObjectsPayload: Buffer.from(this._reforgedAst.triggerObjectsPayload)
         };
     }
 
-    protected parseReforgedAst(buffer: Buffer): ReforgedTriggerAst {
+    public static parseTriggerDataText(text: string): TriggerDataLookup {
+        const lookup: TriggerDataLookup = {};
+        text.split(/\r?\n/).forEach((line) => {
+            const trimmed = line.trim();
+            if (!trimmed || trimmed.startsWith("//") || trimmed.startsWith("[") || trimmed.startsWith("_")) {
+                return;
+            }
+            const equalsIndex = trimmed.indexOf("=");
+            if (equalsIndex <= 0) {
+                return;
+            }
+            const name = trimmed.slice(0, equalsIndex).trim();
+            const values = TriggerNamesObject.splitTriggerDataCsv(trimmed.slice(equalsIndex + 1));
+            if (values.length === 0) {
+                return;
+            }
+            lookup[name] = {
+                name,
+                parameterTypes: values.slice(1).filter((value) => value !== "" && value !== "nothing")
+            };
+        });
+        return lookup;
+    }
+
+    protected static splitTriggerDataCsv(value: string): string[] {
+        const values: string[] = [];
+        let current = "";
+        let quoted = false;
+        for (let i = 0; i < value.length; ++i) {
+            const char = value[i];
+            if (char === "\"") {
+                quoted = !quoted;
+            } else if (char === "," && !quoted) {
+                values.push(current.trim());
+                current = "";
+            } else {
+                current += char;
+            }
+        }
+        values.push(current.trim());
+        return values;
+    }
+
+    protected static normalizeTriggerData(triggerData?: string | TriggerDataLookup): TriggerDataLookup | undefined {
+        if (triggerData === undefined) {
+            return undefined;
+        }
+        return typeof triggerData === "string" ? TriggerNamesObject.parseTriggerDataText(triggerData) : triggerData;
+    }
+
+    protected static copyFunction(func: TriggerFunction): TriggerFunction {
+        return {
+            ...func,
+            parameterTypes: func.parameterTypes.slice(),
+            parameters: func.parameters.map((parameter) => TriggerNamesObject.copyParameter(parameter)),
+            nestedFunctions: func.nestedFunctions.map((nestedFunction) => TriggerNamesObject.copyFunction(nestedFunction))
+        };
+    }
+
+    protected static copyParameter(parameter: TriggerParameter): TriggerParameter {
+        return {
+            ...parameter,
+            parameterTypes: parameter.parameterTypes.slice(),
+            parameters: parameter.parameters.map((nestedParameter) => TriggerNamesObject.copyParameter(nestedParameter))
+        };
+    }
+
+    protected parseReforgedAst(buffer: Buffer, triggerData?: TriggerDataLookup): ReforgedTriggerAst {
         const reader = new BinaryReadBuffer(buffer);
         reader.readChars(4);
         const magicNumber = buffer.readUInt32LE(reader.offset);
         reader.readInt();
         const fileFormatVersion = reader.readInt();
         const typeInfo = this.readReforgedTypeInfo(reader);
-        const unknown1 = reader.readInt();
-        const unknown2 = reader.readInt();
+        const reserved1 = reader.readInt();
+        const reserved2 = reader.readInt();
         const triggerDefinitionVersion = reader.readInt();
         const variables = this.readReforgedVariables(reader);
         const triggerObjectCount = reader.readInt();
@@ -156,8 +263,10 @@ export class TriggerNamesObject implements ReadDumpObject {
             magicNumber,
             fileFormatVersion,
             typeInfo,
-            unknown1,
-            unknown2,
+            reserved1,
+            reserved2,
+            unknown1: reserved1,
+            unknown2: reserved2,
             triggerDefinitionVersion,
             variables,
             triggerObjectCount,
@@ -166,7 +275,7 @@ export class TriggerNamesObject implements ReadDumpObject {
         };
 
         try {
-            ast.triggerObjects = this.readReforgedTriggerObjectSummaries(buffer, buffer.length - triggerObjectsPayload.length, triggerObjectCount);
+            ast.triggerObjects = this.readReforgedTriggerObjectSummaries(buffer, buffer.length - triggerObjectsPayload.length, triggerObjectCount, triggerData);
         } catch (error) {
             ast.parseError = error instanceof Error ? error.message : String(error);
         }
@@ -206,14 +315,14 @@ export class TriggerNamesObject implements ReadDumpObject {
         return variables;
     }
 
-    protected readReforgedTriggerObjectSummaries(buffer: Buffer, offset: number, count: number): TriggerObjectSummary[] {
+    protected readReforgedTriggerObjectSummaries(buffer: Buffer, offset: number, count: number, triggerData?: TriggerDataLookup): TriggerObjectSummary[] {
         const reader = new BinaryReadBuffer(buffer.slice(offset));
         const objects: TriggerObjectSummary[] = [];
         for (let i = 0; i < count && reader.remainingBytes() > 0; ++i) {
             const start = offset + reader.offset;
             const objectType = reader.readInt();
-            const object = this.readReforgedTriggerObjectSummary(reader, objectType, start);
-            if (object.functionCount && object.functionCount > 0) {
+            const object = this.readReforgedTriggerObjectSummary(reader, objectType, start, triggerData);
+            if (object.functionCount && object.functionCount > 0 && !triggerData) {
                 object.length = offset + reader.offset < buffer.length && i === count - 1 ? buffer.length - start : undefined;
                 object.parseComplete = i === count - 1;
                 objects.push(object);
@@ -228,7 +337,7 @@ export class TriggerNamesObject implements ReadDumpObject {
         return objects;
     }
 
-    protected readReforgedTriggerObjectSummary(reader: BinaryReadBuffer, objectType: number, offset: number): TriggerObjectSummary {
+    protected readReforgedTriggerObjectSummary(reader: BinaryReadBuffer, objectType: number, offset: number, triggerData?: TriggerDataLookup): TriggerObjectSummary {
         if (objectType === 1) {
             return {
                 objectType,
@@ -264,22 +373,78 @@ export class TriggerNamesObject implements ReadDumpObject {
             };
         }
         if (objectType === 8 || objectType === 16 || objectType === 32) {
+            const name = reader.readString();
+            const commentText = reader.readString();
+            const isComment = reader.readInt() !== 0;
+            const objectId = reader.readInt();
+            const isEnabled = reader.readInt() !== 0;
+            const isCustomText = reader.readInt() !== 0;
+            const isInitiallyOff = reader.readInt() !== 0;
+            const runOnMapInitialization = reader.readInt() !== 0;
+            const parentId = reader.readInt();
+            const functionCount = reader.readInt();
+            const functions = triggerData ? this.readReforgedFunctions(reader, functionCount, triggerData, false) : undefined;
             return {
                 objectType,
                 offset,
-                name: reader.readString(),
-                commentText: reader.readString(),
-                isComment: reader.readInt() !== 0,
-                objectId: reader.readInt(),
-                isEnabled: reader.readInt() !== 0,
-                isCustomText: reader.readInt() !== 0,
-                isInitiallyOff: reader.readInt() !== 0,
-                runOnMapInitialization: reader.readInt() !== 0,
-                parentId: reader.readInt(),
-                functionCount: reader.readInt(),
+                name,
+                commentText,
+                isComment,
+                objectId,
+                isEnabled,
+                isCustomText,
+                isInitiallyOff,
+                runOnMapInitialization,
+                parentId,
+                functionCount,
+                functions,
                 parseComplete: true
             };
         }
         return { objectType, offset, parseComplete: false };
+    }
+
+    protected readReforgedFunctions(reader: BinaryReadBuffer, count: number, triggerData: TriggerDataLookup, nested: boolean): TriggerFunction[] {
+        const functions: TriggerFunction[] = [];
+        for (let i = 0; i < count; ++i) {
+            functions.push(this.readReforgedFunction(reader, triggerData, nested));
+        }
+        return functions;
+    }
+
+    protected readReforgedFunction(reader: BinaryReadBuffer, triggerData: TriggerDataLookup, nested: boolean): TriggerFunction {
+        const type = reader.readInt();
+        const blockId = nested ? reader.readInt() : undefined;
+        const name = reader.readString();
+        const isEnabled = reader.readInt() !== 0;
+        const parameterTypes = TriggerNamesObject.getFunctionParameterTypes(triggerData, name);
+        const parameters = parameterTypes.map((parameterType) => this.readReforgedParameter(reader, triggerData, parameterType));
+        const nestedFunctionCount = reader.readInt();
+        const nestedFunctions = this.readReforgedFunctions(reader, nestedFunctionCount, triggerData, true);
+        return { type, blockId, name, isEnabled, parameterTypes, parameters, nestedFunctionCount, nestedFunctions };
+    }
+
+    protected readReforgedParameter(reader: BinaryReadBuffer, triggerData: TriggerDataLookup, parameterType: string): TriggerParameter {
+        const type = reader.readInt();
+        const value = reader.readString();
+        const supportsParameters = reader.readInt() !== 0;
+        const parameterTypes = supportsParameters ? TriggerNamesObject.getFunctionParameterTypes(triggerData, value) : [];
+        const parameters = parameterTypes.map((nestedType) => this.readReforgedParameter(reader, triggerData, nestedType));
+        const isArray = reader.readInt() !== 0;
+        const arrayIndexValue = isArray ? reader.readInt() : undefined;
+        return {
+            type,
+            value,
+            supportsParameters,
+            parameterTypes: parameterTypes.length === 0 && supportsParameters && parameterType ? [parameterType] : parameterTypes,
+            parameters,
+            isArray,
+            arrayIndexValue
+        };
+    }
+
+    protected static getFunctionParameterTypes(triggerData: TriggerDataLookup, name: string): string[] {
+        const definition = triggerData[name];
+        return definition ? definition.parameterTypes : [];
     }
 }
