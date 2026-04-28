@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as  assert from "assert";
@@ -113,7 +113,7 @@ export class DoodadsObject implements ReadDumpObject {
             const y = reader.readInt();
             this._specialDoodads.push({ doodadID, z, x, y });
         }
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
     public dump(): Buffer {
             const writer = new BinaryWriteBuffer();

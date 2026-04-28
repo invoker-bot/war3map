@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as  assert from "assert";
@@ -50,7 +50,7 @@ export class RegionObject implements ReadDumpObject {
                 end
             });
         }
-        assert.ok(reader.isEOF(),"Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(),"Not reach end of the file because of trailing data.");
     }
     dump(): Buffer {
         const writer = new BinaryWriteBuffer();

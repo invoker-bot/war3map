@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as assert from "assert";
@@ -95,8 +95,6 @@ export interface SoundDefinition {
     distance: SoundDistance;
     runtimeExtents?: SoundRuntimeExtents;
     editorMetadata?: SoundEditorMetadata;
-    /** @deprecated Use editorMetadata instead. */
-    unknowns?: number[];
     repeatedVariableName?: string;
     internalName?: string;
     repeatedPath?: string;
@@ -162,15 +160,6 @@ export class SoundsObject implements ReadDumpObject {
                 pitchVariance: editorMetadata.reserved2,
                 cutoffDistance: editorMetadata.reserved3
             };
-            const unknowns = [
-                editorMetadata.marker1,
-                editorMetadata.marker2,
-                editorMetadata.marker3,
-                editorMetadata.reserved1,
-                editorMetadata.reserved2,
-                editorMetadata.reserved3
-            ];
-
             const sound: SoundDefinition = {
                 variableName,
                 path,
@@ -191,8 +180,7 @@ export class SoundsObject implements ReadDumpObject {
                 channel,
                 distance,
                 runtimeExtents,
-                editorMetadata,
-                unknowns
+                editorMetadata
             };
 
             if (this._fileVersion === 3) {
@@ -212,7 +200,7 @@ export class SoundsObject implements ReadDumpObject {
             this._sounds.push(sound);
         }
 
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
 
     public dump(): Buffer {
@@ -234,7 +222,7 @@ export class SoundsObject implements ReadDumpObject {
             writer.writeFloat(sound.distance.min);
             writer.writeFloat(sound.distance.max);
             writer.writeFloat(sound.distance.cutoff);
-            const editorMetadata = sound.editorMetadata || SoundsObject.editorMetadataFromUnknowns(sound.unknowns);
+            const editorMetadata = sound.editorMetadata || SoundsObject.defaultEditorMetadata();
             writer.writeInt(editorMetadata.marker1);
             writer.writeInt(editorMetadata.marker2);
             writer.writeInt(editorMetadata.marker3);
@@ -262,15 +250,14 @@ export class SoundsObject implements ReadDumpObject {
         return value === undefined ? (raw === undefined ? fallback : SoundsObject.floatFromRaw(raw)) : value;
     }
 
-    protected static editorMetadataFromUnknowns(unknowns?: number[]): SoundEditorMetadata {
-        const values = unknowns || [0, 0, 127, 0, 0, 0];
+    protected static defaultEditorMetadata(): SoundEditorMetadata {
         return {
-            marker1: values[0] || 0,
-            marker2: values[1] || 0,
-            marker3: values[2] === undefined ? 127 : values[2],
-            reserved1: values[3] || 0,
-            reserved2: values[4] || 0,
-            reserved3: values[5] || 0
+            marker1: 0,
+            marker2: 0,
+            marker3: 127,
+            reserved1: 0,
+            reserved2: 0,
+            reserved3: 0
         };
     }
 

@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as assert from "assert";
@@ -58,7 +58,7 @@ export class TgaImageObject implements ReadDumpObject {
             imageDescriptor: reader.readByte()
         };
         this._payload = reader.readBytes(buffer.length - 18);
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
 
     public dump(): Buffer {

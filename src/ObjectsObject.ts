@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
+﻿/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /**
  *  @packageDocumentation
  */
@@ -33,7 +33,7 @@ export class ObjectsObject implements ReadDumpObject {
         assert.ok(this._fileVersion === 1 ||this._fileVersion===2 , `The File version \`${this._fileVersion}\` not support.`);
         this.originalObjects=this.readObjectsTable(reader);
         this.customObjects=this.readObjectsTable(reader);
-        assert.ok(reader.isEOF(),"Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(),"Not reach end of the file because of trailing data.");
     }
     private readObjectsTable(reader:BinaryReadBuffer):ObjectDefination[]{
         const numDefinations = reader.readInt();
@@ -62,7 +62,7 @@ export class ObjectsObject implements ReadDumpObject {
                     case 3:
                         value=reader.readString();break;
                     default:
-                        throw new Error(`Unknown data type:${type}`);
+                        throw new Error(`trailing data type:${type}`);
                 } 
                 
                 const end=reader.readInt();

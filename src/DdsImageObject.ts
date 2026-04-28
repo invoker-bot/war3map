@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as assert from "assert";
@@ -73,7 +73,7 @@ export class DdsImageObject implements ReadDumpObject {
         assert.strictEqual(this._header.size, 124, "Unsupported DDS header size.");
         assert.strictEqual(this._header.pixelFormat.size, 32, "Unsupported DDS pixel format size.");
         this._payload = reader.readBytes(buffer.length - 128);
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
 
     public dump(): Buffer {

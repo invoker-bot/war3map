@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as  assert from "assert";
@@ -112,7 +112,7 @@ export class EnvironmentObject implements ReadDumpObject{
             centerOffsetOfMapY,
             tilesetsData,
         };
-        assert.ok(reader.isEOF(),"Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(),"Not reach end of the file because of trailing data.");
     }
     public dump():Buffer{
         if(this._environment){

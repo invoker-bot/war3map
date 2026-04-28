@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @packageDocumentation
  */
 
@@ -42,8 +42,7 @@ export class CamerasObject implements ReadDumpObject{
             writer.writeFloat(camera.roll);
             writer.writeFloat(camera.fieldOfView);
             writer.writeFloat(camera.farClipping);
-
-            writer.writeFloat(100);//unknown
+            writer.writeFloat(100);//reserved editor value
 
             writer.writeString(camera.name,true);
         });
@@ -68,8 +67,8 @@ export class CamerasObject implements ReadDumpObject{
             const roll=reader.readFloat();
             const fieldOfView=reader.readFloat();
             const farClipping=reader.readFloat();
-            const unknown=reader.readFloat();
-            assert.strictEqual(unknown,100,"The magic number of camera should be 100");
+            const reserved=reader.readFloat();
+            assert.strictEqual(reserved,100,"The reserved camera value should be 100");
             const name=reader.readString();
             this._cameras.push({
                 target:{
@@ -88,7 +87,7 @@ export class CamerasObject implements ReadDumpObject{
 
         }
 
-        assert.ok(reader.isEOF(),"Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(),"Not reach end of the file because of trailing data.");
     }
     /**
      * Get the version.

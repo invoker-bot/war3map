@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as assert from "assert";
@@ -210,7 +210,7 @@ export class InfoObject implements ReadDumpObject {
             this._techtree = [];
             this._randomGroupTables = [];
             this._randomItemTables = [];
-            assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+            assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
             return;
         }
 
@@ -299,7 +299,7 @@ export class InfoObject implements ReadDumpObject {
             this._randomItemTables = [];
         }
 
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
 
     public dump(): Buffer {

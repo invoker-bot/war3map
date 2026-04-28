@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as assert from "assert";
@@ -81,7 +81,7 @@ export class BlpImageObject implements ReadDumpObject {
         header.mipmaps = offsets.map((offset, index) => ({ offset, size: sizes[index] }));
         this._header = header;
         this._payload = reader.readBytes(buffer.length - BlpImageObject.BLP1_HEADER_SIZE);
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
 
     protected readBlp2(reader: BinaryReadBuffer, magic: string, buffer: Buffer): void {
@@ -118,7 +118,7 @@ export class BlpImageObject implements ReadDumpObject {
         header.palette = reader.readBytes(1024);
         this._header = header;
         this._payload = reader.readBytes(buffer.length - BlpImageObject.BLP2_HEADER_SIZE);
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
 
     public dump(): Buffer {

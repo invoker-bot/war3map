@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as assert from "assert";
@@ -15,7 +15,7 @@ export class CustomTextTriggerObject implements ReadDumpObject {
         const reader = new BinaryReadBuffer(buffer);
         this._fileVersion = reader.readInt();
         this._scriptBytes = reader.readBytes(buffer.length - 4);
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
 
     public dump(): Buffer {

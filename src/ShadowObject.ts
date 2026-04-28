@@ -1,4 +1,4 @@
-import * as  assert from "assert";
+﻿import * as  assert from "assert";
 import { BinaryReadBuffer, BinaryWriteBuffer, ReadDumpObject } from "./BinaryBuffer";
 
 export class ShadowObject implements ReadDumpObject {
@@ -22,7 +22,7 @@ export class ShadowObject implements ReadDumpObject {
             }
             this.tilesets.push(tilesetsX);
         }
-        assert.ok(reader.isEOF(),"Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(),"Not reach end of the file because of trailing data.");
     }
     dump(): Buffer {
         const writer = new BinaryWriteBuffer();

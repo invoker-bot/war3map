@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as assert from "assert";
@@ -100,7 +100,7 @@ export interface UnitDefinition {
     player: PlayerNumber;
     id: number;
     flags?: number;
-    unknownBytes?: [number, number];
+    reservedBytes?: [number, number];
     hitpoints?: number;
     mana?: number;
     randomItemSetID?: number;
@@ -197,7 +197,7 @@ export class UnitsObject implements ReadDumpObject {
             const flags = reader.readByte();
             const player = reader.readInt();
             assert.ok(player >= 0 && player <= PlayerNumber.NeutralPassive, `Invalid unit owner:${player}`);
-            const unknownBytes: [number, number] = [reader.readByte(), reader.readByte()];
+            const reservedBytes: [number, number] = [reader.readByte(), reader.readByte()];
             const hitpoints = reader.readInt();
             const mana = reader.readInt();
             const randomItemSetID = this._fileVersion >= 8 ? reader.readInt() : -1;
@@ -300,7 +300,7 @@ export class UnitsObject implements ReadDumpObject {
                 player,
                 id,
                 flags,
-                unknownBytes
+                reservedBytes
             };
             if (variation !== 0) unit.variation = variation;
             if (skinID && skinID !== type) unit.skinID = skinID;
@@ -324,7 +324,7 @@ export class UnitsObject implements ReadDumpObject {
             this._units.push(unit);
         }
 
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
 
     public dump(): Buffer {
@@ -350,9 +350,9 @@ export class UnitsObject implements ReadDumpObject {
             }
             writer.writeByte(unit.flags === undefined ? 2 : unit.flags);
             writer.writeInt(unit.player);
-            const unknownBytes = unit.unknownBytes || [0, 0];
-            writer.writeByte(unknownBytes[0]);
-            writer.writeByte(unknownBytes[1]);
+            const reservedBytes = unit.reservedBytes || [0, 0];
+            writer.writeByte(reservedBytes[0]);
+            writer.writeByte(reservedBytes[1]);
             writer.writeInt(unit.hitpoints === undefined ? -1 : unit.hitpoints);
             writer.writeInt(unit.mana === undefined ? -1 : unit.mana);
             if (this._fileVersion >= 8) {

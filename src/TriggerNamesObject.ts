@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  @packageDocumentation
  */
 import * as assert from "assert";
@@ -83,10 +83,6 @@ export interface ReforgedTriggerAst {
     typeInfo: TriggerTypeInfo[];
     reserved1: number;
     reserved2: number;
-    /** @deprecated Use reserved1 instead. */
-    unknown1?: number;
-    /** @deprecated Use reserved2 instead. */
-    unknown2?: number;
     triggerDefinitionVersion: number;
     variables: TriggerVariableDefinition[];
     triggerObjectCount: number;
@@ -114,7 +110,7 @@ export class TriggerNamesObject implements ReadDumpObject {
         this._payload = reader.readBytes(buffer.length - 8);
         this._strings = TriggerNamesObject.extractStrings(this._payload, 8);
         this._reforgedAst = this._fileVersionRaw === 0x80000004 ? this.parseReforgedAst(buffer, TriggerNamesObject.normalizeTriggerData(options.triggerData)) : undefined;
-        assert.ok(reader.isEOF(), "Not reach end of the file because of unknown data.");
+        assert.ok(reader.isEOF(), "Not reach end of the file because of trailing data.");
     }
 
     public dump(): Buffer {
@@ -265,8 +261,6 @@ export class TriggerNamesObject implements ReadDumpObject {
             typeInfo,
             reserved1,
             reserved2,
-            unknown1: reserved1,
-            unknown2: reserved2,
             triggerDefinitionVersion,
             variables,
             triggerObjectCount,
