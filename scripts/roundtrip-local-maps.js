@@ -38,6 +38,7 @@ const result = {
   files: 0,
   mismatches: [],
   dumpFailures: [],
+  parseErrors: [],
   readFailures: []
 };
 
@@ -71,6 +72,14 @@ for (const mapPath of maps) {
   }
 
   for (const file of archive.files) {
+    if (file.parseError) {
+      result.parseErrors.push({
+        map: path.basename(mapPath),
+        file: file.name,
+        error: file.parseError
+      });
+    }
+
     const original = originals.get(file.name);
     if (!original) {
       continue;
@@ -118,6 +127,11 @@ for (const mapPath of maps) {
 
 console.log(JSON.stringify(result, null, 2));
 
-if (result.readFailures.length > 0 || result.dumpFailures.length > 0 || result.mismatches.length > 0) {
+if (
+  result.readFailures.length > 0 ||
+  result.dumpFailures.length > 0 ||
+  result.parseErrors.length > 0 ||
+  result.mismatches.length > 0
+) {
   process.exitCode = 1;
 }

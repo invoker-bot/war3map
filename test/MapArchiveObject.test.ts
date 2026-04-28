@@ -7,17 +7,28 @@ import {
     AudioFileObject,
     BlpImageObject,
     CustomTextTriggerObject,
+    CamerasObject,
     DdsImageObject,
+    DoodadsObject,
+    EnvironmentObject,
+    GameConfigurationObject,
     InfoObject,
+    ImportsObject,
     MapArchiveObject,
     MenuMinimapObject,
     MdxModelObject,
+    ObjectsObject,
+    PathmapObject,
     RawFileObject,
+    RegionObject,
+    ShadowObject,
+    SoundsObject,
     StormArchiveEntry,
     StormArchiveModule,
     TextFileObject,
     TgaImageObject,
-    TriggerNamesObject
+    TriggerNamesObject,
+    UnitsObject
 } from "../src/index";
 
 class FakeStormArchive implements StormArchiveModule {
@@ -223,6 +234,28 @@ describe("CustomTextTriggerObject", () => {
 });
 
 describe("createMapFileObject", () => {
+    it("should classify standard engine and editor map files", () => {
+        const pathmap = new PathmapObject();
+
+        assert.ok(createMapFileObject("war3map.w3e") instanceof EnvironmentObject);
+        assert.ok(createMapFileObject("war3mapUnits.doo") instanceof UnitsObject);
+        assert.ok(createMapFileObject("war3map.doo") instanceof DoodadsObject);
+        assert.ok(createMapFileObject("war3map.w3r") instanceof RegionObject);
+        assert.ok(createMapFileObject("war3map.w3c") instanceof CamerasObject);
+        assert.ok(createMapFileObject("war3map.w3s") instanceof SoundsObject);
+        assert.ok(createMapFileObject("war3map.imp") instanceof ImportsObject);
+        assert.ok(createMapFileObject("war3map.wpm") instanceof PathmapObject);
+        assert.ok(createMapFileObject("war3map.wgc") instanceof GameConfigurationObject);
+        assert.ok(createMapFileObject("war3map.w3u") instanceof ObjectsObject);
+        assert.ok(createMapFileObject("war3map.w3t") instanceof ObjectsObject);
+        assert.ok(createMapFileObject("war3map.w3a") instanceof ObjectsObject);
+        assert.ok(createMapFileObject("war3map.w3b") instanceof ObjectsObject);
+        assert.ok(createMapFileObject("war3map.w3d") instanceof ObjectsObject);
+        assert.ok(createMapFileObject("war3map.w3q") instanceof ObjectsObject);
+        assert.ok(createMapFileObject("war3map.w3h") instanceof ObjectsObject);
+        assert.ok(createMapFileObject("war3map.shd", { pathmap }) instanceof ShadowObject);
+    });
+
     it("should support remaining text and opaque map formats", () => {
         assert.ok(createMapFileObject("war3map.j") instanceof TextFileObject);
         assert.ok(createMapFileObject("war3map.lua") instanceof TextFileObject);
